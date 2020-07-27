@@ -1,0 +1,27 @@
+.HpFilterMenu {
+  display: flex;
+  width: 100%;
+  padding: 40px 0px;
+  font-family: Rubik-Regular;
+  font-size: 14px;
+  & .filters {
+    display: flex;
+    justify-content: space-between;
+    width: 45%;
+    & span {
+      cursor: pointer;
+    }
+  }
+  & .filterToggle {
+    display: flex;
+    font-family: Rubik-Regular;
+    justify-content: flex-end;
+    width: 55%;
+    & span {
+      cursor: pointer;
+    }
+    .arrowdown {
+      font-family: ElegantIcons;
+    }
+  }
+}

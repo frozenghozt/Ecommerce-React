@@ -1,0 +1,47 @@
+.filters {
+  display: flex;
+  width: 100%;
+  padding: 40px 0px;
+  font-size: 14px;
+  .filter {
+    width: 20%;
+    height: 300px;
+    margin: 1px;
+    .title {
+      cursor: pointer;
+      font-family: Rubik-Medium;
+      color: #252525;
+      margin-bottom: 40px;
+    }
+    .sort span {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 13px;
+      color: #707070;
+    }
+    .price span {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 13px;
+      color: #707070;
+    }
+    .color div {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 13px;
+      color: #707070;
+    }
+    .size span {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 13px;
+      color: #707070;
+    }
+    .tags span {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 13px;
+      color: #707070;
+    }
+  }
+}
