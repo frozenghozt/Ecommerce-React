@@ -9,12 +9,24 @@ const HpFilters = () => {
           <span>Sort By</span>
         </div>
         <div className={styles.sort}>
-          <span>Best seller</span>
-          <span>Popularity</span>
-          <span>Average rating</span>
-          <span>New arrival</span>
-          <span>Price: low to high</span>
-          <span>Price: high to low</span>
+          <button>
+            <span>Best seller</span>
+          </button>
+          <button>
+            <span>Popularity</span>
+          </button>
+          <button>
+            <span>Average rating</span>
+          </button>
+          <button>
+            <span>New arrival</span>
+          </button>
+          <button>
+            <span>Price: low to high</span>
+          </button>
+          <button>
+            <span>Price: high to low</span>
+          </button>
         </div>
       </div>
       <div className={styles.filter}>
@@ -22,12 +34,24 @@ const HpFilters = () => {
           <span>Price</span>
         </div>
         <div className={styles.price}>
-          <span>$0.00 - $50.00</span>
-          <span>$50.00 - $100.00</span>
-          <span>$100.00 - $150.00</span>
-          <span>$150.00 - $200.00</span>
-          <span>$200.00 - $250.00</span>
-          <span>$250.00+</span>
+          <button>
+            <span>$0.00 - $50.00</span>
+          </button>
+          <button>
+            <span>$50.00 - $100.00</span>
+          </button>
+          <button>
+            <span>$100.00 - $150.00</span>
+          </button>
+          <button>
+            <span>$150.00 - $200.00</span>
+          </button>
+          <button>
+            <span>$200.00 - $250.00</span>
+          </button>
+          <button>
+            <span>$250.00+</span>
+          </button>
         </div>
       </div>
       <div className={styles.filter}>
@@ -35,12 +59,30 @@ const HpFilters = () => {
           <span>Color</span>
         </div>
         <div className={styles.color}>
-          <div>Yellow</div>
-          <div>Gray</div>
-          <div>Red</div>
-          <div>Black</div>
-          <div>Blue</div>
-          <div>Green</div>
+          <button>
+            <span className={styles.circleyellow}></span>
+            <span>Yellow</span>
+          </button>
+          <button>
+            <span className={styles.circlegray}></span>
+            <span>Gray</span>
+          </button>
+          <button>
+            <span className={styles.circlered}></span>
+            <span>Red</span>
+          </button>
+          <button>
+            <span className={styles.circleblack}></span>
+            <span>Black</span>
+          </button>
+          <button>
+            <span className={styles.circleblue}></span>
+            <span>Blue</span>
+          </button>
+          <button>
+            <span className={styles.circlegreen}></span>
+            <span>Green</span>
+          </button>
         </div>
       </div>
       <div className={styles.filter}>
@@ -48,12 +90,24 @@ const HpFilters = () => {
           <span>Size</span>
         </div>
         <div className={styles.size}>
-          <span>S</span>
-          <span>M</span>
-          <span>L</span>
-          <span>XL</span>
-          <span>XXL</span>
-          <span>Over Size</span>
+          <button>
+            <span>L</span>
+          </button>
+          <button>
+            <span>M</span>
+          </button>
+          <button>
+            <span>S</span>
+          </button>
+          <button>
+            <span>XL</span>
+          </button>
+          <button>
+            <span>XXL</span>
+          </button>
+          <button>
+            <span>Over Size</span>
+          </button>
         </div>
       </div>
       <div className={styles.filter}>

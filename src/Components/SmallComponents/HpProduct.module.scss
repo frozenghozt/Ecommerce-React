@@ -1,0 +1,47 @@
+.productcontainer {
+  width: 25%;
+  min-width: 300px;
+  .product {
+    padding: 0px 15px;
+    .image {
+      min-height: 350px;
+      background-image: url(https://static.nike.com/a/images/t_PDP_1280_v1/f_auto/i1-2a9febd8-bc1d-44d3-a050-5eb6ecb17554/air-max-2090-mens-shoe-3pVM46.jpg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      margin-bottom: 30px;
+    }
+    .info {
+      display: flex;
+      font-family: Rubik-Regular;
+      color: #252525;
+      font-size: 14px;
+      margin-bottom: 50px;
+      flex-direction: column;
+      justify-content: center;
+      height: calc(100% - 350px);
+      width: 100%;
+      .namecolor {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        margin-bottom: 12px;
+      }
+      .colors {
+        display: flex;
+        & span {
+          height: 11px;
+          width: 11px;
+          margin-left: 3px;
+          border-radius: 50%;
+          background: #d22626;
+        }
+      }
+      .price {
+        font-family: Rubik-Medium;
+        color: #d35050;
+        width: 100%;
+      }
+    }
+  }
+}

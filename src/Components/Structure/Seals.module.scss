@@ -1,0 +1,65 @@
+.sealscontainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 50px;
+  margin-bottom: 100px;
+  cursor: default;
+  & span {
+    font-family: ElegantIcons;
+    font-size: 34px;
+    margin-bottom: 21px;
+  }
+  & h4 {
+    font-size: 18px;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 13px;
+  }
+  & p {
+    font-family: Rubik-Regular;
+    color: #858585;
+    font-size: 14px;
+    margin: 0;
+  }
+  .deal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 33%;
+    padding: 50px;
+    &:hover {
+      -webkit-box-shadow: 0px 0px 30px 15px rgba(0, 0, 0, 0.05);
+      -moz-box-shadow: 0px 0px 30px 15px rgba(0, 0, 0, 0.05);
+      box-shadow: 0px 0px 30px 15px rgba(0, 0, 0, 0.05);
+      border-radius: 7px;
+    }
+  }
+  .quality {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 34%;
+    padding: 50px;
+    &:hover {
+      -webkit-box-shadow: 0px 0px 30px 15px rgba(0, 0, 0, 0.05);
+      -moz-box-shadow: 0px 0px 30px 15px rgba(0, 0, 0, 0.05);
+      box-shadow: 0px 0px 30px 15px rgba(0, 0, 0, 0.05);
+      border-radius: 7px;
+    }
+  }
+  .return {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 33%;
+    padding: 50px;
+    &:hover {
+      -webkit-box-shadow: 0px 0px 30px 15px rgba(0, 0, 0, 0.05);
+      -moz-box-shadow: 0px 0px 30px 15px rgba(0, 0, 0, 0.05);
+      box-shadow: 0px 0px 30px 15px rgba(0, 0, 0, 0.05);
+      border-radius: 7px;
+    }
+  }
+}
