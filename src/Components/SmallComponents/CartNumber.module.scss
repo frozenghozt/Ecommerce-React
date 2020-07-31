@@ -1,9 +1,11 @@
+@import "../../sass/_variables";
+
 .bullet {
   display: flex;
   justify-content: center;
   align-items: center;
   position: absolute;
-  font-family: Rubik-Regular;
+  font-family: rubikr;
   font-size: 8px;
   color: #fff;
   background-color: red;

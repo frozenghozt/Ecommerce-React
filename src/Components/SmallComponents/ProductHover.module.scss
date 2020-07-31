@@ -1,0 +1,46 @@
+@import "../../sass/_variables";
+
+.producthover {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  top: 83%;
+  width: 88%;
+  height: 30px;
+  padding: 5px 0px;
+  background: $white;
+  .addcart {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    font-family: $icons;
+    font-size: 14px;
+    padding: 0px 14px;
+    color: $mediumgrey;
+    cursor: pointer;
+    border-right: 2px solid $lightgrey;
+  }
+  .viewproduct {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2px;
+    font-family: $rubikm;
+    font-size: 13px;
+    width: 100%;
+    color: $black;
+    cursor: pointer;
+  }
+  .favorite {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    font-family: $icons;
+    font-size: 14px;
+    padding: 0px 14px;
+    color: $mediumgrey;
+    cursor: pointer;
+    border-left: 1px solid $lightgrey;
+  }
+}

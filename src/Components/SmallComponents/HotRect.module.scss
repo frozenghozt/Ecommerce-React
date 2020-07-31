@@ -1,0 +1,13 @@
+@import "../../sass/_variables.scss";
+
+.hotrect {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: $white;
+  font-family: $rubikm;
+  border-bottom-left-radius: 5px;
+  padding: 5px 12px;
+  font-size: 12px;
+  background-color: $btnpink;
+}

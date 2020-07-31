@@ -1,12 +1,15 @@
+@import "../../sass/_variables";
+
 .sealscontainer {
   display: flex;
   justify-content: center;
   width: 100%;
+  text-align: center;
   margin-top: 50px;
   margin-bottom: 100px;
   cursor: default;
   & span {
-    font-family: ElegantIcons;
+    font-family: $icons;
     font-size: 34px;
     margin-bottom: 21px;
   }
@@ -17,8 +20,8 @@
     margin-bottom: 13px;
   }
   & p {
-    font-family: Rubik-Regular;
-    color: #858585;
+    font-family: $rubikr;
+    color: $mediumgrey;
     font-size: 14px;
     margin: 0;
   }

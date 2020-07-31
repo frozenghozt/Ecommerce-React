@@ -1,8 +1,10 @@
+@import "../../sass/_variables";
+
 .bannerContainer {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: Rubik-Medium;
+  font-family: $rubikm;
   background-image: url("../../assets/images/banner.jpg");
   background-position-x: right;
   background-position-y: center;
@@ -11,22 +13,22 @@
   height: 800px;
   min-height: 800px;
   max-height: 800px;
-  background-color: #f7f7f7;
+  background-color: $white;
   & span {
     font-size: 60px;
-    color: #252525;
+    color: $black;
   }
   & p {
-    font-family: Rubik-Regular;
+    font-family: $rubikr;
     margin: 20px 0px 30px 0px;
-    color: #858585;
+    color: $mediumgrey;
   }
   & button {
-    color: #fff;
+    color: $white;
     cursor: pointer;
     font-size: 14px;
-    font-family: Rubik-Medium;
-    background-color: #d35050;
+    font-family: $rubikm;
+    background-color: $btnpink;
     border-style: none;
     padding: 15px 26px 13px 26px;
   }

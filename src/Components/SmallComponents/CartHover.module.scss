@@ -1,0 +1,10 @@
+@import "../../sass/_variables";
+
+.carthover {
+  display: flex;
+  position: absolute;
+  right: 0;
+  flex-direction: column;
+  width: 400px;
+  background-color: $white;
+}

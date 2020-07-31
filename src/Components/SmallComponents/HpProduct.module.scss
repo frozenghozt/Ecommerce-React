@@ -1,9 +1,14 @@
+@import "../../sass/_variables.scss";
+
 .productcontainer {
   width: 25%;
   min-width: 300px;
   .product {
     padding: 0px 15px;
     .image {
+      display: flex;
+      justify-content: center;
+      position: relative;
       min-height: 350px;
       background-image: url(https://static.nike.com/a/images/t_PDP_1280_v1/f_auto/i1-2a9febd8-bc1d-44d3-a050-5eb6ecb17554/air-max-2090-mens-shoe-3pVM46.jpg);
       background-position: center;
@@ -13,8 +18,7 @@
     }
     .info {
       display: flex;
-      font-family: Rubik-Regular;
-      color: #252525;
+      font-family: $rubikr;
       font-size: 14px;
       margin-bottom: 50px;
       flex-direction: column;
@@ -34,12 +38,12 @@
           width: 11px;
           margin-left: 3px;
           border-radius: 50%;
-          background: #d22626;
+          background-color: $btnpink;
         }
       }
       .price {
-        font-family: Rubik-Medium;
-        color: #d35050;
+        font-family: $rubikm;
+        color: $btnpink;
         width: 100%;
       }
     }
