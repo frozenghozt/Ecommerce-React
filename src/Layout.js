@@ -16,8 +16,8 @@ const Layout = () => {
     <div className={styles.layout}>
       <Switch>
         <>
-          <Header />
           <Route exact path="/">
+            <Header />
             <Banner />
             <Container fluid maxWidth="lg">
               <Hidden mdDown>
@@ -29,6 +29,7 @@ const Layout = () => {
             <Newsletter />
           </Route>
           <Route exact path="/search">
+            <Header />
             <Search />
           </Route>
         </>

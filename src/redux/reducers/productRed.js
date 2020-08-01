@@ -1,9 +1,16 @@
-const initialState = [{ favlist: 0 }];
+const initialState = {
+  favlist: {
+    id: "Vic Henry",
+  },
+};
 
 export const favorite = (state = initialState, action) => {
   switch (action.type) {
     case "ADD_FAVORITE":
-      return [...state, { favlist: 5 }];
+      return {
+        ...state,
+        favlist: { ...state.favlist, ...action.payload },
+      };
     case "REMOVE_FAVORITE":
       return state;
     default:

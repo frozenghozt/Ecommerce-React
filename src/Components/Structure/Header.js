@@ -5,9 +5,11 @@ import KossyLogo from "../../assets/images/logo.png";
 import CartNumber from "../SmallComponents/CartNumber";
 import { Link } from "react-router-dom";
 import CartHover from "../SmallComponents/CartHover";
+// Mocking up
 
 const Header = () => {
   const favorite = useSelector((state) => state.favorite);
+
   return (
     <div className={styles.headerContainer}>
       <CartHover />

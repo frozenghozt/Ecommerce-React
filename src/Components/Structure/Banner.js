@@ -8,7 +8,9 @@ const Banner = () => {
     <div className={styles.bannerContainer}>
       <Container fixed>
         <Grid item md={6} sm={12}>
-          <span>SPRING SALE 30%</span>
+          <span>
+            SPRING SALE <span style={{ color: "red" }}>30%</span>
+          </span>
           <p>
             Shop the latest women's clothes at Kossy and keep your style game
             strong with the freshest threads landing daily. Shopping is a right,

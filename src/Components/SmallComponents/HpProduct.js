@@ -4,7 +4,7 @@ import HotRect from "./HotRect";
 import ProductHover from "./ProductHover";
 import styles from "./HpProduct.module.scss";
 
-const HpProduct = () => {
+const HpProduct = ({ name, price, img }) => {
   const [isHover, setIsHover] = useState(false);
 
   const hoverHandler = () => {
@@ -16,6 +16,7 @@ const HpProduct = () => {
       <div className={styles.product}>
         <div
           className={styles.image}
+          style={{ backgroundImage: `url(${img})` }}
           onMouseEnter={hoverHandler}
           onMouseLeave={hoverHandler}
         >
@@ -25,14 +26,14 @@ const HpProduct = () => {
         </div>
         <div className={styles.info}>
           <div className={styles.namecolor}>
-            <span>Floral Print Shirt</span>
+            <span>{name}</span>
             <div className={styles.colors}>
               <span></span>
               <span></span>
               <span></span>
             </div>
           </div>
-          <div className={styles.price}>$35.99</div>
+          <div className={styles.price}>{price}</div>
         </div>
       </div>
     </div>
