@@ -4,13 +4,13 @@ import HotRect from "./HotRect";
 import ProductHover from "./ProductHover";
 import styles from "./HpProduct.module.scss";
 
-const HpProduct = ({ name, price, img }) => {
+const HpProduct = ({ name, price, prevprice, img, hot, colors }) => {
   const [isHover, setIsHover] = useState(false);
 
   const hoverHandler = () => {
     setIsHover(!isHover);
   };
-
+  console.log(colors);
   return (
     <div className={styles.productcontainer}>
       <div className={styles.product}>
@@ -20,20 +20,31 @@ const HpProduct = ({ name, price, img }) => {
           onMouseEnter={hoverHandler}
           onMouseLeave={hoverHandler}
         >
-          <SaleRect />
-          <HotRect />
+          {hot ? <HotRect /> : null}
+          {prevprice > price ? <SaleRect /> : null}
           {isHover ? <ProductHover /> : null}
         </div>
         <div className={styles.info}>
           <div className={styles.namecolor}>
             <span>{name}</span>
             <div className={styles.colors}>
-              <span></span>
-              <span></span>
-              <span></span>
+              {colors.map((color) => (
+                <span
+                  style={{
+                    backgroundColor: `${color}`,
+                    border:
+                      color === "white"
+                        ? "1px solid gray"
+                        : `1px solid ${color}`,
+                  }}
+                ></span>
+              ))}
             </div>
           </div>
-          <div className={styles.price}>{price}</div>
+          <div className={styles.price}>
+            <span>$ {price}</span>
+            {prevprice > 0 ? <span>{prevprice}</span> : null}
+          </div>
         </div>
       </div>
     </div>

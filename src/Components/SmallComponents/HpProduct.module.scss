@@ -32,18 +32,25 @@
       }
       .colors {
         display: flex;
+        align-items: center;
         & span {
           height: 11px;
           width: 11px;
           margin-left: 3px;
           border-radius: 50%;
-          background-color: $btnpink;
         }
       }
       .price {
-        font-family: $rubikm;
-        color: $btnpink;
-        width: 100%;
+        span {
+          font-family: $rubikm;
+          color: $btnpink;
+          width: 100%;
+          &:nth-child(2) {
+            color: rgb(210, 210, 210);
+            margin-left: 13px;
+            text-decoration: line-through;
+          }
+        }
       }
     }
   }
