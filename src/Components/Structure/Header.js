@@ -9,6 +9,7 @@ import CartHover from "../SmallComponents/CartHover";
 
 const Header = () => {
   const favorite = useSelector((state) => state.favorite);
+  console.log(favorite);
 
   return (
     <div className={styles.headerContainer}>

@@ -4,13 +4,13 @@ import HotRect from "./HotRect";
 import ProductHover from "./ProductHover";
 import styles from "./HpProduct.module.scss";
 
-const HpProduct = ({ name, price, prevprice, img, hot, colors }) => {
-  const [isHover, setIsHover] = useState(false);
+const HpProduct = ({ uid, name, price, prevprice, img, hot, colors }) => {
+  const [ishover, setishover] = useState(false);
 
   const hoverHandler = () => {
-    setIsHover(!isHover);
+    setishover(!ishover);
   };
-  console.log(colors);
+
   return (
     <div className={styles.productcontainer}>
       <div className={styles.product}>
@@ -22,14 +22,21 @@ const HpProduct = ({ name, price, prevprice, img, hot, colors }) => {
         >
           {hot ? <HotRect /> : null}
           {prevprice > price ? <SaleRect /> : null}
-          {isHover ? <ProductHover /> : null}
+          <ProductHover
+            ishover={ishover}
+            uid={uid}
+            name={name}
+            img={img}
+            price={price}
+          />
         </div>
         <div className={styles.info}>
           <div className={styles.namecolor}>
             <span>{name}</span>
             <div className={styles.colors}>
-              {colors.map((color) => (
+              {colors.map((color, i) => (
                 <span
+                  key={i}
                   style={{
                     backgroundColor: `${color}`,
                     border:

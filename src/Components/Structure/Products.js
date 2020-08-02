@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "./Products.module.scss";
 import axios from "axios";
 import HpProduct from "../SmallComponents/HpProduct";
@@ -10,7 +10,8 @@ server.get("/api/inventory", productObj);
 
 const Product = () => {
   const [data, setdata] = React.useState({ inventory: [] });
-  React.useEffect(() => {
+
+  useEffect(() => {
     axios
       .get("/api/inventory")
       .then((res) => setdata(res.data))
@@ -20,9 +21,10 @@ const Product = () => {
   return (
     <div className={styles.products}>
       {data.inventory.map(
-        ({ id, name, price, prevprice, img, hot, colors }) => (
+        ({ id, uid, name, price, prevprice, img, hot, colors }) => (
           <HpProduct
             key={id}
+            uid={uid}
             name={name}
             price={price}
             prevprice={prevprice}

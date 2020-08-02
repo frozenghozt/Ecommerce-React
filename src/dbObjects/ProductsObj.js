@@ -2,6 +2,7 @@ const productObj = {
   inventory: [
     {
       id: 1,
+      uid: "f3332370-d3f3-11ea-adfb-37575ff44809",
       name: "Nike Air Max 270",
       price: 170,
       prevprice: 0,
@@ -12,6 +13,7 @@ const productObj = {
     },
     {
       id: 2,
+      uid: "011229f0-d3f4-11ea-bdab-b1ba253220af",
       name: "Nike Joyride Dual",
       price: 130,
       prevprice: 0,
@@ -22,6 +24,7 @@ const productObj = {
     },
     {
       id: 3,
+      uid: "08818b90-d3f4-11ea-8cb1-fbcf5cc0be94",
       name: "Nike Air Max Verona",
       price: 130,
       prevprice: 150,
@@ -32,6 +35,7 @@ const productObj = {
     },
     {
       id: 4,
+      uid: "0f8d2251-d3f4-11ea-a15a-8d56c2959617",
       name: "Nike Air Force 1",
       price: 100,
       prevprice: 110,
@@ -42,6 +46,7 @@ const productObj = {
     },
     {
       id: 5,
+      uid: "19645c30-d3f4-11ea-bbdd-67b5c0f217ae",
       name: "Nike Air Max 90",
       price: 120,
       prevprice: 0,
@@ -52,6 +57,7 @@ const productObj = {
     },
     {
       id: 6,
+      uid: "1f28f401-d3f4-11ea-8275-713413616739",
       name: "Nike Blazer Mid '77",
       price: 100,
       prevprice: 0,
@@ -62,6 +68,7 @@ const productObj = {
     },
     {
       id: 7,
+      uid: "27ddf500-d3f4-11ea-bc88-a7ffa380ec84",
       name: "Nike Blazer Low",
       price: 75,
       prevprice: 110,
@@ -72,6 +79,7 @@ const productObj = {
     },
     {
       id: 8,
+      uid: "2e72ae11-d3f4-11ea-96b5-fd85fb2087f8",
       name: "Nike Air 270",
       price: 150,
       prevprice: 0,
@@ -82,6 +90,7 @@ const productObj = {
     },
     {
       id: 9,
+      uid: "34980381-d3f4-11ea-b134-e165f59a24c4",
       name: "Air Jordan 1 Low",
       price: 90,
       prevprice: 0,
@@ -92,6 +101,7 @@ const productObj = {
     },
     {
       id: 10,
+      uid: "3b515b91-d3f4-11ea-b2ac-2dc06a468c7a",
       name: "Nike Killshot 2",
       price: 90,
       prevprice: 0,
@@ -102,6 +112,7 @@ const productObj = {
     },
     {
       id: 11,
+      uid: "42afcd41-d3f4-11ea-964e-a56be6f8997f",
       name: "Nike Air VaporMax",
       price: 200,
       prevprice: 0,
@@ -112,6 +123,7 @@ const productObj = {
     },
     {
       id: 12,
+      uid: "47fb1660-d3f4-11ea-83a4-93e1553e8d37",
       name: "Nike React Infinity",
       price: 160,
       prevprice: 200,
