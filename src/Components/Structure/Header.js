@@ -5,7 +5,7 @@ import KossyLogo from "../../assets/images/logo.png";
 import CartNumber from "../SmallComponents/CartNumber";
 import { Link } from "react-router-dom";
 import CartHover from "../SmallComponents/CartHover";
-// Mocking up
+import FavoriteList from "../SmallComponents/FavoriteList";
 
 const Header = () => {
   const favorite = useSelector((state) => state.favorite);
@@ -13,6 +13,7 @@ const Header = () => {
 
   return (
     <div className={styles.headerContainer}>
+      <FavoriteList />
       <CartHover />
       <div className={styles.logo}>
         <Link to="/">
@@ -42,6 +43,7 @@ const Header = () => {
         <div className={styles.search}>
           <Link to="/search">&#x55;</Link>
         </div>
+        <div className={styles.login}>&#x7e;</div>
         <div className={styles.favorite}>
           &#xe030;
           <CartNumber number={favorite.length} />

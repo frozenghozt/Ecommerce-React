@@ -31,7 +31,7 @@ const productObj = {
       img:
         "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/i1-5150aab0-88d1-4b92-ac2a-34d9d7710163/air-max-verona-womens-shoe-JF64LJ.jpg",
       hot: false,
-      colors: ["blue", "white"],
+      colors: ["lightblue", "white"],
     },
     {
       id: 4,
