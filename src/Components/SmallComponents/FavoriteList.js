@@ -9,9 +9,9 @@ const FavoriteList = () => {
   return (
     <div className={styles.favlist}>
       <div className={styles.wrapper}>
-        <span>Your Cart</span>
-        {favorite.map(({ uid, name, img, price }) => (
-          <FavoriteItem uid={uid} name={name} img={img} price={price} />
+        <span>Favorite List</span>
+        {favorite.map(({ uid, name, img, price }, i) => (
+          <FavoriteItem key={i} uid={uid} name={name} img={img} price={price} />
         ))}
       </div>
     </div>

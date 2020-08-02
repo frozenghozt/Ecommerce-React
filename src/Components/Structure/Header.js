@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./Header.module.scss";
 import { useSelector } from "react-redux";
 import KossyLogo from "../../assets/images/logo.png";
@@ -9,11 +9,11 @@ import FavoriteList from "../SmallComponents/FavoriteList";
 
 const Header = () => {
   const favorite = useSelector((state) => state.favorite);
-  console.log(favorite);
+  const [isopen, setisopen] = useState(false);
 
   return (
     <div className={styles.headerContainer}>
-      <FavoriteList />
+      {isopen ? <FavoriteList /> : null}
       <CartHover />
       <div className={styles.logo}>
         <Link to="/">
@@ -44,8 +44,12 @@ const Header = () => {
           <Link to="/search">&#x55;</Link>
         </div>
         <div className={styles.login}>&#x7e;</div>
-        <div className={styles.favorite}>
-          &#xe030;
+        <div className={styles.favorite} onClick={() => setisopen(!isopen)}>
+          {isopen ? (
+            <span style={{ color: "red" }}>&#xe089;</span>
+          ) : (
+            <span>&#xe030;</span>
+          )}
           <CartNumber number={favorite.length} />
         </div>
         <div className={styles.cart}>
