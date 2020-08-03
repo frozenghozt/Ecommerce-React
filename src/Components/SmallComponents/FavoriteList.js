@@ -9,7 +9,7 @@ const FavoriteList = () => {
   return (
     <div className={styles.favlist}>
       <div className={styles.wrapper}>
-        <span>Favorite List</span>
+        <span>Your Favorite</span>
         {favorite.map(({ uid, name, img, price }, i) => (
           <FavoriteItem key={i} uid={uid} name={name} img={img} price={price} />
         ))}

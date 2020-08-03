@@ -1,20 +1,22 @@
 import React, { useState } from "react";
 import styles from "./Header.module.scss";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import KossyLogo from "../../assets/images/logo.png";
 import CartNumber from "../SmallComponents/CartNumber";
-import { Link } from "react-router-dom";
-import CartHover from "../SmallComponents/CartHover";
+import CartList from "../SmallComponents/CartList";
 import FavoriteList from "../SmallComponents/FavoriteList";
 
 const Header = () => {
   const favorite = useSelector((state) => state.favorite);
-  const [isopen, setisopen] = useState(false);
+  const cart = useSelector((state) => state.cart);
+  const [isFavOpen, setIsFavOpen] = useState(false);
+  const [isCartOpen, setIsCartOpen] = useState(false);
 
   return (
     <div className={styles.headerContainer}>
-      {isopen ? <FavoriteList /> : null}
-      <CartHover />
+      {isFavOpen ? <FavoriteList /> : null}
+      {isCartOpen ? <CartList /> : null}
       <div className={styles.logo}>
         <Link to="/">
           <img src={KossyLogo} alt="Kossy" />
@@ -44,17 +46,33 @@ const Header = () => {
           <Link to="/search">&#x55;</Link>
         </div>
         <div className={styles.login}>&#x7e;</div>
-        <div className={styles.favorite} onClick={() => setisopen(!isopen)}>
-          {isopen ? (
-            <span style={{ color: "red" }}>&#xe089;</span>
+        <div
+          className={styles.favorite}
+          onClick={() => {
+            setIsFavOpen(!isFavOpen);
+            setIsCartOpen(false);
+          }}
+        >
+          {isFavOpen ? (
+            <span style={{ color: "#252525" }}>&#xe089;</span>
           ) : (
             <span>&#xe030;</span>
           )}
           <CartNumber number={favorite.length} />
         </div>
-        <div className={styles.cart}>
-          &#xe013;
-          <CartNumber number={2} />
+        <div
+          className={styles.cart}
+          onClick={() => {
+            setIsCartOpen(!isCartOpen);
+            setIsFavOpen(false);
+          }}
+        >
+          {isCartOpen ? (
+            <span style={{ color: "#252525" }}>&#xe079;</span>
+          ) : (
+            <span>&#xe013;</span>
+          )}
+          <CartNumber number={cart.length} />
         </div>
       </div>
     </div>

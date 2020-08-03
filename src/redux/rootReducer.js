@@ -1,6 +1,7 @@
 import { combineReducers } from "redux";
-import { favorite } from "./reducers/productRed";
+import { favorite } from "./reducers/favorite";
+import { cart } from "./reducers/cart";
 
-const rootReducer = combineReducers({ favorite });
+const rootReducer = combineReducers({ favorite, cart });
 
 export default rootReducer;

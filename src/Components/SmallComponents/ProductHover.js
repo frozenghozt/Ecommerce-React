@@ -1,13 +1,17 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styles from "./ProductHover.module.scss";
-// Actions
-import { addFavorite } from "../../redux/actions/productAct";
-import { removeFavorite } from "../../redux/actions/productAct";
+import {
+  addFavorite,
+  removeFavorite,
+  addCart,
+  removeCart,
+} from "../../redux/actions/productAct";
 
 const ProductHover = ({ ishover, uid, name, img, price }) => {
   const dispatch = useDispatch();
   const favorite = useSelector((state) => state.favorite);
+  const cart = useSelector((state) => state.cart);
 
   if (ishover === false) {
     return null;
@@ -15,9 +19,21 @@ const ProductHover = ({ ishover, uid, name, img, price }) => {
 
   return (
     <div className={styles.producthover}>
-      <div className={styles.addcart}>
-        <span>&#xe07a;</span>
-      </div>
+      {cart.some((each) => each.uid === uid) ? (
+        <div
+          className={styles.addcart}
+          onClick={() => dispatch(removeCart({ uid, name, img, price }))}
+        >
+          <span style={{ color: "rgb(226, 74, 73)" }}>&#xe07a;</span>
+        </div>
+      ) : (
+        <div
+          className={styles.addcart}
+          onClick={() => dispatch(addCart({ uid, name, img, price }))}
+        >
+          <span>&#xe07a;</span>
+        </div>
+      )}
       <div className={styles.viewproduct}>
         <span>VIEW PRODUCT</span>
       </div>
