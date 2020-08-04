@@ -1,14 +1,22 @@
 import React, { useEffect } from "react";
-import styles from "./Products.module.scss";
+import styled from "styled-components";
 import axios from "axios";
-import HpProduct from "../SmallComponents/HpProduct";
+import Product from "../SmallComponents/Product";
 import { Server } from "miragejs";
 import productObj from "../../dbObjects/ProductsObj";
+
+const ProductsContainer = styled.div`
+  display: flex;
+  margin-top: 50px;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+`;
 
 let server = new Server();
 server.get("/api/inventory", productObj);
 
-const Product = () => {
+const Products = () => {
   const [data, setdata] = React.useState({ inventory: [] });
 
   useEffect(() => {
@@ -19,10 +27,10 @@ const Product = () => {
   }, []);
 
   return (
-    <div className={styles.products}>
+    <ProductsContainer>
       {data.inventory.map(
         ({ id, uid, name, price, prevprice, img, hot, colors }) => (
-          <HpProduct
+          <Product
             key={id}
             uid={uid}
             name={name}
@@ -34,8 +42,8 @@ const Product = () => {
           />
         )
       )}
-    </div>
+    </ProductsContainer>
   );
 };
 
-export default Product;
+export default Products;

@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "./Components/Structure/Header";
 import Banner from "./Components/Structure/Banner";
-import HpFilter from "./Components/Structure/HpFilter";
+import Filter from "./Components/Structure/Filter";
 import Products from "./Components/Structure/Products";
 import Seals from "./Components/Structure/Seals";
 import Newsletter from "./Components/Structure/Newsletter";
@@ -14,25 +14,23 @@ import { Switch, Route } from "react-router-dom";
 const Layout = () => {
   return (
     <div className={styles.layout}>
+      <Header />
       <Switch>
-        <>
-          <Route exact path="/">
-            <Header />
-            <Banner />
-            <Container fluid maxWidth="lg">
-              <Hidden mdDown>
-                <HpFilter />
-              </Hidden>
-              <Products />
-              <Seals />
-            </Container>
-            <Newsletter />
-          </Route>
-          <Route exact path="/search">
-            <Header />
-            <Search />
-          </Route>
-        </>
+        <Route exact path="/">
+          <Banner />
+          <Container fluid maxWidth="lg">
+            <Hidden mdDown>
+              <Filter />
+            </Hidden>
+            <Products />
+            <Seals />
+          </Container>
+          <Newsletter />
+        </Route>
+        <Route exact path="/search">
+          <Search />
+        </Route>
+        {/* <Route path="/"></Route> */}
       </Switch>
     </div>
   );

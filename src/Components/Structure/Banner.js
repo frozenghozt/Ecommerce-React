@@ -1,11 +1,47 @@
 import React from "react";
-import styles from "./Banner.module.scss";
+import styled from "styled-components";
+import { color, font } from "../../sass/variables";
+import bannerImage from "../../assets/images/banner.jpg";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 
+const BannerContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: ${font.rubikm};
+  background-image: url(${bannerImage});
+  background-position-x: right;
+  background-position-y: center;
+  background-size: cover;
+  width: 100%;
+  height: 800px;
+  min-height: 800px;
+  max-height: 800px;
+  background-color: ${color.white};
+  & span {
+    font-size: 60px;
+    color: ${color.black};
+  }
+  & p {
+    font-family: ${font.rubikr};
+    margin: 20px 0px 30px 0px;
+    color: ${color.mediumgrey};
+  }
+  & button {
+    color: ${color.white};
+    cursor: pointer;
+    font-size: 14px;
+    font-family: ${font.rubikm};
+    background-color: ${color.btnpink};
+    border-style: none;
+    padding: 15px 26px 13px 26px;
+  }
+`;
+
 const Banner = () => {
   return (
-    <div className={styles.bannerContainer}>
+    <BannerContainer>
       <Container fixed>
         <Grid item md={6} sm={12}>
           <span>
@@ -19,7 +55,7 @@ const Banner = () => {
           <button>SHOP NOW</button>
         </Grid>
       </Container>
-    </div>
+    </BannerContainer>
   );
 };
 

@@ -10,6 +10,7 @@ store.subscribe(
   throttle(() => {
     saveState({
       favorite: store.getState().favorite,
+      cart: store.getState().cart,
     });
   }, 1000)
 );

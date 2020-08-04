@@ -1,12 +1,59 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import styles from "./ProductHover.module.scss";
+import styled from "styled-components";
+import { color, font } from "../../styled/variables";
 import {
   addFavorite,
   removeFavorite,
   addCart,
   removeCart,
 } from "../../redux/actions/productAct";
+
+const ProductContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  top: 83%;
+  width: 88%;
+  height: 30px;
+  padding: 5px 0px;
+  background: ${color.white};
+  cursor: pointer;
+`;
+
+const AddCart = styled.div`
+  display: flex;
+  align-items: center;
+  height: 100%;
+  font-family: ${font.icons};
+  font-size: 15px;
+  padding: 0px 14px;
+  color: ${color.mediumgrey};
+  border-right: 2px solid ${color.lightgrey};
+`;
+
+const ViewProduct = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2px;
+  font-family: ${font.rubikm};
+  font-size: 13px;
+  width: 100%;
+  color: ${color.black};
+`;
+
+const Favorite = styled.div`
+  display: flex;
+  align-items: center;
+  height: 100%;
+  font-family: ${font.icons};
+  font-size: 15px;
+  padding: 0px 14px;
+  color: ${color.mediumgrey};
+  border-left: 1px solid ${color.lightgrey};
+`;
 
 const ProductHover = ({ ishover, uid, name, img, price }) => {
   const dispatch = useDispatch();
@@ -18,45 +65,39 @@ const ProductHover = ({ ishover, uid, name, img, price }) => {
   }
 
   return (
-    <div className={styles.producthover}>
+    <ProductContainer>
       {cart.some((each) => each.uid === uid) ? (
-        <div
-          className={styles.addcart}
+        <AddCart
           onClick={() => dispatch(removeCart({ uid, name, img, price }))}
         >
           <span style={{ color: "rgb(226, 74, 73)" }}>&#xe07a;</span>
-        </div>
+        </AddCart>
       ) : (
-        <div
-          className={styles.addcart}
-          onClick={() => dispatch(addCart({ uid, name, img, price }))}
-        >
+        <AddCart onClick={() => dispatch(addCart({ uid, name, img, price }))}>
           <span>&#xe07a;</span>
-        </div>
+        </AddCart>
       )}
-      <div className={styles.viewproduct}>
+      <ViewProduct>
         <span>VIEW PRODUCT</span>
-      </div>
+      </ViewProduct>
       {favorite.some((each) => each.uid === uid) ? (
-        <div
-          className={styles.favorite}
+        <Favorite
           onClick={() => {
             dispatch(removeFavorite({ uid, name, img, price }));
           }}
         >
           <span style={{ color: "rgb(226, 74, 73)" }}>&#xe089;</span>
-        </div>
+        </Favorite>
       ) : (
-        <div
-          className={styles.favorite}
+        <Favorite
           onClick={() => {
             dispatch(addFavorite({ uid, name, img, price }));
           }}
         >
           <span>&#xe089;</span>
-        </div>
+        </Favorite>
       )}
-    </div>
+    </ProductContainer>
   );
 };
 
