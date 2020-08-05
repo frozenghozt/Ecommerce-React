@@ -8,11 +8,11 @@ const DetailsContainer = styled.div`
   padding: 50px 0px 60px 0px;
 `;
 
-const ProductDetail = () => {
+const ProductDetail = ({ img, sideimg, uid, name, sku, price }) => {
   return (
     <DetailsContainer>
-      <DetailsImage />
-      <DetailsInfo />
+      <DetailsImage img={img} sideimg={sideimg} />
+      <DetailsInfo uid={uid} name={name} sku={sku} price={price} img={img} />
     </DetailsContainer>
   );
 };

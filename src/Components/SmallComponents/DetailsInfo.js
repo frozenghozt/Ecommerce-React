@@ -1,6 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 import { color, font } from "../../styled/variables";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  addFavorite,
+  removeFavorite,
+  addCart,
+  removeCart,
+} from "../../redux/actions/productAct";
 
 const DetailsInfoContainer = styled.div`
   width: 50%;
@@ -84,16 +91,22 @@ const AddCart = styled.button`
   border: 1px solid ${color.black};
   margin-right: 10px;
   cursor: pointer;
+  &:focus {
+    outline: none;
+  }
 `;
 
 const Favorite = styled.button`
   font-family: ${font.icons};
-  font-size: 15px;
+  font-size: 14px;
   background-color: ${color.white};
   color: ${color.black};
   padding: 9px 9px 9px 9px;
   border: 1px solid ${color.black};
   cursor: pointer;
+  &:focus {
+    outline: none;
+  }
 `;
 
 const SkuCat = styled.div`
@@ -113,13 +126,16 @@ const Tags = styled.div`
   }
 `;
 
-const DetailsInfo = () => {
+const DetailsInfo = ({ uid, name, sku, price, img }) => {
+  const dispatch = useDispatch();
+  const favorite = useSelector((state) => state.favorite);
+  const cart = useSelector((state) => state.cart);
   return (
     <DetailsInfoContainer>
       <InfoWrapper>
         <NamePrice>
-          <Name>Knot Stripped Dress</Name>
-          <Price>$ 59.99</Price>
+          <Name>{name}</Name>
+          <Price>$ {price}</Price>
         </NamePrice>
         <ReviewRating>
           <Title>Review</Title>
@@ -137,11 +153,53 @@ const DetailsInfo = () => {
         </Availability>
         <ButtonWrapper>
           <span>1</span>
-          <AddCart>ADD TO CARD</AddCart>
-          <Favorite>&#xe089;</Favorite>
+          {cart.some((each) => each.uid === uid) ? (
+            <AddCart
+              onClick={() => {
+                dispatch(removeCart({ uid, name, img, price }));
+              }}
+              style={{
+                color: "rgb(255, 255, 255)",
+                backgroundColor: "rgb(65, 191, 92)",
+                border: "1px solid rgb(65, 191, 92)",
+              }}
+            >
+              ADD TO CARD
+            </AddCart>
+          ) : (
+            <AddCart
+              onClick={() => {
+                dispatch(addCart({ uid, name, img, price }));
+              }}
+            >
+              ADD TO CARD
+            </AddCart>
+          )}
+          {favorite.some((each) => each.uid === uid) ? (
+            <Favorite
+              onClick={() => {
+                dispatch(removeFavorite({ uid, name, img, price }));
+              }}
+              style={{
+                color: "rgb(255, 255, 255)",
+                backgroundColor: "rgb(226, 74, 73)",
+                border: "1px solid rgb(226, 74, 73)",
+              }}
+            >
+              &#xe089;
+            </Favorite>
+          ) : (
+            <Favorite
+              onClick={() => {
+                dispatch(addFavorite({ uid, name, img, price }));
+              }}
+            >
+              &#xe089;
+            </Favorite>
+          )}
         </ButtonWrapper>
         <SkuCat>
-          <span>SKU: DR-055</span>
+          <span>SKU: {sku}</span>
           <span>Categories: Dress</span>
         </SkuCat>
         <Tags>

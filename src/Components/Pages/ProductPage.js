@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+import axios from "axios";
 import styled from "styled-components";
 import ProductDetail from "../Structure/ProductDetail";
 import Breadcrumb from "../SmallComponents/Breadcrumb";
@@ -12,12 +13,34 @@ const ProductPageContainer = styled.div`
 `;
 
 const ProductPage = (props) => {
-  console.log(props);
+  const [data, setdata] = React.useState({ inventory: [] });
+
+  useEffect(() => {
+    axios
+      .get("/api/inventory")
+      .then((res) => setdata(res.data))
+      .catch((err) => console.log(err));
+  }, []);
+
+  const isolatedProduct = data.inventory.filter(
+    (each) => each.routeUrl === props.match.params.routeUrl
+  );
+
   return (
     <ProductPageContainer>
       <Breadcrumb />
       <Container maxWidth="lg">
-        <ProductDetail />
+        {isolatedProduct.map(({ id, uid, name, sku, price, img, sideimg }) => (
+          <ProductDetail
+            key={id}
+            uid={uid}
+            name={name}
+            sku={sku}
+            price={price}
+            img={img}
+            sideimg={sideimg}
+          />
+        ))}
         <FilterLine />
         <ProductDescription />
         <FilterLine />

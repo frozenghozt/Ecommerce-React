@@ -42,7 +42,6 @@ const ViewProduct = styled.div`
   font-family: ${font.rubikm};
   font-size: 13px;
   width: 100%;
-  color: ${color.black};
 `;
 
 const Favorite = styled.div`
@@ -56,6 +55,11 @@ const Favorite = styled.div`
   border-left: 1px solid ${color.lightgrey};
 `;
 
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: ${color.black};
+`;
+
 const ProductHover = ({ ishover, uid, name, sku, routeUrl, img, price }) => {
   const dispatch = useDispatch();
   const favorite = useSelector((state) => state.favorite);
@@ -64,7 +68,7 @@ const ProductHover = ({ ishover, uid, name, sku, routeUrl, img, price }) => {
   if (ishover === false) {
     return null;
   }
-  console.log(sku);
+
   return (
     <ProductContainer>
       {cart.some((each) => each.uid === uid) ? (
@@ -79,9 +83,9 @@ const ProductHover = ({ ishover, uid, name, sku, routeUrl, img, price }) => {
         </AddCart>
       )}
       <ViewProduct>
-        <Link to={`/${routeUrl}`}>
+        <StyledLink to={`/${routeUrl}`}>
           <span>VIEW PRODUCT</span>
-        </Link>
+        </StyledLink>
       </ViewProduct>
       {favorite.some((each) => each.uid === uid) ? (
         <Favorite

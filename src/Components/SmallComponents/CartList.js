@@ -62,9 +62,9 @@ const CheckoutWrapper = styled.div`
 
 const CartList = ({ open }) => {
   const cart = useSelector((state) => state.cart);
-  const priceCalc = [];
-  cart.map((each) => priceCalc.push(each.price));
-  console.log(priceCalc);
+  // const priceCalc = [];
+  // cart.map((each) => priceCalc.push(each.price));
+
   return (
     <CSSTransition in={open} timeout={300} classNames="anime" unmountOnExit>
       <CartListContainer>

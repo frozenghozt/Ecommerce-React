@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
 import axios from "axios";
-import Product from "../SmallComponents/Product";
 import { Server } from "miragejs";
 import productObj from "../../dbObjects/ProductsObj";
+import Product from "../SmallComponents/Product";
 
 const ProductsContainer = styled.div`
   display: flex;
