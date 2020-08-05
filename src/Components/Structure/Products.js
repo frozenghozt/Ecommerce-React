@@ -29,11 +29,24 @@ const Products = () => {
   return (
     <ProductsContainer>
       {data.inventory.map(
-        ({ id, uid, name, price, prevprice, img, hot, colors }) => (
+        ({
+          id,
+          uid,
+          name,
+          sku,
+          routeUrl,
+          price,
+          prevprice,
+          img,
+          hot,
+          colors,
+        }) => (
           <Product
             key={id}
             uid={uid}
             name={name}
+            sku={sku}
+            routeUrl={routeUrl}
             price={price}
             prevprice={prevprice}
             img={img}

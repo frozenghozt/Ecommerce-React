@@ -4,10 +4,17 @@ const productObj = {
       id: 1,
       uid: "f3332370-d3f3-11ea-adfb-37575ff44809",
       name: "Nike Air Max 270",
+      sku: "npb2CK",
+      routeUrl: "Nike-Air-Max-270-npb2CK",
       price: 170,
       prevprice: 0,
       img:
         "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/b86b4b22-c511-44cf-bcbf-488a712c4413/air-max-270-react-se-womens-shoe-6bhhrf.jpg",
+      sideimg: [
+        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/1407a459-6724-421d-a7c7-939e1bfb2e72/calzado-air-max-270-react-se-npb2CK.jpg",
+        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/dad754e1-c010-49cf-8a4e-e2059d8f0ad1/calzado-air-max-270-react-se-npb2CK.jpg",
+        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/7a4b2088-6a0a-46c1-bd20-03e7362cdfc7/calzado-air-max-270-react-se-npb2CK.jpg",
+      ],
       hot: false,
       colors: ["black", "white", "pink"],
     },
@@ -19,6 +26,7 @@ const productObj = {
       prevprice: 0,
       img:
         "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/16b7e9ee-7253-4ad0-9515-3d1265867319/joyride-dual-run-mens-running-shoe-8BGXtk.jpg",
+
       hot: true,
       colors: ["gray", "white"],
     },

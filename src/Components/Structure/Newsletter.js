@@ -67,7 +67,7 @@ const RightContainer = styled.div`
 const Newsletter = () => {
   return (
     <NewsletterContainer>
-      <Container fluid maxWidth="lg">
+      <Container maxWidth="lg">
         <Wrapper>
           <LeftContainer>
             <span>Newsletter</span>

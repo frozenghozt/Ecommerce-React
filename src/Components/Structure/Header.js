@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { color, font, index } from "../../sass/variables";
+import { color, font, index } from "../../styled/variables";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import KossyLogo from "../../assets/images/logo.png";

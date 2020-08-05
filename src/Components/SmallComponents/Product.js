@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { font } from "../../styled/variables";
+import { color, font } from "../../styled/variables";
 import SaleRect from "./SaleRect";
 import HotRect from "./HotRect";
 import ProductHover from "./ProductHover";
@@ -56,16 +56,28 @@ const Colors = styled.div`
 
 const Price = styled.div`
   font-family: ${font.rubikm};
-  color: $btnpink;
   width: 100%;
-  &:nth-child(2) {
-    color: rgb(210, 210, 210);
-    margin-left: 13px;
-    text-decoration: line-through;
+  span {
+    color: ${color.btnpink};
+    &:nth-child(2) {
+      color: rgb(210, 210, 210);
+      margin-left: 13px;
+      text-decoration: line-through;
+    }
   }
 `;
 
-const Product = ({ uid, name, price, prevprice, img, hot, colors }) => {
+const Product = ({
+  uid,
+  name,
+  sku,
+  routeUrl,
+  price,
+  prevprice,
+  img,
+  hot,
+  colors,
+}) => {
   const [ishover, setishover] = useState(false);
 
   const hoverHandler = () => {
@@ -86,6 +98,8 @@ const Product = ({ uid, name, price, prevprice, img, hot, colors }) => {
             ishover={ishover}
             uid={uid}
             name={name}
+            sku={sku}
+            routeUrl={routeUrl}
             img={img}
             price={price}
           />

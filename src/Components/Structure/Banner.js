@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { color, font } from "../../sass/variables";
+import { color, font } from "../../styled/variables";
 import bannerImage from "../../assets/images/banner.jpg";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";

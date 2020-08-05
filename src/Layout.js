@@ -1,38 +1,30 @@
 import React from "react";
+import styled from "styled-components";
 import Header from "./Components/Structure/Header";
-import Banner from "./Components/Structure/Banner";
-import Filter from "./Components/Structure/Filter";
-import Products from "./Components/Structure/Products";
-import Seals from "./Components/Structure/Seals";
-import Newsletter from "./Components/Structure/Newsletter";
+import Homepage from "./Components/Pages/Homepage";
+import ProductPage from "./Components/Pages/ProductPage";
 import Search from "./Components/Structure/Search";
-import styles from "./Layout.module.scss";
-import Container from "@material-ui/core/Container";
-import Hidden from "@material-ui/core/Hidden";
 import { Switch, Route } from "react-router-dom";
+
+const LayoutStyle = styled.div`
+  width: 100%;
+  height: 100%;
+`;
 
 const Layout = () => {
   return (
-    <div className={styles.layout}>
+    <LayoutStyle>
       <Header />
       <Switch>
         <Route exact path="/">
-          <Banner />
-          <Container fluid maxWidth="lg">
-            <Hidden mdDown>
-              <Filter />
-            </Hidden>
-            <Products />
-            <Seals />
-          </Container>
-          <Newsletter />
+          <Homepage />
         </Route>
         <Route exact path="/search">
           <Search />
         </Route>
-        {/* <Route path="/"></Route> */}
+        <Route path="/:routeUrl" component={ProductPage} />
       </Switch>
-    </div>
+    </LayoutStyle>
   );
 };
 

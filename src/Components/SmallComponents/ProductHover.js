@@ -1,5 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { color, font } from "../../styled/variables";
 import {
@@ -55,7 +56,7 @@ const Favorite = styled.div`
   border-left: 1px solid ${color.lightgrey};
 `;
 
-const ProductHover = ({ ishover, uid, name, img, price }) => {
+const ProductHover = ({ ishover, uid, name, sku, routeUrl, img, price }) => {
   const dispatch = useDispatch();
   const favorite = useSelector((state) => state.favorite);
   const cart = useSelector((state) => state.cart);
@@ -63,7 +64,7 @@ const ProductHover = ({ ishover, uid, name, img, price }) => {
   if (ishover === false) {
     return null;
   }
-
+  console.log(sku);
   return (
     <ProductContainer>
       {cart.some((each) => each.uid === uid) ? (
@@ -78,7 +79,9 @@ const ProductHover = ({ ishover, uid, name, img, price }) => {
         </AddCart>
       )}
       <ViewProduct>
-        <span>VIEW PRODUCT</span>
+        <Link to={`/${routeUrl}`}>
+          <span>VIEW PRODUCT</span>
+        </Link>
       </ViewProduct>
       {favorite.some((each) => each.uid === uid) ? (
         <Favorite
