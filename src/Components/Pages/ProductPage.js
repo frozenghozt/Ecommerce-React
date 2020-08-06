@@ -27,9 +27,6 @@ const ProductPage = (props) => {
         )
       : null;
 
-  console.log(data);
-  console.log(status);
-
   return (
     <ProductPageContainer>
       <Breadcrumb />
