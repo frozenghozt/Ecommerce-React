@@ -1,9 +1,9 @@
-import React, { useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
-import axios from "axios";
 import { Server } from "miragejs";
 import productObj from "../../dbObjects/ProductsObj";
 import Product from "../SmallComponents/Product";
+import { useQuery } from "react-query";
 
 const ProductsContainer = styled.div`
   display: flex;
@@ -16,45 +16,43 @@ const ProductsContainer = styled.div`
 let server = new Server();
 server.get("/api/inventory", productObj);
 
+const fetchProducts = async () => {
+  const res = await fetch("/api/inventory");
+  return res.json();
+};
+
 const Products = () => {
-  const [data, setdata] = React.useState({ inventory: [] });
-
-  useEffect(() => {
-    axios
-      .get("/api/inventory")
-      .then((res) => setdata(res.data))
-      .catch((err) => console.log(err));
-  }, []);
-
+  const { data, status } = useQuery("products", fetchProducts);
   return (
     <ProductsContainer>
-      {data.inventory.map(
-        ({
-          id,
-          uid,
-          name,
-          sku,
-          routeUrl,
-          price,
-          prevprice,
-          img,
-          hot,
-          colors,
-        }) => (
-          <Product
-            key={id}
-            uid={uid}
-            name={name}
-            sku={sku}
-            routeUrl={routeUrl}
-            price={price}
-            prevprice={prevprice}
-            img={img}
-            hot={hot}
-            colors={colors}
-          />
-        )
-      )}
+      {status === "success" &&
+        data.inventory.map(
+          ({
+            id,
+            uid,
+            name,
+            sku,
+            routeUrl,
+            price,
+            prevprice,
+            img,
+            hot,
+            colors,
+          }) => (
+            <Product
+              key={id}
+              uid={uid}
+              name={name}
+              sku={sku}
+              routeUrl={routeUrl}
+              price={price}
+              prevprice={prevprice}
+              img={img}
+              hot={hot}
+              colors={colors}
+            />
+          )
+        )}
     </ProductsContainer>
   );
 };

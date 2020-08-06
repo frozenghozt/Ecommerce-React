@@ -65,7 +65,7 @@ const Search = styled.div`
   margin-top: 5px;
   a {
     text-decoration: none;
-    color: $black;
+    color: ${color.black};
   }
 `;
 
