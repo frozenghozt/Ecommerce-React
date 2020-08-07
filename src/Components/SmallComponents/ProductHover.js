@@ -60,7 +60,7 @@ const StyledLink = styled(Link)`
   color: ${color.black};
 `;
 
-const ProductHover = ({ ishover, uid, name, sku, routeUrl, img, price }) => {
+const ProductHover = ({ ishover, uid, name, routeUrl, img, price }) => {
   const dispatch = useDispatch();
   const favorite = useSelector((state) => state.favorite);
   const cart = useSelector((state) => state.cart);
@@ -83,7 +83,7 @@ const ProductHover = ({ ishover, uid, name, sku, routeUrl, img, price }) => {
         </AddCart>
       )}
       <ViewProduct>
-        <StyledLink to={`/${routeUrl}`}>
+        <StyledLink to={`/s/${routeUrl}`}>
           <span>VIEW PRODUCT</span>
         </StyledLink>
       </ViewProduct>

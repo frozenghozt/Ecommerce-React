@@ -20,6 +20,8 @@ const fetchProducts = async () => {
 const ProductPage = (props) => {
   const { data, status } = useQuery("products", fetchProducts);
 
+  window.scrollTo(0, 0); // Scroll top when mounted
+
   const isolatedProduct =
     status === "success"
       ? data.inventory.filter(
@@ -29,7 +31,10 @@ const ProductPage = (props) => {
 
   return (
     <ProductPageContainer>
-      <Breadcrumb />
+      {status === "success" &&
+        isolatedProduct.map(({ name }, i) => (
+          <Breadcrumb key={i} name={name} />
+        ))}
       <Container maxWidth="lg">
         {status === "success" &&
           isolatedProduct.map(({ id, uid, name, sku, price, img, sideimg }) => (

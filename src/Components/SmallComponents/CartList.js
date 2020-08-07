@@ -62,8 +62,11 @@ const CheckoutWrapper = styled.div`
 
 const CartList = ({ open }) => {
   const cart = useSelector((state) => state.cart);
-  // const priceCalc = [];
-  // cart.map((each) => priceCalc.push(each.price));
+
+  const priceCalc = [];
+  cart.map((each) => priceCalc.push(each.price));
+  const totalCost =
+    priceCalc.length > 0 ? priceCalc.reduce((a, b) => a + b) : 0;
 
   return (
     <CSSTransition in={open} timeout={300} classNames="anime" unmountOnExit>
@@ -76,7 +79,7 @@ const CartList = ({ open }) => {
           <TotalCart>
             <TotalWrapper>
               <span>Subtotal</span>
-              <span>$ 42.99</span>
+              <span>$ {totalCost}</span>
             </TotalWrapper>
             <CheckoutWrapper>
               <button>Edit Cart</button>

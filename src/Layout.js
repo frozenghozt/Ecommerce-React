@@ -2,7 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import Header from "./Components/Structure/Header";
 import Homepage from "./Components/Pages/Homepage";
+import Footer from "./Components/Structure/Footer";
 import ProductPage from "./Components/Pages/ProductPage";
+import ShopPage from "./Components/Pages/ShopPage";
 import Search from "./Components/Structure/Search";
 import { Switch, Route } from "react-router-dom";
 import { ReactQueryDevtools } from "react-query-devtools";
@@ -24,8 +26,10 @@ const Layout = () => {
           <Route exact path="/search">
             <Search />
           </Route>
-          <Route path="/:routeUrl" component={ProductPage} />
+          <Route path="/s/:routeUrl" component={ProductPage} />
+          <Route path="/shop" component={ShopPage} />
         </Switch>
+        <Footer />
       </LayoutStyle>
       <ReactQueryDevtools initialIsOpen={false} />
     </>

@@ -14,6 +14,7 @@ const HomePageStyle = styled.div`
 `;
 
 const Homepage = () => {
+  window.scrollTo(0, 0); // Scroll top when mounted
   return (
     <HomePageStyle>
       <Banner />

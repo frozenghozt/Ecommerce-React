@@ -18,11 +18,15 @@ const Wrapper = styled.div`
 `;
 
 const LeftContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   width: 50%;
-  height: 100%;
+  height: 70px;
   span {
     font-family: ${font.rubikm};
     font-size: 24px;
+    margin-bottom: 10px;
   }
   p {
     font-family: $rubikr;

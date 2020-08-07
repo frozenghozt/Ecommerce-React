@@ -108,16 +108,16 @@ const Header = () => {
             <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to="shop">Shop</Link>
+            <Link to="/shop">Shop</Link>
           </li>
           <li>
-            <Link to="features">Features</Link>
+            <Link to="/features">Features</Link>
           </li>
           <li>
-            <Link to="page">Page</Link>
+            <Link to="/page">Page</Link>
           </li>
           <li>
-            <Link to="blog">Blog</Link>
+            <Link to="/blog">Blog</Link>
           </li>
         </ul>
       </Nav>

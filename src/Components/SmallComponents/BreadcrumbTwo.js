@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const BreadcrumbContainer = styled.div`
   background-color: ${color.lightgrey};
-  padding: 25px 0px;
+  padding: 70px 0px;
   text-align: center;
   color: ${color.black};
   font-size: 14px;
@@ -16,15 +16,15 @@ const StyledLink = styled(Link)`
   color: ${color.black};
 `;
 
-const Breadcrumb = ({ name }) => {
+const BreadcrumbTwo = ({ name }) => {
   return (
     <BreadcrumbContainer>
       <span>
-        <StyledLink to="/">Home</StyledLink> >{" "}
-        <StyledLink to="/shop">Shop</StyledLink> > {name}
+        <StyledLink to="/">Home</StyledLink> -
+        <StyledLink to="/shop">Shop</StyledLink> - {name}
       </span>
     </BreadcrumbContainer>
   );
 };
 
-export default Breadcrumb;
+export default BreadcrumbTwo;
