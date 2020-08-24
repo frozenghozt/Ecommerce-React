@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { color, font } from "../../styled/variables";
 import { useDispatch, useSelector } from "react-redux";
 import {
   addFavorite,
@@ -16,42 +15,53 @@ const DetailsInfoContainer = styled.div`
 const InfoWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 0px 0px 0px 90px;
+  padding-left: 15%;
   height: 100%;
 `;
 
 const NamePrice = styled.div`
-  margin-bottom: 50px;
+  margin-bottom: 45px;
   display: flex;
   flex-direction: column;
 `;
 
 const Name = styled.span`
   font-size: 28px;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
+`;
+
+const PricePrevPrive = styled.div`
+  display: flex;
 `;
 
 const Price = styled.span`
   font-size: 22px;
-  color: ${color.btnpink};
+  color: var(--btnpink);
+`;
+
+const PrevPrice = styled.div`
+  font-size: 22px;
+  color: rgb(210, 210, 210);
+  margin-left: 13px;
+  text-decoration: line-through;
 `;
 
 const ReviewRating = styled.div`
   display: flex;
   flex-direction: column;
-  margin-bottom: 50px;
+  margin-bottom: 45px;
 `;
 
 const Title = styled.span`
-  color: ${color.black};
+  color: var(--black);
   font-size: 18px;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 `;
 
 const Starwrap = styled.div`
   display: flex;
   span {
-    font-family: ${font.icons};
+    font-family: var(--icons);
     font-size: 17px;
     color: #f5c136;
     margin-right: 1px;
@@ -61,34 +71,34 @@ const Starwrap = styled.div`
 const Availability = styled.div`
   display: flex;
   flex-direction: column;
-  margin-bottom: 50px;
+  margin-bottom: 45px;
 `;
 
 const Subtext = styled.span`
   font-size: 14px;
-  color: ${color.mediumgrey};
+  color: var(--mediumgrey);
 `;
 
 const ButtonWrapper = styled.div`
   display: flex;
   align-items: center;
   span {
-    font-family: ${font.rubikm};
+    font-weight: var(--rubikm);
     font-size: 14px;
-    border: 1px solid ${color.black};
+    border: 1px solid var(--black);
     padding: 9px 25px 9px 25px;
     margin-right: 10px;
   }
-  margin-bottom: 50px;
+  margin-bottom: 45px;
 `;
 
 const AddCart = styled.button`
-  font-family: ${font.rubikm};
+  font-weight: var(--rubikm);
   font-size: 14px;
-  background-color: ${color.black};
-  color: ${color.white};
+  background-color: var(--black);
+  color: var(--white);
   padding: 10px 25px 8px 25px;
-  border: 1px solid ${color.black};
+  border: 1px solid var(--black);
   margin-right: 10px;
   cursor: pointer;
   &:focus {
@@ -97,12 +107,12 @@ const AddCart = styled.button`
 `;
 
 const Favorite = styled.button`
-  font-family: ${font.icons};
+  font-family: var(--icons);
   font-size: 14px;
-  background-color: ${color.white};
-  color: ${color.black};
+  background-color: var(--white);
+  color: var(--black);
   padding: 9px 9px 9px 9px;
-  border: 1px solid ${color.black};
+  border: 1px solid var(--black);
   cursor: pointer;
   &:focus {
     outline: none;
@@ -110,32 +120,36 @@ const Favorite = styled.button`
 `;
 
 const SkuCat = styled.div`
-  color: ${color.black};
+  color: var(--black);
   font-size: 16px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   span {
     margin-right: 15px;
   }
 `;
 
 const Tags = styled.div`
-  color: ${color.black};
+  color: var(--black);
   font-size: 16px;
   span {
     margin-right: 15px;
   }
 `;
 
-const DetailsInfo = ({ uid, name, sku, price, img }) => {
+const DetailsInfo = ({ uid, name, sku, price, prevprice, img }) => {
   const dispatch = useDispatch();
   const favorite = useSelector((state) => state.favorite);
   const cart = useSelector((state) => state.cart);
+
   return (
     <DetailsInfoContainer>
       <InfoWrapper>
         <NamePrice>
           <Name>{name}</Name>
-          <Price>$ {price}</Price>
+          <PricePrevPrive>
+            <Price>$ {price}</Price>
+            {prevprice > 0 ? <PrevPrice>{prevprice}</PrevPrice> : null}
+          </PricePrevPrive>
         </NamePrice>
         <ReviewRating>
           <Title>Review</Title>

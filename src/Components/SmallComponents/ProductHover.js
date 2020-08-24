@@ -2,7 +2,6 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { color, font } from "../../styled/variables";
 import {
   addFavorite,
   removeFavorite,
@@ -19,7 +18,7 @@ const ProductContainer = styled.div`
   width: 88%;
   height: 30px;
   padding: 5px 0px;
-  background: ${color.white};
+  background: var(--white);
   cursor: pointer;
 `;
 
@@ -27,11 +26,11 @@ const AddCart = styled.div`
   display: flex;
   align-items: center;
   height: 100%;
-  font-family: ${font.icons};
+  font-family: var(--icons);
   font-size: 15px;
   padding: 0px 14px;
-  color: ${color.mediumgrey};
-  border-right: 2px solid ${color.lightgrey};
+  color: var(--mediumgrey);
+  border-right: 2px solid var(--lightgrey);
 `;
 
 const ViewProduct = styled.div`
@@ -39,7 +38,7 @@ const ViewProduct = styled.div`
   align-items: center;
   justify-content: center;
   margin-top: 2px;
-  font-family: ${font.rubikm};
+  font-weight: var(--rubikm);
   font-size: 13px;
   width: 100%;
 `;
@@ -48,16 +47,16 @@ const Favorite = styled.div`
   display: flex;
   align-items: center;
   height: 100%;
-  font-family: ${font.icons};
+  font-family: var(--icons);
   font-size: 15px;
   padding: 0px 14px;
-  color: ${color.mediumgrey};
-  border-left: 1px solid ${color.lightgrey};
+  color: var(--mediumgrey);
+  border-left: 1px solid var(--lightgrey);
 `;
 
 const StyledLink = styled(Link)`
   text-decoration: none;
-  color: ${color.black};
+  color: var(--black);
 `;
 
 const ProductHover = ({ ishover, uid, name, routeUrl, img, price }) => {
@@ -73,12 +72,16 @@ const ProductHover = ({ ishover, uid, name, routeUrl, img, price }) => {
     <ProductContainer>
       {cart.some((each) => each.uid === uid) ? (
         <AddCart
-          onClick={() => dispatch(removeCart({ uid, name, img, price }))}
+          onClick={() =>
+            dispatch(removeCart({ uid, name, img, price, routeUrl }))
+          }
         >
           <span style={{ color: "rgb(226, 74, 73)" }}>&#xe07a;</span>
         </AddCart>
       ) : (
-        <AddCart onClick={() => dispatch(addCart({ uid, name, img, price }))}>
+        <AddCart
+          onClick={() => dispatch(addCart({ uid, name, img, price, routeUrl }))}
+        >
           <span>&#xe07a;</span>
         </AddCart>
       )}
@@ -90,7 +93,7 @@ const ProductHover = ({ ishover, uid, name, routeUrl, img, price }) => {
       {favorite.some((each) => each.uid === uid) ? (
         <Favorite
           onClick={() => {
-            dispatch(removeFavorite({ uid, name, img, price }));
+            dispatch(removeFavorite({ uid, name, img, price, routeUrl }));
           }}
         >
           <span style={{ color: "rgb(226, 74, 73)" }}>&#xe089;</span>
@@ -98,7 +101,7 @@ const ProductHover = ({ ishover, uid, name, routeUrl, img, price }) => {
       ) : (
         <Favorite
           onClick={() => {
-            dispatch(addFavorite({ uid, name, img, price }));
+            dispatch(addFavorite({ uid, name, img, price, routeUrl }));
           }}
         >
           <span>&#xe089;</span>

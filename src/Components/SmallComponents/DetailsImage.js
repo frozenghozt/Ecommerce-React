@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { color } from "../../styled/variables";
 import SideImage from "./SideImage";
 
 const DetailsImageContainer = styled.div`
@@ -12,10 +11,11 @@ const ImageWrapper = styled.div`
 `;
 
 const MainImage = styled.div`
-  height: 570px;
+  height: 0;
+  padding-bottom: 92.5%;
   width: 100%;
-  background-color: ${color.mediumgrey};
   background-size: cover;
+  background-position-x: center;
   background-position-y: bottom;
   background-repeat: no-repeat;
 `;

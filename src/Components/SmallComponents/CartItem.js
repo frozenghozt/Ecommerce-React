@@ -1,13 +1,19 @@
 import React from "react";
 import styled from "styled-components";
-import { color, font } from "../../styled/variables";
+import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { removeCart } from "../../redux/actions/productAct";
 
 const CartItemContainer = styled.div`
   display: flex;
   width: 100%;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
+  padding: 7px;
+  border-radius: 5px;
+  &:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.13);
+  }
 `;
 
 const Image = styled.div`
@@ -15,6 +21,7 @@ const Image = styled.div`
   min-width: 65px;
   border-radius: 3px;
   background-color: #999;
+  background-position-x: center;
   background-position-y: -13px;
   background-repeat: no-repeat;
   background-size: cover;
@@ -34,10 +41,9 @@ const NameClose = styled.div`
   justify-content: space-between;
   margin-bottom: 6px;
   span {
-    font-family: ${font.rubikr};
     font-size: 14px;
     &:nth-child(2) {
-      font-family: ${font.icons};
+      font-family: var(--icons);
       font-size: 20px;
       cursor: pointer;
     }
@@ -46,15 +52,22 @@ const NameClose = styled.div`
 
 const Price = styled.div`
   width: 100%;
-  font-family: ${font.rubikm};
-  color: ${color.btnpink};
+  font-weight: var(--rubikm);
+  color: var(--btnpink);
 `;
 
-const CartItem = ({ uid, name, img, price }) => {
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: var(--black);
+`;
+
+const CartItem = ({ uid, name, img, price, routeUrl }) => {
   const dispatch = useDispatch();
   return (
     <CartItemContainer>
-      <Image style={{ backgroundImage: `url(${img})` }}></Image>
+      <StyledLink to={`/s/${routeUrl}`}>
+        <Image style={{ backgroundImage: `url(${img})` }}></Image>
+      </StyledLink>
       <Wrapper>
         <NameClose>
           <span>{name}</span>

@@ -7,7 +7,8 @@ const SideImageContainer = styled.div`
   margin-right: 30px;
   margin-bottom: 10px;
   background-size: cover;
-  background-position-y: -5px;
+  background-position-x: center;
+  background-position-y: -10px;
   background-repeat: no-repeat;
   cursor: pointer;
 `;

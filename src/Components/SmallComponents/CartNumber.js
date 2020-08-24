@@ -10,7 +10,7 @@ const Bullet = styled.div`
   font-family: ${font.rubikr};
   font-size: 8px;
   color: #fff;
-  border: 1px solid ${font.white};
+  border: 1px solid var(--white);
   background-color: red;
   border-radius: 50%;
   height: 14px;

@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { color, font } from "../../styled/variables";
 import Container from "@material-ui/core/Container";
 
 const NewsletterContainer = styled.div`
@@ -8,7 +7,7 @@ const NewsletterContainer = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  background-color: ${color.lightgrey};
+  background-color: var(--lightgrey);
   padding: 50px 0px;
 `;
 
@@ -24,14 +23,13 @@ const LeftContainer = styled.div`
   width: 50%;
   height: 70px;
   span {
-    font-family: ${font.rubikm};
+    font-weight: var(--rubikm);
     font-size: 24px;
     margin-bottom: 10px;
   }
   p {
-    font-family: $rubikr;
     font-size: 14px;
-    color: ${color.mediumgrey};
+    color: var(--mediumgrey);
     margin-block-start: 0;
     margin-block-end: 0;
     margin-inline-start: 0px;
@@ -51,16 +49,17 @@ const RightContainer = styled.div`
       padding: 3px 20px;
       border: none;
       width: 100%;
+      background-color: var(--white);
       &:focus {
         outline: none;
       }
     }
     button {
       padding: 13px 26px 12px 26px;
-      font-family: ${font.rubikm};
+      font-weight: var(--rubikm);
       font-size: 14px;
-      background-color: ${color.btnpink};
-      color: ${color.white};
+      background-color: var(--btnpink);
+      color: var(--white);
       outline: none;
       cursor: pointer;
       border-style: none;

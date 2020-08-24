@@ -17,6 +17,7 @@ const productObj = {
       ],
       hot: false,
       colors: ["black", "white", "pink"],
+      tags: ["New", "Best"],
     },
     {
       id: 2,
@@ -35,6 +36,7 @@ const productObj = {
       ],
       hot: true,
       colors: ["red", "pink"],
+      tags: ["New", "Popular"],
     },
     {
       id: 3,
@@ -53,6 +55,7 @@ const productObj = {
       ],
       hot: false,
       colors: ["black"],
+      tags: ["Sales"],
     },
     {
       id: 4,
@@ -71,6 +74,7 @@ const productObj = {
       ],
       hot: false,
       colors: ["orange", "blue", "white"],
+      tags: ["Sales"],
     },
     {
       id: 5,
@@ -89,6 +93,7 @@ const productObj = {
       ],
       hot: false,
       colors: ["black", "white"],
+      tags: ["Best"],
     },
     {
       id: 6,
@@ -107,6 +112,7 @@ const productObj = {
       ],
       hot: true,
       colors: ["black", "white"],
+      tags: ["Popular"],
     },
     {
       id: 7,
@@ -125,6 +131,7 @@ const productObj = {
       ],
       hot: false,
       colors: ["black", "white"],
+      tags: ["Sales"],
     },
     {
       id: 8,
@@ -143,6 +150,7 @@ const productObj = {
       ],
       hot: false,
       colors: ["pink", "white"],
+      tags: ["New"],
     },
     {
       id: 9,
@@ -161,6 +169,7 @@ const productObj = {
       ],
       hot: true,
       colors: ["white"],
+      tags: ["Popular"],
     },
     {
       id: 10,
@@ -179,6 +188,7 @@ const productObj = {
       ],
       hot: false,
       colors: ["red", "white", "gray"],
+      tags: [],
     },
     {
       id: 11,
@@ -197,6 +207,7 @@ const productObj = {
       ],
       hot: true,
       colors: ["green", "white"],
+      tags: ["Popular"],
     },
     {
       id: 12,
@@ -215,6 +226,7 @@ const productObj = {
       ],
       hot: false,
       colors: ["black", "white"],
+      tags: ["Sales"],
     },
     {
       id: 13,
@@ -233,6 +245,7 @@ const productObj = {
       ],
       hot: false,
       colors: ["black", "white"],
+      tags: [],
     },
     {
       id: 14,
@@ -251,6 +264,7 @@ const productObj = {
       ],
       hot: false,
       colors: ["black", "white"],
+      tags: [],
     },
     {
       id: 15,
@@ -269,6 +283,7 @@ const productObj = {
       ],
       hot: false,
       colors: ["black", "white"],
+      tags: [],
     },
     {
       id: 16,
@@ -287,6 +302,7 @@ const productObj = {
       ],
       hot: false,
       colors: ["black", "white"],
+      tags: [],
     },
     {
       id: 17,
@@ -305,6 +321,7 @@ const productObj = {
       ],
       hot: false,
       colors: ["black", "white"],
+      tags: [],
     },
     {
       id: 18,
@@ -323,6 +340,7 @@ const productObj = {
       ],
       hot: false,
       colors: ["black", "white"],
+      tags: [],
     },
     {
       id: 19,
@@ -341,6 +359,7 @@ const productObj = {
       ],
       hot: false,
       colors: ["black", "white"],
+      tags: [],
     },
     {
       id: 20,
@@ -359,6 +378,7 @@ const productObj = {
       ],
       hot: false,
       colors: ["black", "white"],
+      tags: [],
     },
     {
       id: 21,
@@ -377,6 +397,7 @@ const productObj = {
       ],
       hot: false,
       colors: ["black", "white"],
+      tags: [],
     },
     {
       id: 22,
@@ -395,6 +416,7 @@ const productObj = {
       ],
       hot: false,
       colors: ["black", "white"],
+      tags: [],
     },
     {
       id: 23,
@@ -413,6 +435,7 @@ const productObj = {
       ],
       hot: false,
       colors: ["black", "white"],
+      tags: [],
     },
     {
       id: 24,
@@ -431,6 +454,7 @@ const productObj = {
       ],
       hot: false,
       colors: ["black", "white"],
+      tags: [],
     },
     {
       id: 25,
@@ -449,6 +473,7 @@ const productObj = {
       ],
       hot: false,
       colors: ["black", "white"],
+      tags: [],
     },
     {
       id: 26,
@@ -467,6 +492,7 @@ const productObj = {
       ],
       hot: false,
       colors: ["black", "white"],
+      tags: [],
     },
     {
       id: 27,
@@ -485,6 +511,7 @@ const productObj = {
       ],
       hot: false,
       colors: ["black", "white"],
+      tags: [],
     },
     {
       id: 28,
@@ -503,6 +530,7 @@ const productObj = {
       ],
       hot: false,
       colors: ["black", "white"],
+      tags: [],
     },
     {
       id: 29,
@@ -521,6 +549,7 @@ const productObj = {
       ],
       hot: false,
       colors: ["black", "white"],
+      tags: [],
     },
     {
       id: 30,
@@ -539,6 +568,7 @@ const productObj = {
       ],
       hot: false,
       colors: ["black", "white"],
+      tags: [],
     },
     {
       id: 31,
@@ -557,6 +587,7 @@ const productObj = {
       ],
       hot: false,
       colors: ["black", "white"],
+      tags: [],
     },
     {
       id: 32,
@@ -575,6 +606,7 @@ const productObj = {
       ],
       hot: false,
       colors: ["black", "white"],
+      tags: [],
     },
     {
       id: 33,
@@ -593,6 +625,7 @@ const productObj = {
       ],
       hot: false,
       colors: ["black", "white"],
+      tags: [],
     },
     {
       id: 34,
@@ -611,6 +644,7 @@ const productObj = {
       ],
       hot: false,
       colors: ["black", "white"],
+      tags: [],
     },
     {
       id: 35,
@@ -629,6 +663,7 @@ const productObj = {
       ],
       hot: false,
       colors: ["black", "white"],
+      tags: [],
     },
     {
       id: 36,
@@ -647,6 +682,7 @@ const productObj = {
       ],
       hot: false,
       colors: ["black", "white"],
+      tags: [],
     },
   ],
 };

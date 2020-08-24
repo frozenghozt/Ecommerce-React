@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { color, font } from "../../styled/variables";
 
 const SealsContainer = styled.div`
   display: flex;
@@ -11,7 +10,7 @@ const SealsContainer = styled.div`
   margin-bottom: 100px;
   cursor: default;
   & span {
-    font-family: ${font.icons};
+    font-family: var(--icons);
     font-size: 34px;
     margin-bottom: 21px;
   }
@@ -22,8 +21,7 @@ const SealsContainer = styled.div`
     margin-bottom: 13px;
   }
   & p {
-    font-family: ${font.rubikr};
-    color: ${color.mediumgrey};
+    color: var(--mediumgrey);
     font-size: 14px;
     margin: 0;
   }

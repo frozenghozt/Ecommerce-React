@@ -1,16 +1,17 @@
 import React from "react";
 import styled from "styled-components";
 import Banner from "../Structure/Banner";
+import Categories from "../Structure/Categories";
 import Filter from "../Structure/Filter";
 import Products from "../Structure/Products";
 import Seals from "../Structure/Seals";
 import Newsletter from "../Structure/Newsletter";
 import Container from "@material-ui/core/Container";
-import Hidden from "@material-ui/core/Hidden";
 
 const HomePageStyle = styled.div`
   display: flex;
   flex-direction: column;
+  width: 100%;
 `;
 
 const Homepage = () => {
@@ -18,10 +19,9 @@ const Homepage = () => {
   return (
     <HomePageStyle>
       <Banner />
+      <Categories />
       <Container maxWidth="lg">
-        <Hidden mdDown>
-          <Filter />
-        </Hidden>
+        <Filter />
         <Products />
         <Seals />
       </Container>

@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { color } from "../../styled/variables";
 
 const NavContainer = styled.div`
   width: 100%;
@@ -14,7 +13,7 @@ const NavWrapper = styled.div`
     font-size: 14px;
     cursor: pointer;
     margin-right: 35px;
-    color: ${color.black};
+    color: var(--black);
     &:nth-child(3) {
       margin-right: 0px;
     }

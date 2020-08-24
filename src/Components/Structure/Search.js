@@ -33,7 +33,7 @@ const TitleClose = styled.div`
     font-size: 24px;
     color: ${color.black};
     &:nth-child(2) {
-      font-family: ${font.icons};
+      font-family: var(--icons);
       color: ${color.btnpink};
       font-size: 24px;
       cursor: pointer;

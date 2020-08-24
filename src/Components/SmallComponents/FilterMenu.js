@@ -1,13 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import { font } from "../../styled/variables";
 
 const FilterMenuContainer = styled.div`
   display: flex;
   width: 100%;
   padding: 40px 0px;
   margin: 32px 0px 0px 0px;
-  font-family: ${font.rubikr};
   font-size: 14px;
 `;
 
@@ -22,7 +20,6 @@ const Filters = styled.div`
 
 const FilterToggle = styled.div`
   display: flex;
-  font-family: ${font.rubikr};
   justify-content: flex-end;
   width: 55%;
   & span {
@@ -31,20 +28,20 @@ const FilterToggle = styled.div`
 `;
 
 const ArrowDown = styled.span`
-  font-family: ${font.icons};
+  font-family: var(--icons);
 `;
 
-const FilterMenu = () => {
+const FilterMenu = ({ toggler, sorter }) => {
   return (
     <FilterMenuContainer>
       <Filters>
-        <span>All Products</span>
-        <span>Best Sellers</span>
-        <span>New Arrival</span>
-        <span>Sales Products</span>
-        <span>Popular</span>
+        <span onClick={() => sorter("All")}>All Products</span>
+        <span onClick={() => sorter("Best")}>Best Sellers</span>
+        <span onClick={() => sorter("New")}>New Arrival</span>
+        <span onClick={() => sorter("Sales")}>Sales Products</span>
+        <span onClick={() => sorter("Popular")}>Popular</span>
       </Filters>
-      <FilterToggle>
+      <FilterToggle onClick={toggler}>
         <span>Filter</span>
         <ArrowDown>&#x33;</ArrowDown>
       </FilterToggle>

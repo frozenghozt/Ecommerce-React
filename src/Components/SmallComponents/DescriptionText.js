@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { color } from "../../styled/variables";
 
 const TextContainer = styled.div`
   display: flex;
@@ -12,7 +11,7 @@ const TextWrapper = styled.div`
   padding: 20px 0px 50px 0px;
   width: 70%;
   p {
-    color: ${color.mediumgrey};
+    color: var(--mediumgrey);
     font-size: 14px;
     line-height: 30px;
     margin: 0;

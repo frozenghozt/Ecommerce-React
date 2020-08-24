@@ -1,18 +1,18 @@
 .anime-enter {
   opacity: 0;
-  transform: translateX(100%);
+  transform: translateY(-100%);
 }
 .anime-enter-active {
   opacity: 1;
-  transform: translateX(0%);
+  transform: translateY(0%);
   transition: opacity 400ms ease-out, transform 300ms ease-out;
 }
 .anime-exit {
   opacity: 1;
-  transform: translateX(0%);
+  transform: translateY(0%);
 }
 .anime-exit-active {
   opacity: 0;
-  transform: translateX(100%);
+  transform: translateY(-100%);
   transition: opacity 400ms ease-out, transform 300ms ease-in;
 }

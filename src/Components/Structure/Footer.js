@@ -1,10 +1,13 @@
 import React from "react";
 import styled from "styled-components";
-import { color, font } from "../../styled/variables";
 import Container from "@material-ui/core/Container";
 
 const FooterContainer = styled.div`
   width: 100%;
+  display: none;
+  @media (min-width: 1024px) {
+    display: block;
+  }
 `;
 
 const Wrapper = styled.div`
@@ -23,8 +26,8 @@ const Column = styled.div`
 `;
 
 const Title = styled.span`
-  color: ${color.black};
-  font-family: ${font.rubikm};
+  color: var(--black);
+  font-weight: var(--rubikm);
   margin-bottom: 30px;
 `;
 
@@ -34,7 +37,7 @@ const Links = styled.div`
   span {
     margin-bottom: 24px;
     font-size: 14px;
-    color: ${color.mediumgrey};
+    color: var(--mediumgrey);
     &:nth-last-child(1) {
       margin: 0px;
     }

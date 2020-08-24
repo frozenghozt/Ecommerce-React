@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
+import OwnContainer from "../../styled/OwnContainer";
 import ProductDetail from "../Structure/ProductDetail";
 import Breadcrumb from "../SmallComponents/Breadcrumb";
 import FilterLine from "../SmallComponents/FilterLine";
 import ProductDescription from "../Structure/ProductDescription";
-import Container from "@material-ui/core/Container";
 import { useQuery } from "react-query";
 
 const ProductPageContainer = styled.div`
@@ -19,7 +19,6 @@ const fetchProducts = async () => {
 
 const ProductPage = (props) => {
   const { data, status } = useQuery("products", fetchProducts);
-
   window.scrollTo(0, 0); // Scroll top when mounted
 
   const isolatedProduct =
@@ -28,30 +27,32 @@ const ProductPage = (props) => {
           (each) => each.routeUrl === props.match.params.routeUrl
         )
       : null;
-
   return (
     <ProductPageContainer>
       {status === "success" &&
         isolatedProduct.map(({ name }, i) => (
           <Breadcrumb key={i} name={name} />
         ))}
-      <Container maxWidth="lg">
+      <OwnContainer>
         {status === "success" &&
-          isolatedProduct.map(({ id, uid, name, sku, price, img, sideimg }) => (
-            <ProductDetail
-              key={id}
-              uid={uid}
-              name={name}
-              sku={sku}
-              price={price}
-              img={img}
-              sideimg={sideimg}
-            />
-          ))}
+          isolatedProduct.map(
+            ({ id, uid, name, sku, price, prevprice, img, sideimg }) => (
+              <ProductDetail
+                key={id}
+                uid={uid}
+                name={name}
+                sku={sku}
+                price={price}
+                prevprice={prevprice}
+                img={img}
+                sideimg={sideimg}
+              />
+            )
+          )}
         <FilterLine />
         <ProductDescription />
         <FilterLine />
-      </Container>
+      </OwnContainer>
     </ProductPageContainer>
   );
 };

@@ -8,6 +8,10 @@ import ShopPage from "./Components/Pages/ShopPage";
 import Search from "./Components/Structure/Search";
 import { Switch, Route } from "react-router-dom";
 import { ReactQueryDevtools } from "react-query-devtools";
+// Styles
+import GlobalStyles from "./styled/GlobalStyles";
+import "./styled/MenuAnime.css";
+import "./styled/FiltersAnime.css";
 
 const LayoutStyle = styled.div`
   width: 100%;
@@ -30,6 +34,7 @@ const Layout = () => {
           <Route path="/shop" component={ShopPage} />
         </Switch>
         <Footer />
+        <GlobalStyles />
       </LayoutStyle>
       <ReactQueryDevtools initialIsOpen={false} />
     </>

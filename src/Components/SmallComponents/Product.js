@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { color, font } from "../../styled/variables";
 import SaleRect from "./SaleRect";
 import HotRect from "./HotRect";
 import ProductHover from "./ProductHover";
@@ -27,7 +26,6 @@ const Image = styled.div`
 
 const Info = styled.div`
   display: flex;
-  font-family: ${font.rubikr};
   font-size: 14px;
   margin-bottom: 50px;
   flex-direction: column;
@@ -55,10 +53,10 @@ const Colors = styled.div`
 `;
 
 const Price = styled.div`
-  font-family: ${font.rubikm};
+  font-weight: var(--rubikm);
   width: 100%;
   span {
-    color: ${color.btnpink};
+    color: var(--btnpink);
     &:nth-child(2) {
       color: rgb(210, 210, 210);
       margin-left: 13px;

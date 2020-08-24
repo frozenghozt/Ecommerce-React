@@ -7,7 +7,7 @@ import { useQuery } from "react-query";
 
 const ProductsContainer = styled.div`
   display: flex;
-  margin-top: 50px;
+  margin-top: 40px;
   flex-wrap: wrap;
   justify-content: center;
   width: 100%;
@@ -21,52 +21,70 @@ const fetchProducts = async () => {
   return res.json();
 };
 
-const Products = () => {
+const Products = ({ tosort }) => {
   const [howmany, sethowmany] = React.useState(12);
   const { data, status } = useQuery("products", fetchProducts);
 
-  window.addEventListener("scroll", () => {
+  // window.addEventListener("scroll", () => {
+  //   if (
+  //     window.innerHeight + document.documentElement.scrollTop !==
+  //     document.documentElement.offsetHeight
+  //   ) {
+  //     return;
+  //   } else {
+  //     sethowmany(howmany + 12);
+  //   }
+  // });
+
+  function compare(a, b) {
     if (
-      window.innerHeight + document.documentElement.scrollTop !==
-      document.documentElement.offsetHeight
+      a.tags.includes(`${tosort}`) === true &&
+      b.tags.includes(`${tosort}`) === false
     ) {
-      return;
-    } else {
-      sethowmany(howmany + 12);
+      return -1;
     }
-  });
+    if (
+      a.tags.includes(`${tosort}`) === false &&
+      b.tags.includes(`${tosort}`) === true
+    ) {
+      return 1;
+    }
+    return 0;
+  }
 
   return (
     <ProductsContainer>
       {status === "success" &&
-        data.inventory.map(
-          ({
-            id,
-            uid,
-            name,
-            sku,
-            routeUrl,
-            price,
-            prevprice,
-            img,
-            hot,
-            colors,
-          }) =>
-            id <= howmany ? (
-              <Product
-                key={id}
-                uid={uid}
-                name={name}
-                sku={sku}
-                routeUrl={routeUrl}
-                price={price}
-                prevprice={prevprice}
-                img={img}
-                hot={hot}
-                colors={colors}
-              />
-            ) : null
-        )}
+        data.inventory
+          .sort(compare)
+          .map(
+            ({
+              id,
+              uid,
+              name,
+              sku,
+              routeUrl,
+              price,
+              prevprice,
+              img,
+              hot,
+              colors,
+            }) =>
+              id <= howmany ? (
+                <Product
+                  key={id}
+                  uid={uid}
+                  name={name}
+                  sku={sku}
+                  routeUrl={routeUrl}
+                  price={price}
+                  prevprice={prevprice}
+                  img={img}
+                  hot={hot}
+                  colors={colors}
+                />
+              ) : null
+          )}
     </ProductsContainer>
   );
 };
