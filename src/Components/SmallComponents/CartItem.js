@@ -9,7 +9,7 @@ const CartItemContainer = styled.div`
   width: 100%;
   margin-bottom: 10px;
   padding: 7px;
-  border-radius: 5px;
+  border-radius: 3px;
   &:hover {
     cursor: pointer;
     box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.13);

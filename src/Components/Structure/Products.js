@@ -24,17 +24,6 @@ const fetchProducts = async () => {
 const Products = ({ tosort }) => {
   const { data, status } = useQuery("products", fetchProducts);
 
-  // window.addEventListener("scroll", () => {
-  //   if (
-  //     window.innerHeight + document.documentElement.scrollTop !==
-  //     document.documentElement.offsetHeight
-  //   ) {
-  //     return;
-  //   } else {
-  //     sethowmany(howmany + 12);
-  //   }
-  // });
-
   function compare(a, b) {
     if (
       a.tags.includes(`${tosort}`) === true &&

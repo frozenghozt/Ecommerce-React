@@ -9,7 +9,10 @@ import {
 } from "../../redux/actions/productAct";
 
 const DetailsInfoContainer = styled.div`
-  width: 50%;
+  width: 100%;
+  @media (min-width: 1024px) {
+    width: 50%;
+  }
 `;
 
 const InfoWrapper = styled.div`

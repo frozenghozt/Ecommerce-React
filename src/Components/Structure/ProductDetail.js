@@ -5,7 +5,12 @@ import DetailsInfo from "../SmallComponents/DetailsInfo";
 
 const DetailsContainer = styled.div`
   display: flex;
-  padding: 50px 0px 60px 0px;
+  flex-direction: column;
+  padding: 30px 0px 40px 0px;
+  @media (min-width: 1024px) {
+    flex-direction: row;
+    padding: 50px 0px 60px 0px;
+  }
 `;
 
 const ProductDetail = ({ img, sideimg, uid, name, sku, price, prevprice }) => {
