@@ -22,7 +22,6 @@ const fetchProducts = async () => {
 };
 
 const Products = ({ tosort }) => {
-  const [howmany, sethowmany] = React.useState(12);
   const { data, status } = useQuery("products", fetchProducts);
 
   // window.addEventListener("scroll", () => {
@@ -69,21 +68,20 @@ const Products = ({ tosort }) => {
               img,
               hot,
               colors,
-            }) =>
-              id <= howmany ? (
-                <Product
-                  key={id}
-                  uid={uid}
-                  name={name}
-                  sku={sku}
-                  routeUrl={routeUrl}
-                  price={price}
-                  prevprice={prevprice}
-                  img={img}
-                  hot={hot}
-                  colors={colors}
-                />
-              ) : null
+            }) => (
+              <Product
+                key={id}
+                uid={uid}
+                name={name}
+                sku={sku}
+                routeUrl={routeUrl}
+                price={price}
+                prevprice={prevprice}
+                img={img}
+                hot={hot}
+                colors={colors}
+              />
+            )
           )}
     </ProductsContainer>
   );
