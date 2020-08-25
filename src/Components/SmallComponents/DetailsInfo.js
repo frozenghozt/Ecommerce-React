@@ -56,18 +56,20 @@ const PrevPrice = styled.div`
 `;
 
 const ReviewRating = styled.div`
-  display: none;
   flex-direction: column;
-  margin-bottom: 45px;
   @media (min-width: 1024px) {
     display: flex;
+    margin-bottom: 45px;
   }
 `;
 
 const Title = styled.span`
   color: var(--black);
   font-size: 18px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
+  @media (min-width: 1024px) {
+    margin-bottom: 15px;
+  }
 `;
 
 const Starwrap = styled.div`
@@ -81,17 +83,28 @@ const Starwrap = styled.div`
 `;
 
 const Availability = styled.div`
-  display: none;
+  display: flex;
   flex-direction: column;
-  margin-bottom: 45px;
   @media (min-width: 1024px) {
-    display: flex;
+    margin-bottom: 45px;
   }
 `;
 
 const Subtext = styled.span`
   font-size: 14px;
   color: var(--mediumgrey);
+`;
+
+const MobileInfoWrap = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40px;
+  @media (min-width: 1024px) {
+    flex-direction: column;
+    margin-top: 0;
+    align-items: flex-start;
+  }
 `;
 
 const ButtonWrapper = styled.div`
@@ -112,9 +125,10 @@ const ButtonWrapper = styled.div`
       max-height: 35px;
     }
   }
-  margin: 35px 0;
+  margin-top: 40px;
   @media (min-width: 1024px) {
-    margin-bottom: 45px;
+    margin: 0 0 45px;
+    padding: 0;
   }
 `;
 
@@ -156,6 +170,15 @@ const Favorite = styled.button`
   }
 `;
 
+const SkuTagsWrap = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+  @media (min-width: 1024px) {
+    margin-top: 0;
+  }
+`;
+
 const SkuCat = styled.div`
   color: var(--black);
   font-size: 16px;
@@ -188,20 +211,22 @@ const DetailsInfo = ({ uid, name, sku, price, prevprice, img }) => {
             {prevprice > 0 ? <PrevPrice>{prevprice}</PrevPrice> : null}
           </PricePrevPrive>
         </NamePrice>
-        <ReviewRating>
-          <Title>Review</Title>
-          <Starwrap>
-            <span>&#xe033;</span>
-            <span>&#xe033;</span>
-            <span>&#xe033;</span>
-            <span>&#xe031;</span>
-            <span>&#xe031;</span>
-          </Starwrap>
-        </ReviewRating>
-        <Availability>
-          <Title>Availability</Title>
-          <Subtext>In Stock</Subtext>
-        </Availability>
+        <MobileInfoWrap>
+          <ReviewRating>
+            <Title>Review</Title>
+            <Starwrap>
+              <span>&#xe033;</span>
+              <span>&#xe033;</span>
+              <span>&#xe033;</span>
+              <span>&#xe031;</span>
+              <span>&#xe031;</span>
+            </Starwrap>
+          </ReviewRating>
+          <Availability>
+            <Title>Availability</Title>
+            <Subtext>In Stock</Subtext>
+          </Availability>
+        </MobileInfoWrap>
         <ButtonWrapper>
           <span>1</span>
           {cart.some((each) => each.uid === uid) ? (
@@ -249,13 +274,15 @@ const DetailsInfo = ({ uid, name, sku, price, prevprice, img }) => {
             </Favorite>
           )}
         </ButtonWrapper>
-        <SkuCat>
-          <span>SKU: {sku}</span>
-          <span>Categories: Dress</span>
-        </SkuCat>
-        <Tags>
-          <span>Tags: Women, Dress, Fashion</span>
-        </Tags>
+        <SkuTagsWrap>
+          <SkuCat>
+            <span>SKU: {sku}</span>
+            <span>Categories: Dress</span>
+          </SkuCat>
+          <Tags>
+            <span>Tags: Women, Dress, Fashion</span>
+          </Tags>
+        </SkuTagsWrap>
       </InfoWrapper>
     </DetailsInfoContainer>
   );
