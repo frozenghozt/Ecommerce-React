@@ -7,7 +7,6 @@ import ProductPage from "./Components/Pages/ProductPage";
 import ShopPage from "./Components/Pages/ShopPage";
 import Search from "./Components/Structure/Search";
 import { Switch, Route } from "react-router-dom";
-import { ReactQueryDevtools } from "react-query-devtools";
 // Styles
 import GlobalStyles from "./styled/GlobalStyles";
 import "./styled/MenuAnime.css";
@@ -36,7 +35,6 @@ const Layout = () => {
         <Footer />
         <GlobalStyles />
       </LayoutStyle>
-      <ReactQueryDevtools initialIsOpen={false} />
     </>
   );
 };

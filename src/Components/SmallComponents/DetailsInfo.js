@@ -18,14 +18,20 @@ const DetailsInfoContainer = styled.div`
 const InfoWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  padding-left: 15%;
+  padding-left: 0;
   height: 100%;
+  @media (min-width: 1024px) {
+    padding-left: 15%;
+  }
 `;
 
 const NamePrice = styled.div`
+  display: none;
   margin-bottom: 45px;
-  display: flex;
   flex-direction: column;
+  @media (min-width: 1024px) {
+    display: flex;
+  }
 `;
 
 const Name = styled.span`
@@ -50,9 +56,12 @@ const PrevPrice = styled.div`
 `;
 
 const ReviewRating = styled.div`
-  display: flex;
+  display: none;
   flex-direction: column;
   margin-bottom: 45px;
+  @media (min-width: 1024px) {
+    display: flex;
+  }
 `;
 
 const Title = styled.span`
@@ -72,9 +81,12 @@ const Starwrap = styled.div`
 `;
 
 const Availability = styled.div`
-  display: flex;
+  display: none;
   flex-direction: column;
   margin-bottom: 45px;
+  @media (min-width: 1024px) {
+    display: flex;
+  }
 `;
 
 const Subtext = styled.span`
@@ -85,27 +97,44 @@ const Subtext = styled.span`
 const ButtonWrapper = styled.div`
   display: flex;
   align-items: center;
+  width: 100%;
   span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-weight: var(--rubikm);
     font-size: 14px;
     border: 1px solid var(--black);
-    padding: 9px 25px 9px 25px;
+    padding: 0 25px;
+    height: 40px;
     margin-right: 10px;
+    @media (min-width: 1024px) {
+      max-height: 35px;
+    }
   }
-  margin-bottom: 45px;
+  margin: 35px 0;
+  @media (min-width: 1024px) {
+    margin-bottom: 45px;
+  }
 `;
 
 const AddCart = styled.button`
+  flex: 1;
   font-weight: var(--rubikm);
   font-size: 14px;
   background-color: var(--black);
   color: var(--white);
-  padding: 10px 25px 8px 25px;
+  height: 40px;
   border: 1px solid var(--black);
   margin-right: 10px;
   cursor: pointer;
   &:focus {
     outline: none;
+  }
+  @media (min-width: 1024px) {
+    flex: none;
+    padding: 10px 25px 8px 25px;
+    max-height: 35px;
   }
 `;
 
@@ -114,11 +143,16 @@ const Favorite = styled.button`
   font-size: 14px;
   background-color: var(--white);
   color: var(--black);
+  height: 40px;
+  width: 40px;
   padding: 9px 9px 9px 9px;
   border: 1px solid var(--black);
   cursor: pointer;
   &:focus {
     outline: none;
+  }
+  @media (min-width: 1024px) {
+    max-height: 35px;
   }
 `;
 

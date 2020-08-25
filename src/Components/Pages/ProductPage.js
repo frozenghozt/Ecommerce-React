@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import OwnContainer from "../../styled/OwnContainer";
+import ProductName from "../SmallComponents/ProductName";
 import ProductDetail from "../Structure/ProductDetail";
 import Breadcrumb from "../SmallComponents/Breadcrumb";
 import FilterLine from "../SmallComponents/FilterLine";
@@ -27,6 +28,7 @@ const ProductPage = (props) => {
           (each) => each.routeUrl === props.match.params.routeUrl
         )
       : null;
+
   return (
     <ProductPageContainer>
       {status === "success" &&
@@ -34,6 +36,15 @@ const ProductPage = (props) => {
           <Breadcrumb key={i} name={name} />
         ))}
       <OwnContainer>
+        {status === "success" &&
+          isolatedProduct.map(({ name, price, prevprice }, i) => (
+            <ProductName
+              key={i}
+              name={name}
+              price={price}
+              prevprice={prevprice}
+            />
+          ))}
         {status === "success" &&
           isolatedProduct.map(
             ({ id, uid, name, sku, price, prevprice, img, sideimg }) => (

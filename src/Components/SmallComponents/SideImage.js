@@ -2,8 +2,8 @@ import React from "react";
 import styled from "styled-components";
 
 const SideImageContainer = styled.div`
-  height: 100px;
-  width: 100px;
+  height: 80px;
+  width: 80px;
   margin-right: 0;
   background-size: cover;
   background-position-x: center;
@@ -15,8 +15,8 @@ const SideImageContainer = styled.div`
   }
   @media (min-width: 480px) {
     margin-right: 10px;
-    height: 120px;
-    width: 120px;
+    height: 100px;
+    width: 100px;
     background-position-y: -25px;
   }
   @media (min-width: 1024px) {

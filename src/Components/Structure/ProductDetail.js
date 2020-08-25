@@ -6,7 +6,7 @@ import DetailsInfo from "../SmallComponents/DetailsInfo";
 const DetailsContainer = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 30px 0px 40px 0px;
+  padding: 0px 0px 40px 0px;
   @media (min-width: 1024px) {
     flex-direction: row;
     padding: 50px 0px 60px 0px;

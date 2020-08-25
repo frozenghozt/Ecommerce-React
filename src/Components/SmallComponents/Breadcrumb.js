@@ -23,8 +23,8 @@ const Breadcrumb = ({ name }) => {
   return (
     <BreadcrumbContainer>
       <span>
-        <StyledLink to="/">Home</StyledLink> >{" "}
-        <StyledLink to="/shop">Shop</StyledLink> > {name}
+        <StyledLink to="/">Home</StyledLink> /
+        <StyledLink to="/shop"> Shop</StyledLink> / {name}
       </span>
     </BreadcrumbContainer>
   );
