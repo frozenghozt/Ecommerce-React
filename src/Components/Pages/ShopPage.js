@@ -4,6 +4,7 @@ import BreadcrumbTwo from "../SmallComponents/BreadcrumbTwo";
 import Filter from "../Structure/Filter";
 import Products from "../Structure/Products";
 import FluidContainer from "../../styled/FluidContainer";
+import FilterList from "../SmallComponents/FilterList";
 
 const ShopPageContainer = styled.div`
   display: flex;
@@ -25,6 +26,7 @@ const ShopPage = () => {
 
   return (
     <ShopPageContainer>
+      {filterIsOpen ? <FilterList opener={opener} /> : null}
       <BreadcrumbTwo />
       <FluidContainer>
         <Filter sorter={sorter} opener={opener} />

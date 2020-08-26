@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 import { CSSTransition } from "react-transition-group";
 
 const MenuListContainer = styled.div`
@@ -44,7 +45,12 @@ const Wrapper = styled.div`
   }
 `;
 
-const MenuList = ({ open }) => {
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: var(--black);
+`;
+
+const MenuList = ({ open, close }) => {
   return (
     <CSSTransition
       in={open}
@@ -56,12 +62,31 @@ const MenuList = ({ open }) => {
         <Wrapper>
           <div>
             <ul>
-              <li>Home</li>
-              <li>Shop</li>
-              <li>Features</li>
-              <li>Page</li>
-              <li>Blog</li>
-              <li>Login</li>
+              <li>
+                <StyledLink to="/" onClick={close}>
+                  Home
+                </StyledLink>
+              </li>
+              <li>
+                <StyledLink to="/shop" onClick={close}>
+                  Shop
+                </StyledLink>
+              </li>
+              <li>
+                <StyledLink to="/features" onClick={close}>
+                  Features
+                </StyledLink>
+              </li>
+              <li>
+                <StyledLink to="/page" onClick={close}>
+                  Page
+                </StyledLink>
+              </li>
+              <li>
+                <StyledLink to="/blog" onClick={close}>
+                  Blog
+                </StyledLink>
+              </li>
             </ul>
           </div>
         </Wrapper>

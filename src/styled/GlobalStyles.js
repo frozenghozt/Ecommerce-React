@@ -32,7 +32,6 @@ export default createGlobalStyle`
     --white: #ffffff;
     --lightgrey: #f7f7f7;
     --mediumgrey: #858585;
-    --filtergrey: #616194;
     --btnpink: #d35050;
     --btngreen: #78cc41;
     --rubikm: 500;

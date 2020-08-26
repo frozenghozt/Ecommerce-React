@@ -161,12 +161,16 @@ const Header = () => {
     }
   }, [width]);
 
+  const closeMobMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
     <Container>
       <Wrapper>
         <FavoriteList open={isFavOpen} />
         <CartList open={isCartOpen} />
-        <MenuList open={isMenuOpen} />
+        <MenuList open={isMenuOpen} close={closeMobMenu} />
         <Logo>
           <Link to="/">
             <img src={KossyLogo} alt="Kossy" />

@@ -2,10 +2,13 @@ import React from "react";
 import styled from "styled-components";
 
 const Container = styled.div`
-  display: flex;
+  display: none;
   flex-direction: column;
   width: 250px;
   margin-top: 40px;
+  @media (min-width: 1024px) {
+    display: flex;
+  }
 `;
 
 const Filter = styled.div`
@@ -34,7 +37,7 @@ const Sort = styled.div`
     span {
       font-size: 14px;
       cursor: pointer;
-      color: var(--filtergrey);
+      color: var(--black);
     }
   }
   margin-bottom: 20px;
@@ -57,7 +60,7 @@ const Price = styled.div`
   span {
     font-size: 14px;
     cursor: pointer;
-    color: var(--filtergrey);
+    color: var(--black);
   }
   margin-bottom: 20px;
 `;
@@ -79,7 +82,6 @@ const Color = styled.div`
     span {
       font-size: 14px;
       cursor: pointer;
-      color: var(--filtergrey);
     }
   }
   margin-bottom: 20px;
@@ -156,7 +158,7 @@ const Size = styled.div`
   span {
     font-size: 14px;
     cursor: pointer;
-    color: var(--filtergrey);
+    color: var(--black);
   }
   margin-bottom: 20px;
 `;
