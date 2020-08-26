@@ -1,8 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import bannerImage from "../../assets/images/banner.jpg";
-import Container from "@material-ui/core/Container";
-import Grid from "@material-ui/core/Grid";
+import FixedContainer from "../../styled/FixedContainer";
 
 const BannerContainer = styled.div`
   display: flex;
@@ -36,11 +35,15 @@ const BannerContainer = styled.div`
   }
 `;
 
+const TextWrapper = styled.div`
+  width: 50%;
+`;
+
 const Banner = () => {
   return (
     <BannerContainer>
-      <Container fixed>
-        <Grid item md={6} sm={12}>
+      <FixedContainer>
+        <TextWrapper>
           <span>
             SPRING SALE <span style={{ color: "red" }}>30%</span>
           </span>
@@ -50,8 +53,8 @@ const Banner = () => {
             not a luxury.
           </p>
           <button>SHOP NOW</button>
-        </Grid>
-      </Container>
+        </TextWrapper>
+      </FixedContainer>
     </BannerContainer>
   );
 };

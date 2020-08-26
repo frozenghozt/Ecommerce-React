@@ -7,9 +7,12 @@ const HotRectContainer = styled.div`
   right: 0;
   color: var(--white);
   font-weight: var(--rubikm);
-  padding: 8px 12px 6px 12px;
   font-size: 12px;
   background-color: var(--btnpink);
+  padding: 6px 10px 4px 10px;
+  @media (min-width: 480px) {
+    padding: 8px 12px 6px 12px;
+  }
 `;
 
 const HotRect = () => {

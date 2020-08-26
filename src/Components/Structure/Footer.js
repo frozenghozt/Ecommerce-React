@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Container from "@material-ui/core/Container";
+import FixedContainer from "../../styled/FixedContainer";
 
 const FooterContainer = styled.div`
   width: 100%;
@@ -47,7 +47,7 @@ const Links = styled.div`
 const Footer = () => {
   return (
     <FooterContainer>
-      <Container maxWidth="lg">
+      <FixedContainer>
         <Wrapper>
           <Column>
             <Title>QUESTIONS</Title>
@@ -89,7 +89,7 @@ const Footer = () => {
             </Links>
           </Column>
         </Wrapper>
-      </Container>
+      </FixedContainer>
     </FooterContainer>
   );
 };

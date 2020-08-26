@@ -3,14 +3,22 @@ import styled from "styled-components";
 import { Server } from "miragejs";
 import productObj from "../../dbObjects/ProductsObj";
 import Product from "../SmallComponents/Product";
+import VerticalFilter from "../Structure/VerticalFilter";
 import { useQuery } from "react-query";
 
 const ProductsContainer = styled.div`
   display: flex;
-  margin-top: 40px;
+`;
+
+const ProductsWrapper = styled.div`
+  display: flex;
+  margin-top: 25px;
   flex-wrap: wrap;
   justify-content: center;
   width: 100%;
+  @media (min-width: 480px) {
+    margin-top: 40px;
+  }
 `;
 
 let server = new Server();
@@ -21,7 +29,7 @@ const fetchProducts = async () => {
   return res.json();
 };
 
-const Products = ({ tosort }) => {
+const Products = ({ tosort, isOpen }) => {
   const { data, status } = useQuery("products", fetchProducts);
 
   function compare(a, b) {
@@ -42,36 +50,39 @@ const Products = ({ tosort }) => {
 
   return (
     <ProductsContainer>
-      {status === "success" &&
-        data.inventory
-          .sort(compare)
-          .map(
-            ({
-              id,
-              uid,
-              name,
-              sku,
-              routeUrl,
-              price,
-              prevprice,
-              img,
-              hot,
-              colors,
-            }) => (
-              <Product
-                key={id}
-                uid={uid}
-                name={name}
-                sku={sku}
-                routeUrl={routeUrl}
-                price={price}
-                prevprice={prevprice}
-                img={img}
-                hot={hot}
-                colors={colors}
-              />
-            )
-          )}
+      {isOpen ? <VerticalFilter /> : null}
+      <ProductsWrapper>
+        {status === "success" &&
+          data.inventory
+            .sort(compare)
+            .map(
+              ({
+                id,
+                uid,
+                name,
+                sku,
+                routeUrl,
+                price,
+                prevprice,
+                img,
+                hot,
+                colors,
+              }) => (
+                <Product
+                  key={id}
+                  uid={uid}
+                  name={name}
+                  sku={sku}
+                  routeUrl={routeUrl}
+                  price={price}
+                  prevprice={prevprice}
+                  img={img}
+                  hot={hot}
+                  colors={colors}
+                />
+              )
+            )}
+      </ProductsWrapper>
     </ProductsContainer>
   );
 };

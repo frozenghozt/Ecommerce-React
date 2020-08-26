@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Container from "@material-ui/core/Container";
+import FixedContainer from "../../styled/FixedContainer";
 
 const NewsletterContainer = styled.div`
   display: flex;
@@ -70,7 +70,7 @@ const RightContainer = styled.div`
 const Newsletter = () => {
   return (
     <NewsletterContainer>
-      <Container maxWidth="lg">
+      <FixedContainer>
         <Wrapper>
           <LeftContainer>
             <span>Newsletter</span>
@@ -85,7 +85,7 @@ const Newsletter = () => {
             </form>
           </RightContainer>
         </Wrapper>
-      </Container>
+      </FixedContainer>
     </NewsletterContainer>
   );
 };

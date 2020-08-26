@@ -16,7 +16,6 @@ const Wrapper = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
-  padding: 25px 10%;
   & > span {
     font-weight: var(--rubikm);
     font-size: 15px;
@@ -25,6 +24,7 @@ const Wrapper = styled.div`
   > div {
     width: 100%;
     height: 100%;
+    margin-bottom: 70px;
     > ul {
       width: 100%;
       height: 100%;

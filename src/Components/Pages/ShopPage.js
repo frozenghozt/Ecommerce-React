@@ -3,7 +3,7 @@ import styled from "styled-components";
 import BreadcrumbTwo from "../SmallComponents/BreadcrumbTwo";
 import Filter from "../Structure/Filter";
 import Products from "../Structure/Products";
-import OwnContainer from "../../styled/OwnContainer";
+import FluidContainer from "../../styled/FluidContainer";
 
 const ShopPageContainer = styled.div`
   display: flex;
@@ -13,18 +13,23 @@ const ShopPageContainer = styled.div`
 const ShopPage = () => {
   window.scrollTo(0, 0); // Scroll top when mounted
   const [sort, setsort] = React.useState("");
+  const [filterIsOpen, setFilterIsOpen] = React.useState(false);
 
   const sorter = (categorie) => {
     setsort(categorie);
   };
 
+  const opener = () => {
+    setFilterIsOpen(!filterIsOpen);
+  };
+
   return (
     <ShopPageContainer>
       <BreadcrumbTwo />
-      <OwnContainer>
-        <Filter sorter={sorter} />
-        <Products tosort={sort} />
-      </OwnContainer>
+      <FluidContainer>
+        <Filter sorter={sorter} opener={opener} />
+        <Products tosort={sort} isOpen={filterIsOpen} />
+      </FluidContainer>
     </ShopPageContainer>
   );
 };

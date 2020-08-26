@@ -21,13 +21,14 @@ const Container = styled.header`
 const Wrapper = styled.div`
   display: flex;
   width: 100%;
-  height: 70px;
+  height: 50px;
   margin: 0 auto;
   font-size: 15px;
   padding: 0 20px;
   background-color: var(--white);
   @media (min-width: 768px) {
     padding: 0 35px;
+    height: 70px;
   }
   @media (min-width: 1024px) {
     height: 100px;

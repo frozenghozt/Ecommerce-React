@@ -5,40 +5,72 @@ import HotRect from "./HotRect";
 import ProductHover from "./ProductHover";
 
 const ProductContainer = styled.div`
-  width: 25%;
-  min-width: 300px;
+  width: calc(100% / 2);
+  @media (min-width: 768px) {
+    width: calc(100% / 3);
+  }
+  @media (min-width: 1366px) {
+    width: calc(100% / 4);
+  }
 `;
 
 const Wrapper = styled.div`
-  padding: 0px 15px;
+  padding: 0px 7px;
+  @media (min-width: 1024px) {
+    padding: 0px 10px;
+  }
 `;
 
 const Image = styled.div`
   display: flex;
   justify-content: center;
   position: relative;
-  min-height: 350px;
+  width: 100%;
+  padding-bottom: 110%;
+  height: 0;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  margin-bottom: 30px;
+  margin-bottom: 15px;
+  @media (min-width: 768px) {
+    margin-bottom: 30px;
+  }
 `;
 
 const Info = styled.div`
   display: flex;
   font-size: 14px;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
   flex-direction: column;
   justify-content: center;
   height: calc(100% - 350px);
   width: 100%;
+  @media (min-width: 480px) {
+    margin-bottom: 30px;
+  }
+  @media (min-width: 768px) {
+    margin-bottom: 40px;
+  }
+  @media (min-width: 1024px) {
+    margin-bottom: 50px;
+  }
 `;
 
 const NameColor = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   width: 100%;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
+  > span {
+    margin-bottom: 6px;
+    @media (min-width: 480px) {
+      margin-bottom: 0px;
+    }
+  }
+  @media (min-width: 480px) {
+    flex-direction: row;
+  }
 `;
 
 const Colors = styled.div`
@@ -49,6 +81,9 @@ const Colors = styled.div`
     width: 11px;
     margin-left: 3px;
     border-radius: 50%;
+    &:nth-child(1) {
+      margin-left: 0;
+    }
   }
 `;
 

@@ -27,10 +27,8 @@ const Grid = styled.div`
   grid-gap: 20px;
   width: 100%;
   max-width: 1450px;
-  @media (max-width: 767.98px) {
-    grid-template-columns: [col1-start] 1fr;
-    grid-template-rows: [row1-start] 150px [row2-start] 150px [row3-start] 150px [row4-start] 150px [row4-end];
-  }
+  grid-template-columns: [col1-start] 1fr;
+  grid-template-rows: [row1-start] 150px [row2-start] 150px [row3-start] 150px [row4-start] 150px [row4-end];
   @media (min-width: 768px) {
     grid-template-columns: [col1-start] 3.7fr [col2-start] 3.7fr [col3-start] 3.7fr [col3-end];
     grid-template-rows: [row1-start] 200px [row2-start] 200px [row2-end];
@@ -47,10 +45,8 @@ const Women = styled.picture`
     height: 100%;
     object-fit: cover;
   }
-  @media (max-width: 767.98px) {
-    grid-column: col1-start;
-    grid-row: row1-start;
-  }
+  grid-column: col1-start;
+  grid-row: row1-start;
   @media (min-width: 768px) {
     grid-column: col1-start;
     grid-row: row1-start / row2-end;
@@ -61,10 +57,8 @@ const Sunglasses = styled.picture`
   background-size: cover;
   background-repeat: no-repeat;
   background-position-y: -70px;
-  @media (max-width: 767.98) {
-    grid-column: col1-start;
-    grid-row: row4-start;
-  }
+  grid-column: col1-start;
+  grid-row: row4-start;
   @media (min-width: 1200px) {
     grid-column: col2-start;
     grid-row: row1-start;
@@ -74,10 +68,8 @@ const Sunglasses = styled.picture`
 const Men = styled.picture`
   background-size: cover;
   background-repeat: no-repeat;
-  @media (max-width: 767.98px) {
-    grid-column: col1-start;
-    grid-row: row2-start;
-  }
+  grid-column: col1-start;
+  grid-row: row2-start;
   @media (min-width: 768px) {
     grid-column: col3-start;
     grid-row: row1-start / row2-end;
@@ -92,10 +84,8 @@ const Sneakers = styled.picture`
   background: #999;
   background-position: center;
   background-size: cover;
-  @media (max-width: 767.98px) {
-    grid-column: col1-start;
-    grid-row: row3-start;
-  }
+  grid-column: col1-start;
+  grid-row: row3-start;
   @media (min-width: 768px) {
     grid-column: col2-start;
     grid-row: row2-start;

@@ -1,36 +1,19 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import FilterMenu from "../SmallComponents/FilterMenu";
 import FilterLine from "../SmallComponents/FilterLine";
-import Filters from "../SmallComponents/Filters";
 
 const FilterContainer = styled.div`
-  display: none;
+  display: flex;
   flex-direction: column;
   width: 100%;
-  @media (min-width: 1024px) {
-    display: flex;
-  }
 `;
 
-const Overflow = styled.div`
-  overflow: hidden;
-`;
-
-const Filter = ({ sorter }) => {
-  const [filterIsOpen, setFilterIsOpen] = useState(false);
-
-  const toggler = () => {
-    setFilterIsOpen(!filterIsOpen);
-  };
-
+const Filter = ({ sorter, opener }) => {
   return (
     <FilterContainer>
-      <FilterMenu toggler={toggler} sorter={sorter} />
+      <FilterMenu opener={opener} sorter={sorter} />
       <FilterLine />
-      <Overflow>
-        <Filters open={filterIsOpen} />
-      </Overflow>
     </FilterContainer>
   );
 };

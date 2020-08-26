@@ -6,7 +6,7 @@ import Filter from "../Structure/Filter";
 import Products from "../Structure/Products";
 import Seals from "../Structure/Seals";
 import Newsletter from "../Structure/Newsletter";
-import Container from "@material-ui/core/Container";
+import FixedContainer from "../../styled/FixedContainer";
 
 const HomePageStyle = styled.div`
   display: flex;
@@ -20,11 +20,11 @@ const Homepage = () => {
     <HomePageStyle>
       <Banner />
       <Categories />
-      <Container maxWidth="lg">
+      <FixedContainer>
         <Filter />
         <Products />
         <Seals />
-      </Container>
+      </FixedContainer>
       <Newsletter />
     </HomePageStyle>
   );

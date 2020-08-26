@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import OwnContainer from "../../styled/OwnContainer";
+import FixedContainer from "../../styled/FixedContainer";
 import ProductName from "../SmallComponents/ProductName";
 import ProductDetail from "../Structure/ProductDetail";
 import Breadcrumb from "../SmallComponents/Breadcrumb";
@@ -35,7 +35,7 @@ const ProductPage = (props) => {
         isolatedProduct.map(({ name }, i) => (
           <Breadcrumb key={i} name={name} />
         ))}
-      <OwnContainer>
+      <FixedContainer>
         {status === "success" &&
           isolatedProduct.map(({ name, price, prevprice }, i) => (
             <ProductName
@@ -63,7 +63,7 @@ const ProductPage = (props) => {
         <FilterLine />
         <ProductDescription />
         <FilterLine />
-      </OwnContainer>
+      </FixedContainer>
     </ProductPageContainer>
   );
 };

@@ -56,9 +56,9 @@ const PrevPrice = styled.div`
 `;
 
 const ReviewRating = styled.div`
+  display: flex;
   flex-direction: column;
   @media (min-width: 1024px) {
-    display: flex;
     margin-bottom: 45px;
   }
 `;
@@ -66,7 +66,7 @@ const ReviewRating = styled.div`
 const Title = styled.span`
   color: var(--black);
   font-size: 18px;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   @media (min-width: 1024px) {
     margin-bottom: 15px;
   }

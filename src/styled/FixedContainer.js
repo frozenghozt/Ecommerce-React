@@ -14,8 +14,8 @@ const Container = styled.div`
   }
 `;
 
-const OwnContainer = (props) => {
-  return <Container>{props.children}</Container>;
+const FixeContainer = ({ children }) => {
+  return <Container>{children}</Container>;
 };
 
-export default OwnContainer;
+export default FixeContainer;
