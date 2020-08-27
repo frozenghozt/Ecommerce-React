@@ -91,7 +91,7 @@ const Availability = styled.div`
 `;
 
 const Subtext = styled.span`
-  font-size: 14px;
+  font-size: 15px;
   color: var(--mediumgrey);
 `;
 
@@ -116,7 +116,7 @@ const ButtonWrapper = styled.div`
     justify-content: center;
     align-items: center;
     font-weight: var(--rubikm);
-    font-size: 14px;
+    font-size: 15px;
     border: 1px solid var(--black);
     padding: 0 25px;
     height: 40px;
@@ -135,7 +135,7 @@ const ButtonWrapper = styled.div`
 const AddCart = styled.button`
   flex: 1;
   font-weight: var(--rubikm);
-  font-size: 14px;
+  font-size: 15px;
   background-color: var(--black);
   color: var(--white);
   height: 40px;
@@ -154,7 +154,7 @@ const AddCart = styled.button`
 
 const Favorite = styled.button`
   font-family: var(--icons);
-  font-size: 14px;
+  font-size: 15px;
   background-color: var(--white);
   color: var(--black);
   height: 40px;

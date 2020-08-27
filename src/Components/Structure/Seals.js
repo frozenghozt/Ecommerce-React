@@ -22,7 +22,7 @@ const SealsContainer = styled.div`
   }
   & p {
     color: var(--mediumgrey);
-    font-size: 14px;
+    font-size: 15px;
     margin: 0;
   }
 `;

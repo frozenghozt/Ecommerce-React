@@ -40,7 +40,7 @@ const NameClose = styled.div`
   justify-content: space-between;
   margin-bottom: 6px;
   span {
-    font-size: 14px;
+    font-size: 15px;
     &:nth-child(2) {
       font-family: var(--icons);
       font-size: 20px;

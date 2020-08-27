@@ -28,7 +28,7 @@ const LeftContainer = styled.div`
     margin-bottom: 10px;
   }
   p {
-    font-size: 14px;
+    font-size: 15px;
     color: var(--mediumgrey);
     margin-block-start: 0;
     margin-block-end: 0;
@@ -57,7 +57,7 @@ const RightContainer = styled.div`
     button {
       padding: 13px 26px 12px 26px;
       font-weight: var(--rubikm);
-      font-size: 14px;
+      font-size: 15px;
       background-color: var(--btnpink);
       color: var(--white);
       outline: none;

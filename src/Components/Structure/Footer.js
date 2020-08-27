@@ -36,7 +36,7 @@ const Links = styled.div`
   flex-direction: column;
   span {
     margin-bottom: 24px;
-    font-size: 14px;
+    font-size: 15px;
     color: var(--mediumgrey);
     &:nth-last-child(1) {
       margin: 0px;

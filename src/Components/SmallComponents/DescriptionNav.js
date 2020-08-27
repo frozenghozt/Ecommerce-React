@@ -10,7 +10,7 @@ const NavWrapper = styled.div`
   justify-content: center;
   padding: 50px 0px 20px 0px;
   span {
-    font-size: 14px;
+    font-size: 15px;
     cursor: pointer;
     margin-right: 35px;
     color: var(--black);

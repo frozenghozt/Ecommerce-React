@@ -58,7 +58,7 @@ const CheckoutWrapper = styled.div`
   button {
     border: 1px solid black;
     color: var(--black);
-    font-size: 14px;
+    font-size: 15px;
     padding: 7px 12px;
     background-color: var(--white);
   }

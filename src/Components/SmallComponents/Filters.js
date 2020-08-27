@@ -6,7 +6,7 @@ const FiltersContainer = styled.div`
   display: flex;
   width: 100%;
   padding: 40px 0px 0px 0px;
-  font-size: 14px;
+  font-size: 15px;
 `;
 
 const Filter = styled.div`
@@ -36,7 +36,7 @@ const Sort = styled.div`
     justify-content: flex-start;
     margin-bottom: 13px;
     span {
-      font-size: 14px;
+      font-size: 15px;
       cursor: pointer;
       color: var(--filtergrey);
     }
@@ -58,7 +58,7 @@ const Price = styled.div`
     margin-bottom: 13px;
   }
   span {
-    font-size: 14px;
+    font-size: 15px;
     cursor: pointer;
     color: var(--filtergrey);
   }
@@ -79,7 +79,7 @@ const Color = styled.div`
     align-items: center;
     margin-bottom: 13px;
     span {
-      font-size: 14px;
+      font-size: 15px;
       cursor: pointer;
       color: var(--filtergrey);
     }
@@ -155,7 +155,7 @@ const Size = styled.div`
     margin-bottom: 13px;
   }
   span {
-    font-size: 14px;
+    font-size: 15px;
     cursor: pointer;
     color: var(--filtergrey);
   }

@@ -39,7 +39,7 @@ const ViewProduct = styled.div`
   justify-content: center;
   margin-top: 2px;
   font-weight: var(--rubikm);
-  font-size: 13px;
+  font-size: 14px;
   width: 100%;
 `;
 

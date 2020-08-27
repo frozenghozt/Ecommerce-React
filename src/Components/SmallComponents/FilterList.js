@@ -7,7 +7,8 @@ const Container = styled.div`
   left: 0;
   right: 0;
   bottom: 0;
-  width: 100%;
+  width: 100vw;
+  height: 100vh;
   background-color: var(--white);
   z-index: var(--veryhigh);
   @media (min-width: 1024px) {
@@ -49,14 +50,22 @@ const Sort = styled.div`
     outline: none;
     display: flex;
     justify-content: flex-start;
+    align-items: center;
     margin-bottom: 13px;
+    input[type="radio"] {
+      margin-right: 7px;
+      height: 16px;
+      width: 16px;
+      background-color: #000;
+    }
     span {
-      font-size: 15px;
+      font-size: 16px;
+      margin-top: 3px;
       cursor: pointer;
       color: var(--black);
     }
   }
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 `;
 
 const Price = styled.div`
@@ -78,7 +87,7 @@ const Price = styled.div`
     cursor: pointer;
     color: var(--black);
   }
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 `;
 
 const Color = styled.div`
@@ -96,11 +105,11 @@ const Color = styled.div`
     align-items: center;
     margin-bottom: 13px;
     span {
-      font-size: 15px;
+      font-size: 16px;
       cursor: pointer;
     }
   }
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 `;
 
 const YellowBullet = styled.span`
@@ -172,11 +181,11 @@ const Size = styled.div`
     margin-bottom: 13px;
   }
   span {
-    font-size: 15px;
+    font-size: 16px;
     cursor: pointer;
     color: var(--black);
   }
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 `;
 
 const Tags = styled.div`
@@ -190,7 +199,7 @@ const Tags = styled.div`
     background-color: rgba(255, 255, 255, 0);
     outline: none;
   }
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 `;
 
 const TitleWrapper = styled.div`
@@ -212,6 +221,8 @@ const FilterLine = styled.div`
 `;
 
 const FilterList = ({ opener }) => {
+  const [isChecked, setisChecked] = React.useState({});
+
   return (
     <Container>
       <GlobalWrapper>
@@ -225,21 +236,31 @@ const FilterList = ({ opener }) => {
           </Title>
           <Sort>
             <button>
+              <input
+                type="radio"
+                checked={isChecked}
+                onClick={() => setisChecked(!isChecked)}
+              />
               <span>Best seller</span>
             </button>
             <button>
+              <input type="radio" />
               <span>Popularity</span>
             </button>
             <button>
+              <input type="radio" />
               <span>Average rating</span>
             </button>
             <button>
+              <input type="radio" />
               <span>New arrival</span>
             </button>
             <button>
+              <input type="radio" />
               <span>Price: low to high</span>
             </button>
             <button>
+              <input type="radio" />
               <span>Price: high to low</span>
             </button>
           </Sort>

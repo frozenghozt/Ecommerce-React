@@ -27,7 +27,7 @@ const BannerContainer = styled.div`
   & button {
     color: var(--white);
     cursor: pointer;
-    font-size: 14px;
+    font-size: 15px;
     font-weight: var(--rubikm);
     background-color: var(--btnpink);
     border-style: none;

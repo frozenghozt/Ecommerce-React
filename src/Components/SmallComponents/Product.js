@@ -39,7 +39,7 @@ const Image = styled.div`
 
 const Info = styled.div`
   display: flex;
-  font-size: 14px;
+  font-size: 15px;
   margin-bottom: 20px;
   flex-direction: column;
   justify-content: center;

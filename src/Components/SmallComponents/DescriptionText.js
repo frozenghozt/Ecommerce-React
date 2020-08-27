@@ -12,7 +12,7 @@ const TextWrapper = styled.div`
   width: 70%;
   p {
     color: var(--mediumgrey);
-    font-size: 14px;
+    font-size: 15px;
     line-height: 30px;
     margin: 0;
   }

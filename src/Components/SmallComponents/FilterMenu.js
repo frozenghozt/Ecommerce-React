@@ -5,7 +5,7 @@ const FilterMenuContainer = styled.div`
   display: flex;
   width: 100%;
   padding: 20px 0px;
-  font-size: 14px;
+  font-size: 15px;
   @media (min-width: 480px) {
     margin: 0;
     padding: 30px 0px;
