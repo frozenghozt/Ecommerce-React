@@ -165,20 +165,6 @@ const Size = styled.div`
   margin-bottom: 20px;
 `;
 
-const Tags = styled.div`
-  display: flex;
-  flex-direction: column;
-  button {
-    border: none;
-    margin: 0;
-    padding: 0;
-    text-decoration: none;
-    background-color: rgba(255, 255, 255, 0);
-    outline: none;
-  }
-  margin-bottom: 20px;
-`;
-
 const VerticalFilter = () => {
   return (
     <motion.div animate={{ x: 0 }} initial={{ x: -200 }}>
@@ -288,19 +274,6 @@ const VerticalFilter = () => {
               <span>Over Size</span>
             </button>
           </Size>
-        </Filter>
-        <Filter>
-          <Title>
-            <span>Tags</span>
-          </Title>
-          <Tags>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-          </Tags>
         </Filter>
       </Container>
     </motion.div>

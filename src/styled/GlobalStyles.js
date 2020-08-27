@@ -36,6 +36,7 @@ export default createGlobalStyle`
     --btngreen: #78cc41;
     --rubikm: 500;
     --icons: Elegant Icons;
+    --veryveryhigh: 9999;
     --veryhigh: 999;
     --high: 888;
     --medium: 777;

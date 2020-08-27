@@ -1,5 +1,7 @@
 import React from "react";
+import ReactDOM from "react-dom";
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 const Container = styled.div`
   position: fixed;
@@ -9,8 +11,8 @@ const Container = styled.div`
   bottom: 0;
   width: 100vw;
   height: 100vh;
-  background-color: var(--white);
-  z-index: var(--veryhigh);
+  overflow: scroll;
+  z-index: var(--veryveryhigh);
   @media (min-width: 1024px) {
     display: none;
   }
@@ -23,7 +25,24 @@ const GlobalWrapper = styled.div`
   padding: 20px;
   height: 100%;
   width: 100%;
+  background-color: var(--white);
   overflow-y: scroll;
+`;
+
+const TitleWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  color: var(--black);
+  align-items: center;
+  padding: 20px 0 20px;
+  > h3 {
+    font-size: 24px;
+    font-weight: 400;
+  }
+  > span {
+    cursor: pointer;
+  }
 `;
 
 const Filter = styled.div`
@@ -57,6 +76,7 @@ const Sort = styled.div`
       height: 16px;
       width: 16px;
       background-color: #000;
+      cursor: pointer;
     }
     span {
       font-size: 16px;
@@ -188,180 +208,147 @@ const Size = styled.div`
   margin-bottom: 20px;
 `;
 
-const Tags = styled.div`
-  display: flex;
-  flex-direction: column;
-  button {
-    border: none;
-    margin: 0;
-    padding: 0;
-    text-decoration: none;
-    background-color: rgba(255, 255, 255, 0);
-    outline: none;
-  }
-  margin-bottom: 20px;
-`;
-
-const TitleWrapper = styled.div`
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  align-items: center;
-  padding: 20px 0 20px;
-  > h3 {
-    font-size: 24px;
-    font-weight: 400;
-  }
-`;
-
 const FilterLine = styled.div`
   height: 1px;
   width: 100%;
-  background-color: var(--black);
+  background-color: #e5e5e5;
+  margin-bottom: 15px;
 `;
 
 const FilterList = ({ opener }) => {
-  const [isChecked, setisChecked] = React.useState({});
+  const ModalRoot = document.getElementById("MobileFilter");
 
-  return (
+  return ReactDOM.createPortal(
     <Container>
-      <GlobalWrapper>
-        <TitleWrapper>
-          <h3>Filter</h3>
-          <span onClick={opener}>X</span>
-        </TitleWrapper>
-        <Filter>
-          <Title>
-            <span>Sort By</span>
-          </Title>
-          <Sort>
-            <button>
-              <input
-                type="radio"
-                checked={isChecked}
-                onClick={() => setisChecked(!isChecked)}
-              />
-              <span>Best seller</span>
-            </button>
-            <button>
-              <input type="radio" />
-              <span>Popularity</span>
-            </button>
-            <button>
-              <input type="radio" />
-              <span>Average rating</span>
-            </button>
-            <button>
-              <input type="radio" />
-              <span>New arrival</span>
-            </button>
-            <button>
-              <input type="radio" />
-              <span>Price: low to high</span>
-            </button>
-            <button>
-              <input type="radio" />
-              <span>Price: high to low</span>
-            </button>
-          </Sort>
-        </Filter>
-        <FilterLine />
-        <Filter>
-          <Title>
-            <span>Price</span>
-          </Title>
-          <Price>
-            <button>
-              <span>$0.00 - $50.00</span>
-            </button>
-            <button>
-              <span>$50.00 - $100.00</span>
-            </button>
-            <button>
-              <span>$100.00 - $150.00</span>
-            </button>
-            <button>
-              <span>$150.00 - $200.00</span>
-            </button>
-            <button>
-              <span>$200.00 - $250.00</span>
-            </button>
-            <button>
-              <span>$250.00+</span>
-            </button>
-          </Price>
-        </Filter>
-        <Filter>
-          <Title>
-            <span>Color</span>
-          </Title>
-          <Color>
-            <button>
-              <YellowBullet></YellowBullet>
-              <span>Yellow</span>
-            </button>
-            <button>
-              <GrayBullet></GrayBullet>
-              <span>Gray</span>
-            </button>
-            <button>
-              <RedBullet></RedBullet>
-              <span>Red</span>
-            </button>
-            <button>
-              <BlackBullet></BlackBullet>
-              <span>Black</span>
-            </button>
-            <button>
-              <BlueBullet></BlueBullet>
-              <span>Blue</span>
-            </button>
-            <button>
-              <GreenBullet></GreenBullet>
-              <span>Green</span>
-            </button>
-          </Color>
-        </Filter>
-        <Filter>
-          <Title>
-            <span>Size</span>
-          </Title>
-          <Size>
-            <button>
-              <span>L</span>
-            </button>
-            <button>
-              <span>M</span>
-            </button>
-            <button>
-              <span>S</span>
-            </button>
-            <button>
-              <span>XL</span>
-            </button>
-            <button>
-              <span>XXL</span>
-            </button>
-            <button>
-              <span>Over Size</span>
-            </button>
-          </Size>
-        </Filter>
-        <Filter>
-          <Title>
-            <span>Tags</span>
-          </Title>
-          <Tags>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-          </Tags>
-        </Filter>
-      </GlobalWrapper>
-    </Container>
+      <motion.div
+        animate={{ y: 0 }}
+        initial={{ y: "100vh" }}
+        transition={{ ease: "easeOut", duration: 0.6 }}
+      >
+        <GlobalWrapper>
+          <TitleWrapper>
+            <h3>Filter</h3>
+            <span onClick={opener}>X</span>
+          </TitleWrapper>
+          <Filter>
+            <Title>
+              <span>Sort By</span>
+            </Title>
+            <Sort>
+              <button>
+                <input type="radio" name="sort" />
+                <span>Best seller</span>
+              </button>
+              <button>
+                <input type="radio" name="sort" />
+                <span>Popularity</span>
+              </button>
+              <button>
+                <input type="radio" name="sort" />
+                <span>Average rating</span>
+              </button>
+              <button>
+                <input type="radio" name="sort" />
+                <span>New arrival</span>
+              </button>
+              <button>
+                <input type="radio" name="sort" />
+                <span>Price: low to high</span>
+              </button>
+              <button>
+                <input type="radio" name="sort" />
+                <span>Price: high to low</span>
+              </button>
+            </Sort>
+          </Filter>
+          <FilterLine />
+          <Filter>
+            <Title>
+              <span>Price</span>
+            </Title>
+            <Price>
+              <button>
+                <span>$0.00 - $50.00</span>
+              </button>
+              <button>
+                <span>$50.00 - $100.00</span>
+              </button>
+              <button>
+                <span>$100.00 - $150.00</span>
+              </button>
+              <button>
+                <span>$150.00 - $200.00</span>
+              </button>
+              <button>
+                <span>$200.00 - $250.00</span>
+              </button>
+              <button>
+                <span>$250.00+</span>
+              </button>
+            </Price>
+          </Filter>
+          <FilterLine />
+          <Filter>
+            <Title>
+              <span>Color</span>
+            </Title>
+            <Color>
+              <button>
+                <YellowBullet></YellowBullet>
+                <span>Yellow</span>
+              </button>
+              <button>
+                <GrayBullet></GrayBullet>
+                <span>Gray</span>
+              </button>
+              <button>
+                <RedBullet></RedBullet>
+                <span>Red</span>
+              </button>
+              <button>
+                <BlackBullet></BlackBullet>
+                <span>Black</span>
+              </button>
+              <button>
+                <BlueBullet></BlueBullet>
+                <span>Blue</span>
+              </button>
+              <button>
+                <GreenBullet></GreenBullet>
+                <span>Green</span>
+              </button>
+            </Color>
+          </Filter>
+          <FilterLine />
+          <Filter>
+            <Title>
+              <span>Size</span>
+            </Title>
+            <Size>
+              <button>
+                <span>L</span>
+              </button>
+              <button>
+                <span>M</span>
+              </button>
+              <button>
+                <span>S</span>
+              </button>
+              <button>
+                <span>XL</span>
+              </button>
+              <button>
+                <span>XXL</span>
+              </button>
+              <button>
+                <span>Over Size</span>
+              </button>
+            </Size>
+          </Filter>
+        </GlobalWrapper>
+      </motion.div>
+    </Container>,
+    ModalRoot
   );
 };
 
