@@ -9,8 +9,11 @@ const MenuListContainer = styled.div`
   bottom: 0;
   width: 100vw;
   background-color: var(--white);
-  height: calc(100% - 70px);
+  height: calc(100% - 50px);
   z-index: 200;
+  @media (min-width: 768px) {
+    height: calc(100% - 70px);
+  }
 `;
 
 const Wrapper = styled.div`
@@ -25,7 +28,10 @@ const Wrapper = styled.div`
   > div {
     width: 100%;
     height: 100%;
-    margin-bottom: 70px;
+    margin-bottom: 50px;
+    @media (min-width: 768px) {
+      margin-bottom: 70px;
+    }
     > ul {
       width: 100%;
       height: 100%;

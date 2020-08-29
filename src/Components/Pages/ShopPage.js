@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import BreadcrumbTwo from "../SmallComponents/BreadcrumbTwo";
 import Filter from "../Structure/Filter";
@@ -13,8 +13,8 @@ const ShopPageContainer = styled.div`
 
 const ShopPage = () => {
   window.scrollTo(0, 0); // Scroll top when mounted
-  const [sort, setsort] = React.useState("");
-  const [filterIsOpen, setFilterIsOpen] = React.useState(false);
+  const [sort, setsort] = useState("");
+  const [filterIsOpen, setFilterIsOpen] = useState(false);
 
   const sorter = (categorie) => {
     setsort(categorie);
@@ -26,7 +26,7 @@ const ShopPage = () => {
 
   return (
     <ShopPageContainer>
-      {filterIsOpen ? <FilterList opener={opener} /> : null}
+      <FilterList opener={opener} isOpen={filterIsOpen} />
       <BreadcrumbTwo />
       <FluidContainer>
         <Filter sorter={sorter} opener={opener} />

@@ -2,10 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import Banner from "../Structure/Banner";
 import Categories from "../Structure/Categories";
-import Filter from "../Structure/Filter";
-import Products from "../Structure/Products";
+import Showcase from "../Structure/Showcase";
 import Seals from "../Structure/Seals";
-import Newsletter from "../Structure/Newsletter";
+// import Newsletter from "../Structure/Newsletter";
 import FixedContainer from "../../styled/FixedContainer";
 
 const HomePageStyle = styled.div`
@@ -19,13 +18,12 @@ const Homepage = () => {
   return (
     <HomePageStyle>
       <Banner />
-      <Categories />
       <FixedContainer>
-        <Filter />
-        <Products />
+        <Categories />
+        <Showcase />
         <Seals />
       </FixedContainer>
-      <Newsletter />
+      {/* <Newsletter /> */}
     </HomePageStyle>
   );
 };

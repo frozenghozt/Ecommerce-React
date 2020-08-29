@@ -12,31 +12,44 @@ const BannerContainer = styled.div`
   background-position-y: center;
   background-size: cover;
   width: 100%;
-  height: 800px;
-  min-height: 800px;
-  max-height: 800px;
+  height: 550px;
+  @media (min-width: 768px) {
+    height: 760px;
+  }
   background-color: var(--white);
-  & span {
-    font-size: 60px;
+`;
+
+const TextWrapper = styled.div`
+  width: 100%;
+  > span {
+    font-size: 42px;
     color: var(--black);
   }
-  & p {
+  > p {
     margin: 20px 0px 30px 0px;
     color: var(--mediumgrey);
   }
-  & button {
+  > button {
     color: var(--white);
     cursor: pointer;
     font-size: 15px;
     font-weight: var(--rubikm);
     background-color: var(--btnpink);
     border-style: none;
-    padding: 15px 26px 13px 26px;
+    padding: 13px 24px 12px 24px;
   }
-`;
-
-const TextWrapper = styled.div`
-  width: 50%;
+  @media (min-width: 768px) {
+    > span {
+      font-size: 60px;
+    }
+    > button {
+      font-size: 14px;
+      padding: 15px 26px 13px 26px;
+    }
+  }
+  @media (min-width: 1024px) {
+    width: 50%;
+  }
 `;
 
 const Banner = () => {

@@ -5,14 +5,6 @@ import styled from "styled-components";
 import CatWomen from "../../assets/images/catwomen.jpg";
 import CatWomen767 from "../../assets/images/catwomenmin1200.jpg";
 
-const Container = styled.div`
-  max-width: 100%;
-  padding: 0 50px;
-  @media (max-width: 767.98px) {
-    padding: 0 20px;
-  }
-`;
-
 const Wrapper = styled.div`
   padding: 60px 0 30px 0;
   display: flex;
@@ -119,38 +111,36 @@ const Hats = styled.picture`
 
 const Categories = () => {
   return (
-    <Container>
-      <Wrapper>
-        <Grid>
-          <Women>
-            <source media="(max-width: 1199.98px)" srcSet={CatWomen767} />
-            <source media="(min-width: 1200px)" srcSet={CatWomen} />
-            <img src={CatWomen} alt="yo" />
-          </Women>
-          <Sunglasses
-            style={{
-              backgroundImage: `url(https://images.pexels.com/photos/1388888/pexels-photo-1388888.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)`,
-            }}
-          />
-          <Leather
-            style={{
-              backgroundImage: `url(https://images.pexels.com/photos/1152077/pexels-photo-1152077.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)`,
-            }}
-          />
-          <Men
-            style={{
-              backgroundImage: `url(https://images.pexels.com/photos/594610/pexels-photo-594610.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500)`,
-            }}
-          />
-          <Sneakers
-            style={{
-              backgroundImage: `url(https://images.pexels.com/photos/2529148/pexels-photo-2529148.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500)`,
-            }}
-          />
-          <Hats></Hats>
-        </Grid>
-      </Wrapper>
-    </Container>
+    <Wrapper>
+      <Grid>
+        <Women>
+          <source media="(max-width: 1199.98px)" srcSet={CatWomen767} />
+          <source media="(min-width: 1200px)" srcSet={CatWomen} />
+          <img src={CatWomen} alt="yo" />
+        </Women>
+        <Sunglasses
+          style={{
+            backgroundImage: `url(https://images.pexels.com/photos/1388888/pexels-photo-1388888.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)`,
+          }}
+        />
+        <Leather
+          style={{
+            backgroundImage: `url(https://images.pexels.com/photos/1152077/pexels-photo-1152077.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)`,
+          }}
+        />
+        <Men
+          style={{
+            backgroundImage: `url(https://images.pexels.com/photos/594610/pexels-photo-594610.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500)`,
+          }}
+        />
+        <Sneakers
+          style={{
+            backgroundImage: `url(https://images.pexels.com/photos/2529148/pexels-photo-2529148.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500)`,
+          }}
+        />
+        <Hats></Hats>
+      </Grid>
+    </Wrapper>
   );
 };
 

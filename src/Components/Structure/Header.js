@@ -22,12 +22,14 @@ const Wrapper = styled.div`
   display: flex;
   width: 100%;
   height: 50px;
+  padding: 0 15px;
   margin: 0 auto;
   font-size: 15px;
-  padding: 0 20px;
   background-color: var(--white);
+  @media (min-width: 480px) {
+    padding: 0 20px;
+  }
   @media (min-width: 768px) {
-    padding: 0 35px;
     height: 70px;
   }
   @media (min-width: 1024px) {
@@ -47,6 +49,10 @@ const Logo = styled.div`
   justify-content: flex-start;
   img {
     margin-top: 8px;
+    @media (max-width: 767px) {
+      height: 22px;
+      width: auto;
+    }
   }
 `;
 

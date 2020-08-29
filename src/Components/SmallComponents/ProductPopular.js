@@ -5,12 +5,15 @@ import HotRect from "./HotRect";
 import ProductHover from "./ProductHover";
 
 const ProductContainer = styled.div`
-  width: calc(100% / 2);
-  @media (min-width: 768px) {
-    width: calc(100% / 3);
+  min-width: calc(100% / 1.15);
+  @media (min-width: 576px) {
+    min-width: calc(100% / 2.3);
   }
-  @media (min-width: 1366px) {
-    width: calc(100% / 4);
+  @media (min-width: 1024px) {
+    min-width: calc(100% / 4);
+  }
+  @media (min-width: 1200px) {
+    min-width: calc((100% / 5));
   }
 `;
 
@@ -24,7 +27,6 @@ const Image = styled.div`
   position: relative;
   width: 100%;
   padding-bottom: 110%;
-  height: 0;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -97,7 +99,7 @@ const Price = styled.div`
   }
 `;
 
-const Product = ({
+const ProductPopular = ({
   uid,
   name,
   sku,
@@ -162,4 +164,4 @@ const Product = ({
   );
 };
 
-export default Product;
+export default ProductPopular;

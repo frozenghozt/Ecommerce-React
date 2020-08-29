@@ -7,31 +7,20 @@ const FilterMenuContainer = styled.div`
   padding: 20px 0px;
   font-size: 15px;
   @media (min-width: 480px) {
-    margin: 0;
     padding: 30px 0px;
   }
   @media (min-width: 1024px) {
-    margin-top: 32px;
     padding: 40px 0px;
   }
 `;
 
-const Filters = styled.div`
+const Title = styled.h3`
   flex: 2;
-  display: none;
   justify-content: space-between;
-  & span {
-    cursor: pointer;
-    margin-right: 0;
-    @media (min-width: 1024px) {
-      margin-right: 35px;
-    }
-  }
-  @media (min-width: 768px) {
-    display: flex;
-  }
+  font-size: 24px;
+  font-weight: 400;
   @media (min-width: 1024px) {
-    justify-content: flex-start;
+    font-size: 28px;
   }
 `;
 
@@ -39,6 +28,7 @@ const FilterToggle = styled.div`
   flex: 1;
   display: flex;
   justify-content: flex-end;
+  align-items: center;
   & span {
     cursor: pointer;
   }
@@ -48,16 +38,10 @@ const ArrowDown = styled.span`
   font-family: var(--icons);
 `;
 
-const FilterMenu = ({ opener, sorter }) => {
+const FilterMenu = ({ opener }) => {
   return (
     <FilterMenuContainer>
-      <Filters>
-        <span onClick={() => sorter("All")}>All Products</span>
-        <span onClick={() => sorter("Best")}>Best Sellers</span>
-        <span onClick={() => sorter("New")}>New Arrival</span>
-        <span onClick={() => sorter("Sales")}>Sales Products</span>
-        <span onClick={() => sorter("Popular")}>Popular</span>
-      </Filters>
+      <Title>Shoes</Title>
       <FilterToggle onClick={opener}>
         <span>Filter</span>
         <ArrowDown>&#x33;</ArrowDown>

@@ -10,8 +10,12 @@ const CartListContainer = styled.div`
   bottom: 0;
   width: 300px;
   background-color: var(--white);
-  height: calc(100% - 70px);
+  height: calc(100% - 50px);
   z-index: 200;
+  @media (min-width: 768px) {
+    height: calc(100% - 70px);
+    width: 350px;
+  }
   @media (min-width: 1024px) {
     height: calc(100% - 100px);
     width: 350px;

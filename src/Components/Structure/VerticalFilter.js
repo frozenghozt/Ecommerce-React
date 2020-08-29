@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Container = styled.div`
   display: none;
@@ -165,118 +165,128 @@ const Size = styled.div`
   margin-bottom: 20px;
 `;
 
-const VerticalFilter = () => {
+const VerticalFilter = ({ isOpen }) => {
   return (
-    <motion.div animate={{ x: 0 }} initial={{ x: -200 }}>
-      <Container>
-        <Filter>
-          <Title>
-            <span>Sort By</span>
-          </Title>
-          <Sort>
-            <button>
-              <span>Best seller</span>
-            </button>
-            <button>
-              <span>Popularity</span>
-            </button>
-            <button>
-              <span>Average rating</span>
-            </button>
-            <button>
-              <span>New arrival</span>
-            </button>
-            <button>
-              <span>Price: low to high</span>
-            </button>
-            <button>
-              <span>Price: high to low</span>
-            </button>
-          </Sort>
-        </Filter>
-        <Filter>
-          <Title>
-            <span>Price</span>
-          </Title>
-          <Price>
-            <button>
-              <span>$0.00 - $50.00</span>
-            </button>
-            <button>
-              <span>$50.00 - $100.00</span>
-            </button>
-            <button>
-              <span>$100.00 - $150.00</span>
-            </button>
-            <button>
-              <span>$150.00 - $200.00</span>
-            </button>
-            <button>
-              <span>$200.00 - $250.00</span>
-            </button>
-            <button>
-              <span>$250.00+</span>
-            </button>
-          </Price>
-        </Filter>
-        <Filter>
-          <Title>
-            <span>Color</span>
-          </Title>
-          <Color>
-            <button>
-              <YellowBullet></YellowBullet>
-              <span>Yellow</span>
-            </button>
-            <button>
-              <GrayBullet></GrayBullet>
-              <span>Gray</span>
-            </button>
-            <button>
-              <RedBullet></RedBullet>
-              <span>Red</span>
-            </button>
-            <button>
-              <BlackBullet></BlackBullet>
-              <span>Black</span>
-            </button>
-            <button>
-              <BlueBullet></BlueBullet>
-              <span>Blue</span>
-            </button>
-            <button>
-              <GreenBullet></GreenBullet>
-              <span>Green</span>
-            </button>
-          </Color>
-        </Filter>
-        <Filter>
-          <Title>
-            <span>Size</span>
-          </Title>
-          <Size>
-            <button>
-              <span>L</span>
-            </button>
-            <button>
-              <span>M</span>
-            </button>
-            <button>
-              <span>S</span>
-            </button>
-            <button>
-              <span>XL</span>
-            </button>
-            <button>
-              <span>XXL</span>
-            </button>
-            <button>
-              <span>Over Size</span>
-            </button>
-          </Size>
-        </Filter>
-      </Container>
-    </motion.div>
+    <AnimatePresence>
+      {isOpen && (
+        <motion.div
+          key="VertFilter"
+          animate={{ x: 0 }}
+          initial={{ x: -200 }}
+          exit={{ x: -200 }}
+          transition={{ ease: "easeOut", duration: 0.3 }}
+        >
+          <Container>
+            <Filter>
+              <Title>
+                <span>Sort By</span>
+              </Title>
+              <Sort>
+                <button>
+                  <span>Best seller</span>
+                </button>
+                <button>
+                  <span>Popularity</span>
+                </button>
+                <button>
+                  <span>Average rating</span>
+                </button>
+                <button>
+                  <span>New arrival</span>
+                </button>
+                <button>
+                  <span>Price: low to high</span>
+                </button>
+                <button>
+                  <span>Price: high to low</span>
+                </button>
+              </Sort>
+            </Filter>
+            <Filter>
+              <Title>
+                <span>Price</span>
+              </Title>
+              <Price>
+                <button>
+                  <span>$0.00 - $50.00</span>
+                </button>
+                <button>
+                  <span>$50.00 - $100.00</span>
+                </button>
+                <button>
+                  <span>$100.00 - $150.00</span>
+                </button>
+                <button>
+                  <span>$150.00 - $200.00</span>
+                </button>
+                <button>
+                  <span>$200.00 - $250.00</span>
+                </button>
+                <button>
+                  <span>$250.00+</span>
+                </button>
+              </Price>
+            </Filter>
+            <Filter>
+              <Title>
+                <span>Color</span>
+              </Title>
+              <Color>
+                <button>
+                  <YellowBullet></YellowBullet>
+                  <span>Yellow</span>
+                </button>
+                <button>
+                  <GrayBullet></GrayBullet>
+                  <span>Gray</span>
+                </button>
+                <button>
+                  <RedBullet></RedBullet>
+                  <span>Red</span>
+                </button>
+                <button>
+                  <BlackBullet></BlackBullet>
+                  <span>Black</span>
+                </button>
+                <button>
+                  <BlueBullet></BlueBullet>
+                  <span>Blue</span>
+                </button>
+                <button>
+                  <GreenBullet></GreenBullet>
+                  <span>Green</span>
+                </button>
+              </Color>
+            </Filter>
+            <Filter>
+              <Title>
+                <span>Size</span>
+              </Title>
+              <Size>
+                <button>
+                  <span>L</span>
+                </button>
+                <button>
+                  <span>M</span>
+                </button>
+                <button>
+                  <span>S</span>
+                </button>
+                <button>
+                  <span>XL</span>
+                </button>
+                <button>
+                  <span>XXL</span>
+                </button>
+                <button>
+                  <span>Over Size</span>
+                </button>
+              </Size>
+            </Filter>
+          </Container>
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 };
 

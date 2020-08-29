@@ -1,10 +1,11 @@
 import React from "react";
 import styled from "styled-components";
+import { useLocation } from "react-router-dom";
 import { Server } from "miragejs";
+import { useQuery } from "react-query";
 import productObj from "../../dbObjects/ProductsObj";
 import Product from "../SmallComponents/Product";
 import VerticalFilter from "../Structure/VerticalFilter";
-import { useQuery } from "react-query";
 
 const ProductsContainer = styled.div`
   display: flex;
@@ -31,17 +32,18 @@ const fetchProducts = async () => {
 
 const Products = ({ tosort, isOpen }) => {
   const { data, status } = useQuery("products", fetchProducts);
+  const params = useLocation().search;
 
-  function compare(a, b) {
+  function sorting(a, b) {
     if (
-      a.tags.includes(`${tosort}`) === true &&
-      b.tags.includes(`${tosort}`) === false
+      a.tags.includes(params.slice(6)) === true &&
+      b.tags.includes(params.slice(6)) === false
     ) {
       return -1;
     }
     if (
-      a.tags.includes(`${tosort}`) === false &&
-      b.tags.includes(`${tosort}`) === true
+      a.tags.includes(params.slice(6)) === false &&
+      b.tags.includes(params.slice(6)) === true
     ) {
       return 1;
     }
@@ -50,11 +52,11 @@ const Products = ({ tosort, isOpen }) => {
 
   return (
     <ProductsContainer>
-      {isOpen ? <VerticalFilter /> : null}
+      <VerticalFilter isOpen={isOpen} />
       <ProductsWrapper>
         {status === "success" &&
           data.inventory
-            .sort(compare)
+            .sort(sorting)
             .map(
               ({
                 id,

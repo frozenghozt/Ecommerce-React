@@ -97,7 +97,7 @@ const Price = styled.div`
   }
 `;
 
-const Product = ({
+const PopularProduct = ({
   uid,
   name,
   sku,
@@ -162,4 +162,4 @@ const Product = ({
   );
 };
 
-export default Product;
+export default PopularProduct;
