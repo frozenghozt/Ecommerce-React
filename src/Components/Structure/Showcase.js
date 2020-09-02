@@ -5,6 +5,7 @@ import productObj from "../../dbObjects/ProductsObj";
 import styled from "styled-components";
 import Popular from "../SmallComponents/Popular";
 import Trends from "../SmallComponents/Trends";
+import { ProductDataProvider } from "../../context/ProductContext";
 
 const Container = styled.div`
   display: flex;
@@ -25,8 +26,10 @@ const Showcase = () => {
 
   return (
     <Container>
-      <Popular data={data} status={status} />
-      <Trends data={data} status={status} />
+      <ProductDataProvider value={{ data, status }}>
+        <Popular />
+        <Trends />
+      </ProductDataProvider>
     </Container>
   );
 };

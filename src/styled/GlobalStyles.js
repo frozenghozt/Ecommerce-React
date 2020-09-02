@@ -23,6 +23,10 @@ export default createGlobalStyle`
     background: none;
   }
 
+  button:focus {
+    outline: none;
+  }
+
   ul {
     list-style: none;
   }

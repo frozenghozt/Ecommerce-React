@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
-import ProductPopular from "./ProductPopular";
 import ShowcaseHeader from "./ShowcaseHeader";
+import ProductPopular from "./ProductPopular";
+import ProductData from "../../context/ProductContext";
 
 const Wrapper = styled.div`
   display: flex;
@@ -27,7 +28,7 @@ const ProductWrapper = styled.div`
     overflow-x: hidden;
   }
   > div {
-    @media (min-width: 1024px) and (max-width: 1199px) {
+    @media (min-width: 1024px) {
       &:nth-last-child(-n + 2) {
         display: none;
       }
@@ -35,13 +36,14 @@ const ProductWrapper = styled.div`
   }
 `;
 
-const Popular = ({ data, status }) => {
+const Popular = () => {
+  const ArrProduct = useContext(ProductData);
   return (
     <Wrapper>
       <ShowcaseHeader title="Popular" />
       <ProductWrapper>
-        {status === "success" &&
-          data.inventory.map(
+        {ArrProduct.status === "success" &&
+          ArrProduct.data.inventory.map(
             (
               {
                 id,

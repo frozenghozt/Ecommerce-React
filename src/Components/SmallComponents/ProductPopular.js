@@ -12,9 +12,6 @@ const ProductContainer = styled.div`
   @media (min-width: 1024px) {
     min-width: calc(100% / 4);
   }
-  @media (min-width: 1200px) {
-    min-width: calc((100% / 5));
-  }
 `;
 
 const Wrapper = styled.div`
@@ -31,6 +28,7 @@ const Image = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
   margin-bottom: 15px;
+  cursor: pointer;
   @media (min-width: 768px) {
     margin-bottom: 30px;
   }
@@ -44,9 +42,6 @@ const Info = styled.div`
   justify-content: center;
   height: calc(100% - 350px);
   width: 100%;
-  @media (min-width: 480px) {
-    margin-bottom: 30px;
-  }
   @media (min-width: 768px) {
     margin-bottom: 40px;
   }
@@ -57,7 +52,7 @@ const Info = styled.div`
 
 const NameColor = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-between;
   width: 100%;
   margin-bottom: 8px;
@@ -66,9 +61,6 @@ const NameColor = styled.div`
     @media (min-width: 480px) {
       margin-bottom: 0px;
     }
-  }
-  @media (min-width: 480px) {
-    flex-direction: row;
   }
 `;
 
@@ -111,11 +103,12 @@ const ProductPopular = ({
   colors,
 }) => {
   const [ishover, setishover] = useState(false);
-
   const hoverHandler = () => {
     setishover(!ishover);
   };
-
+  // const ref = React.createRef();
+  // console.log(ref.current);
+  const ref = React.createRef();
   return (
     <ProductContainer>
       <Wrapper>
@@ -134,9 +127,10 @@ const ProductPopular = ({
             routeUrl={routeUrl}
             img={img}
             price={price}
+            ref={ref}
           />
         </Image>
-        <Info>
+        <Info ref={ref}>
           <NameColor>
             <span>{name}</span>
             <Colors>

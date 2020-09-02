@@ -5,12 +5,12 @@ import HotRect from "./HotRect";
 import ProductHover from "./ProductHover";
 
 const ProductContainer = styled.div`
-  width: calc(100% / 2);
-  @media (min-width: 768px) {
-    width: calc(100% / 3);
+  min-width: calc(100% / 1.15);
+  @media (min-width: 576px) {
+    min-width: calc(100% / 2.3);
   }
-  @media (min-width: 1366px) {
-    width: calc(100% / 4);
+  @media (min-width: 1024px) {
+    min-width: calc(100% / 4);
   }
 `;
 
@@ -24,7 +24,6 @@ const Image = styled.div`
   position: relative;
   width: 100%;
   padding-bottom: 110%;
-  height: 0;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -42,9 +41,6 @@ const Info = styled.div`
   justify-content: center;
   height: calc(100% - 350px);
   width: 100%;
-  @media (min-width: 480px) {
-    margin-bottom: 30px;
-  }
   @media (min-width: 768px) {
     margin-bottom: 40px;
   }
@@ -55,7 +51,7 @@ const Info = styled.div`
 
 const NameColor = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-between;
   width: 100%;
   margin-bottom: 8px;
@@ -64,9 +60,6 @@ const NameColor = styled.div`
     @media (min-width: 480px) {
       margin-bottom: 0px;
     }
-  }
-  @media (min-width: 480px) {
-    flex-direction: row;
   }
 `;
 
@@ -97,7 +90,7 @@ const Price = styled.div`
   }
 `;
 
-const PopularProduct = ({
+const ProductTrend = ({
   uid,
   name,
   sku,
@@ -162,4 +155,4 @@ const PopularProduct = ({
   );
 };
 
-export default PopularProduct;
+export default ProductTrend;

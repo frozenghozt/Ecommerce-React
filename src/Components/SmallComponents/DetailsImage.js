@@ -49,16 +49,20 @@ const SideImageWrapper = styled.div`
   }
 `;
 
-const DetailsImage = ({ sideimg, img }) => {
+const DetailsImage = ({ img, sideimg }) => {
+  const [mainimg, setmainimg] = React.useState(0);
+
+  let arrLoop = [img, ...sideimg];
+
   return (
     <DetailsImageContainer>
       <ImageWrapper>
         <SideImageWrapper>
-          {sideimg.map((each, i) => (
-            <SideImage key={i} img={each} />
+          {arrLoop.map((each, i) => (
+            <SideImage key={i} img={each} switcher={() => setmainimg(i)} />
           ))}
         </SideImageWrapper>
-        <MainImage style={{ backgroundImage: `url(${img})` }}></MainImage>
+        <MainImage style={{ backgroundImage: `url(${arrLoop[mainimg]})` }} />
       </ImageWrapper>
     </DetailsImageContainer>
   );

@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const Container = styled.div`
   width: 100%;
@@ -47,6 +48,11 @@ const Redirect = styled.div`
   }
 `;
 
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: var(--black);
+`;
+
 const ShowcaseHeader = ({ title }) => {
   return (
     <Container>
@@ -55,10 +61,9 @@ const ShowcaseHeader = ({ title }) => {
           <h2>{title}</h2>
         </Headline>
         <Redirect>
-          <span>ALL PRODUCTS</span>
-          <span>
-            <i className="fas fa-arrow-right"></i>
-          </span>
+          <StyledLink to="/shop">
+            <span>All Products</span>
+          </StyledLink>
         </Redirect>
       </Wrapper>
     </Container>

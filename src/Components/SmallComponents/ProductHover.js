@@ -59,56 +59,60 @@ const StyledLink = styled(Link)`
   color: var(--black);
 `;
 
-const ProductHover = ({ ishover, uid, name, routeUrl, img, price }) => {
-  const dispatch = useDispatch();
-  const favorite = useSelector((state) => state.favorite);
-  const cart = useSelector((state) => state.cart);
+const ProductHover = React.forwardRef(
+  ({ ishover, uid, name, routeUrl, img, price }, ref) => {
+    const dispatch = useDispatch();
+    const favorite = useSelector((state) => state.favorite);
+    const cart = useSelector((state) => state.cart);
 
-  if (ishover === false) {
-    return null;
+    if (ishover === false) {
+      return null;
+    }
+
+    return (
+      <ProductContainer ref={ref}>
+        {cart.some((each) => each.uid === uid) ? (
+          <AddCart
+            onClick={() =>
+              dispatch(removeCart({ uid, name, img, price, routeUrl }))
+            }
+          >
+            <span style={{ color: "rgb(226, 74, 73)" }}>&#xe07a;</span>
+          </AddCart>
+        ) : (
+          <AddCart
+            onClick={() =>
+              dispatch(addCart({ uid, name, img, price, routeUrl }))
+            }
+          >
+            <span>&#xe07a;</span>
+          </AddCart>
+        )}
+        <ViewProduct>
+          <StyledLink to={`/s/${routeUrl}`}>
+            <span>VIEW PRODUCT</span>
+          </StyledLink>
+        </ViewProduct>
+        {favorite.some((each) => each.uid === uid) ? (
+          <Favorite
+            onClick={() => {
+              dispatch(removeFavorite({ uid, name, img, price, routeUrl }));
+            }}
+          >
+            <span style={{ color: "rgb(226, 74, 73)" }}>&#xe089;</span>
+          </Favorite>
+        ) : (
+          <Favorite
+            onClick={() => {
+              dispatch(addFavorite({ uid, name, img, price, routeUrl }));
+            }}
+          >
+            <span>&#xe089;</span>
+          </Favorite>
+        )}
+      </ProductContainer>
+    );
   }
-
-  return (
-    <ProductContainer>
-      {cart.some((each) => each.uid === uid) ? (
-        <AddCart
-          onClick={() =>
-            dispatch(removeCart({ uid, name, img, price, routeUrl }))
-          }
-        >
-          <span style={{ color: "rgb(226, 74, 73)" }}>&#xe07a;</span>
-        </AddCart>
-      ) : (
-        <AddCart
-          onClick={() => dispatch(addCart({ uid, name, img, price, routeUrl }))}
-        >
-          <span>&#xe07a;</span>
-        </AddCart>
-      )}
-      <ViewProduct>
-        <StyledLink to={`/s/${routeUrl}`}>
-          <span>VIEW PRODUCT</span>
-        </StyledLink>
-      </ViewProduct>
-      {favorite.some((each) => each.uid === uid) ? (
-        <Favorite
-          onClick={() => {
-            dispatch(removeFavorite({ uid, name, img, price, routeUrl }));
-          }}
-        >
-          <span style={{ color: "rgb(226, 74, 73)" }}>&#xe089;</span>
-        </Favorite>
-      ) : (
-        <Favorite
-          onClick={() => {
-            dispatch(addFavorite({ uid, name, img, price, routeUrl }));
-          }}
-        >
-          <span>&#xe089;</span>
-        </Favorite>
-      )}
-    </ProductContainer>
-  );
-};
+);
 
 export default ProductHover;

@@ -32,10 +32,11 @@ const SideImageContainer = styled.div`
   }
 `;
 
-const SideImage = ({ img }) => {
+const SideImage = ({ img, switcher }) => {
   return (
     <SideImageContainer
       style={{ backgroundImage: `url(${img})` }}
+      onClick={switcher}
     ></SideImageContainer>
   );
 };

@@ -37,8 +37,10 @@ const Women = styled.picture`
     height: 100%;
     object-fit: cover;
   }
-  grid-column: col1-start;
-  grid-row: row1-start;
+  @media (max-width: 767.98px) {
+    grid-column: col1-start;
+    grid-row: row1-start;
+  }
   @media (min-width: 768px) {
     grid-column: col1-start;
     grid-row: row1-start / row2-end;
@@ -49,8 +51,10 @@ const Sunglasses = styled.picture`
   background-size: cover;
   background-repeat: no-repeat;
   background-position-y: -70px;
-  grid-column: col1-start;
-  grid-row: row4-start;
+  @media (max-width: 767.98) {
+    grid-column: col1-start;
+    grid-row: row4-start;
+  }
   @media (min-width: 1200px) {
     grid-column: col2-start;
     grid-row: row1-start;
@@ -60,8 +64,10 @@ const Sunglasses = styled.picture`
 const Men = styled.picture`
   background-size: cover;
   background-repeat: no-repeat;
-  grid-column: col1-start;
-  grid-row: row2-start;
+  @media (max-width: 767.98px) {
+    grid-column: col1-start;
+    grid-row: row2-start;
+  }
   @media (min-width: 768px) {
     grid-column: col3-start;
     grid-row: row1-start / row2-end;
@@ -76,8 +82,10 @@ const Sneakers = styled.picture`
   background: #999;
   background-position: center;
   background-size: cover;
-  grid-column: col1-start;
-  grid-row: row3-start;
+  @media (max-width: 767.98px) {
+    grid-column: col1-start;
+    grid-row: row3-start;
+  }
   @media (min-width: 768px) {
     grid-column: col2-start;
     grid-row: row2-start;

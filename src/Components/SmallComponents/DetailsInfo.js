@@ -147,7 +147,7 @@ const AddCart = styled.button`
   }
   @media (min-width: 1024px) {
     flex: none;
-    padding: 10px 25px 8px 25px;
+    padding: 8px 25px 8px 25px;
     max-height: 35px;
   }
 `;
