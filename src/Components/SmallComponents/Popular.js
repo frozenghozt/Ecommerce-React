@@ -12,6 +12,9 @@ const Wrapper = styled.div`
   width: 100%;
   overflow: hidden;
   @media (min-width: 768px) {
+    padding: 20px 0;
+  }
+  @media (min-width: 1024px) {
     padding: 40px 0;
   }
 `;
