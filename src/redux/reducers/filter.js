@@ -19,13 +19,25 @@ export const filter = (state = initialState, action) => {
         ),
       };
     case "ADD_COLOR":
-      return { ...state, ...action.payload };
+      return {
+        ...state,
+        color: [...state.color, action.payload],
+      };
     case "REMOVE_COLOR":
-      return { ...state, ...action.payload };
+      return {
+        ...state,
+        color: state.color.filter((each) => each !== action.payload),
+      };
     case "ADD_SIZE":
-      return { ...state, ...action.payload };
+      return {
+        ...state,
+        size: [...state.size, action.payload],
+      };
     case "REMOVE_SIZE":
-      return { ...state, ...action.payload };
+      return {
+        ...state,
+        size: state.size.filter((each) => each !== action.payload),
+      };
     case "CLEAR":
       return { ...state, ...action.payload };
     default:

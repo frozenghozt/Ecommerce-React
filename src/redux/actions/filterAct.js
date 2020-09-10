@@ -27,8 +27,3 @@ export const removeSize = (payload) => ({
   type: "REMOVE_SIZE",
   payload,
 });
-
-export const clear = (payload) => ({
-  type: "CLEAR",
-  payload,
-});

@@ -8,7 +8,6 @@ import {
   removeColor,
   addSize,
   removeSize,
-  clear,
 } from "../../redux/actions/filterAct";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
@@ -194,6 +193,17 @@ const VerticalFilter = ({ isOpen }) => {
   const [hidePriceFour, sethidePriceFour] = useState(false);
   const [hidePriceFive, sethidePriceFive] = useState(false);
   const [hidePriceSix, sethidePriceSix] = useState(false);
+  const [hideColorOne, sethideColorOne] = useState(false);
+  const [hideColorTwo, sethideColorTwo] = useState(false);
+  const [hideColorThree, sethideColorThree] = useState(false);
+  const [hideColorFour, sethideColorFour] = useState(false);
+  const [hideColorFive, sethideColorFive] = useState(false);
+  const [hideColorSix, sethideColorSix] = useState(false);
+  const [hideSizeOne, sethideSizeOne] = useState(false);
+  const [hideSizeTwo, sethideSizeTwo] = useState(false);
+  const [hideSizeThree, sethideSizeThree] = useState(false);
+  const [hideSizeFour, sethideSizeFour] = useState(false);
+  const [hideSizeFive, sethideSizeFive] = useState(false);
   const dispatch = useDispatch();
   return (
     <AnimatePresence>
@@ -383,30 +393,132 @@ const VerticalFilter = ({ isOpen }) => {
                 <span>Color</span>
               </Title>
               <Color>
-                <button>
-                  <YellowBullet></YellowBullet>
-                  <span>Yellow</span>
-                </button>
-                <button>
-                  <GrayBullet></GrayBullet>
-                  <span>Gray</span>
-                </button>
-                <button>
-                  <RedBullet></RedBullet>
-                  <span>Red</span>
-                </button>
-                <button>
-                  <BlackBullet></BlackBullet>
-                  <span>Black</span>
-                </button>
-                <button>
-                  <BlueBullet></BlueBullet>
-                  <span>Blue</span>
-                </button>
-                <button>
-                  <GreenBullet></GreenBullet>
-                  <span>Green</span>
-                </button>
+                {hideColorOne ? (
+                  <button
+                    onClick={() => {
+                      dispatch(removeColor("Yellow"));
+                      sethideColorOne(false);
+                    }}
+                  >
+                    <YellowBullet></YellowBullet>
+                    <span style={{ fontWeight: "bolder" }}>Yellow</span>
+                  </button>
+                ) : (
+                  <button
+                    onClick={() => {
+                      dispatch(addColor("Yellow"));
+                      sethideColorOne(true);
+                    }}
+                  >
+                    <YellowBullet></YellowBullet>
+                    <span>Yellow</span>
+                  </button>
+                )}
+                {hideColorTwo ? (
+                  <button
+                    onClick={() => {
+                      dispatch(removeColor("Gray"));
+                      sethideColorTwo(false);
+                    }}
+                  >
+                    <GrayBullet></GrayBullet>
+                    <span style={{ fontWeight: "bolder" }}>Gray</span>
+                  </button>
+                ) : (
+                  <button
+                    onClick={() => {
+                      dispatch(addColor("Gray"));
+                      sethideColorTwo(true);
+                    }}
+                  >
+                    <GrayBullet></GrayBullet>
+                    <span>Gray</span>
+                  </button>
+                )}
+                {hideColorThree ? (
+                  <button
+                    onClick={() => {
+                      dispatch(removeColor("Red"));
+                      sethideColorThree(false);
+                    }}
+                  >
+                    <RedBullet></RedBullet>
+                    <span style={{ fontWeight: "bolder" }}>Red</span>
+                  </button>
+                ) : (
+                  <button
+                    onClick={() => {
+                      dispatch(addColor("Red"));
+                      sethideColorThree(true);
+                    }}
+                  >
+                    <RedBullet></RedBullet>
+                    <span>Red</span>
+                  </button>
+                )}
+                {hideColorFour ? (
+                  <button
+                    onClick={() => {
+                      dispatch(removeColor("Black"));
+                      sethideColorFour(false);
+                    }}
+                  >
+                    <BlackBullet></BlackBullet>
+                    <span style={{ fontWeight: "bolder" }}>Black</span>
+                  </button>
+                ) : (
+                  <button
+                    onClick={() => {
+                      dispatch(addColor("Black"));
+                      sethideColorFour(true);
+                    }}
+                  >
+                    <BlackBullet></BlackBullet>
+                    <span>Black</span>
+                  </button>
+                )}
+                {hideColorFive ? (
+                  <button
+                    onClick={() => {
+                      dispatch(removeColor("Blue"));
+                      sethideColorFive(false);
+                    }}
+                  >
+                    <BlueBullet></BlueBullet>
+                    <span style={{ fontWeight: "bolder" }}>Blue</span>
+                  </button>
+                ) : (
+                  <button
+                    onClick={() => {
+                      dispatch(addColor("Blue"));
+                      sethideColorFive(true);
+                    }}
+                  >
+                    <BlueBullet></BlueBullet>
+                    <span>Blue</span>
+                  </button>
+                )}
+                {hideColorSix ? (
+                  <button
+                    onClick={() => {
+                      dispatch(removeColor("Green"));
+                      sethideColorSix(false);
+                    }}
+                  >
+                    <GreenBullet></GreenBullet>
+                    <span style={{ fontWeight: "bolder" }}>Green</span>
+                  </button>
+                ) : (
+                  <button
+                    onClick={() => {
+                      dispatch(addColor("Green"));
+                      sethideColorSix(true);
+                    }}
+                  >
+                    <GreenBullet></GreenBullet>
+                    <span>Green</span>
+                  </button>
+                )}
               </Color>
             </Filter>
             <Filter>
@@ -414,24 +526,101 @@ const VerticalFilter = ({ isOpen }) => {
                 <span>Size</span>
               </Title>
               <Size>
-                <button>
-                  <span>L</span>
-                </button>
-                <button>
-                  <span>M</span>
-                </button>
-                <button>
-                  <span>S</span>
-                </button>
-                <button>
-                  <span>XL</span>
-                </button>
-                <button>
-                  <span>XXL</span>
-                </button>
-                <button>
-                  <span>Over Size</span>
-                </button>
+                {hideSizeOne ? (
+                  <button
+                    onClick={() => {
+                      dispatch(removeSize("S"));
+                      sethideSizeOne(false);
+                    }}
+                  >
+                    <span style={{ fontWeight: "bolder" }}>S</span>
+                  </button>
+                ) : (
+                  <button
+                    onClick={() => {
+                      dispatch(addSize("S"));
+                      sethideSizeOne(true);
+                    }}
+                  >
+                    <span>S</span>
+                  </button>
+                )}
+                {hideSizeTwo ? (
+                  <button
+                    onClick={() => {
+                      dispatch(removeSize("M"));
+                      sethideSizeTwo(false);
+                    }}
+                  >
+                    <span style={{ fontWeight: "bolder" }}>M</span>
+                  </button>
+                ) : (
+                  <button
+                    onClick={() => {
+                      dispatch(addSize("M"));
+                      sethideSizeTwo(true);
+                    }}
+                  >
+                    <span>M</span>
+                  </button>
+                )}
+                {hideSizeThree ? (
+                  <button
+                    onClick={() => {
+                      dispatch(removeSize("L"));
+                      sethideSizeThree(false);
+                    }}
+                  >
+                    <span style={{ fontWeight: "bolder" }}>L</span>
+                  </button>
+                ) : (
+                  <button
+                    onClick={() => {
+                      dispatch(addSize("L"));
+                      sethideSizeThree(true);
+                    }}
+                  >
+                    <span>L</span>
+                  </button>
+                )}
+                {hideSizeFour ? (
+                  <button
+                    onClick={() => {
+                      dispatch(removeSize("XL"));
+                      sethideSizeFour(false);
+                    }}
+                  >
+                    <span style={{ fontWeight: "bolder" }}>XL</span>
+                  </button>
+                ) : (
+                  <button
+                    onClick={() => {
+                      dispatch(addSize("XL"));
+                      sethideSizeFour(true);
+                    }}
+                  >
+                    <span>XL</span>
+                  </button>
+                )}
+                {hideSizeFive ? (
+                  <button
+                    onClick={() => {
+                      dispatch(removeSize("XXL"));
+                      sethideSizeFive(false);
+                    }}
+                  >
+                    <span style={{ fontWeight: "bolder" }}>XXL</span>
+                  </button>
+                ) : (
+                  <button
+                    onClick={() => {
+                      dispatch(addSize("XXL"));
+                      sethideSizeFive(true);
+                    }}
+                  >
+                    <span>XXL</span>
+                  </button>
+                )}
               </Size>
             </Filter>
           </Container>
