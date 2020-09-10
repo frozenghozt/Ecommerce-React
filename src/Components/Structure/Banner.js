@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 import bannerImage from "../../assets/images/banner.jpg";
 import FixedContainer from "../../styled/FixedContainer";
 
@@ -29,7 +30,7 @@ const TextWrapper = styled.div`
     margin: 20px 0px 30px 0px;
     color: var(--mediumgrey);
   }
-  > button {
+  & button {
     color: var(--white);
     cursor: pointer;
     font-size: 15px;
@@ -52,6 +53,11 @@ const TextWrapper = styled.div`
   }
 `;
 
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: var(--black);
+`;
+
 const Banner = () => {
   return (
     <BannerContainer>
@@ -65,7 +71,9 @@ const Banner = () => {
             strong with the freshest threads landing daily. Shopping is a right,
             not a luxury.
           </p>
-          <button>SHOP NOW</button>
+          <StyledLink to="/shop">
+            <button> SHOP NOW </button>
+          </StyledLink>
         </TextWrapper>
       </FixedContainer>
     </BannerContainer>

@@ -1,5 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
+import { useDispatch } from "react-redux";
+import {
+  addPrice,
+  removePrice,
+  addColor,
+  removeColor,
+  addSize,
+  removeSize,
+  clear,
+} from "../../redux/actions/filterAct";
+import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 
 const Container = styled.div`
@@ -56,8 +67,13 @@ const Price = styled.div`
     background-color: rgba(255, 255, 255, 0);
     outline: none;
     display: flex;
+    align-items: center;
     justify-content: flex-start;
     margin-bottom: 13px;
+  }
+  input {
+    margin-right: 5px;
+    margin-top: 4px;
   }
   span {
     font-size: 15px;
@@ -155,6 +171,7 @@ const Size = styled.div`
     outline: none;
     display: flex;
     justify-content: flex-start;
+    align-items: center;
     margin-bottom: 13px;
   }
   span {
@@ -165,7 +182,19 @@ const Size = styled.div`
   margin-bottom: 20px;
 `;
 
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: var(--black);
+`;
+
 const VerticalFilter = ({ isOpen }) => {
+  const [hidePriceOne, sethidePriceOne] = useState(false);
+  const [hidePriceTwo, sethidePriceTwo] = useState(false);
+  const [hidePriceThree, sethidePriceThree] = useState(false);
+  const [hidePriceFour, sethidePriceFour] = useState(false);
+  const [hidePriceFive, sethidePriceFive] = useState(false);
+  const [hidePriceSix, sethidePriceSix] = useState(false);
+  const dispatch = useDispatch();
   return (
     <AnimatePresence>
       {isOpen && (
@@ -183,22 +212,34 @@ const VerticalFilter = ({ isOpen }) => {
               </Title>
               <Sort>
                 <button>
-                  <span>Best seller</span>
+                  <StyledLink to="/shop?sort=best">
+                    <span>Best seller</span>
+                  </StyledLink>
                 </button>
                 <button>
-                  <span>Popularity</span>
+                  <StyledLink to="/shop?sort=popular">
+                    <span>Popularity</span>
+                  </StyledLink>
                 </button>
                 <button>
-                  <span>Average rating</span>
+                  <StyledLink to="/shop?sort=rating">
+                    <span>Average rating</span>
+                  </StyledLink>
                 </button>
                 <button>
-                  <span>New arrival</span>
+                  <StyledLink to="/shop?sort=new">
+                    <span>New arrival</span>
+                  </StyledLink>
                 </button>
                 <button>
-                  <span>Price: low to high</span>
+                  <StyledLink to="/shop?sort=priceAsc">
+                    <span>Price: low to high</span>
+                  </StyledLink>
                 </button>
                 <button>
-                  <span>Price: high to low</span>
+                  <StyledLink to="/shop?sort=priceDesc">
+                    <span>Price: high to low</span>
+                  </StyledLink>
                 </button>
               </Sort>
             </Filter>
@@ -207,24 +248,134 @@ const VerticalFilter = ({ isOpen }) => {
                 <span>Price</span>
               </Title>
               <Price>
-                <button>
-                  <span>$0.00 - $50.00</span>
-                </button>
-                <button>
-                  <span>$50.00 - $100.00</span>
-                </button>
-                <button>
-                  <span>$100.00 - $150.00</span>
-                </button>
-                <button>
-                  <span>$150.00 - $200.00</span>
-                </button>
-                <button>
-                  <span>$200.00 - $250.00</span>
-                </button>
-                <button>
-                  <span>$250.00+</span>
-                </button>
+                {/* Price Range Button 0 - 49.99 */}
+                {hidePriceOne ? (
+                  <button
+                    onClick={() => {
+                      dispatch(removePrice([0, 49.99]));
+                      sethidePriceOne(false);
+                    }}
+                  >
+                    <span style={{ fontWeight: "bolder" }}>$0.00 - $50.00</span>
+                  </button>
+                ) : (
+                  <button
+                    onClick={() => {
+                      dispatch(addPrice([0, 49.99]));
+                      sethidePriceOne(true);
+                    }}
+                  >
+                    <span>$0.00 - $50.00</span>
+                  </button>
+                )}
+                {/* Price Range Button 50 - 99.99 */}
+                {hidePriceTwo ? (
+                  <button
+                    onClick={() => {
+                      dispatch(removePrice([50, 99.99]));
+                      sethidePriceTwo(false);
+                    }}
+                  >
+                    <span style={{ fontWeight: "bolder" }}>
+                      $50.00 - $100.00
+                    </span>
+                  </button>
+                ) : (
+                  <button
+                    onClick={() => {
+                      dispatch(addPrice([50, 99.99]));
+                      sethidePriceTwo(true);
+                    }}
+                  >
+                    <span>$50.00 - $100.00</span>
+                  </button>
+                )}
+                {/* Price Range Button 100 - 149.99 */}
+                {hidePriceThree ? (
+                  <button
+                    onClick={() => {
+                      dispatch(removePrice([100, 149.99]));
+                      sethidePriceThree(false);
+                    }}
+                  >
+                    <span style={{ fontWeight: "bolder" }}>
+                      $100.00 - $150.00
+                    </span>
+                  </button>
+                ) : (
+                  <button
+                    onClick={() => {
+                      dispatch(addPrice([100, 149.99]));
+                      sethidePriceThree(true);
+                    }}
+                  >
+                    <span>$100.00 - $150.00</span>
+                  </button>
+                )}
+                {/* Price Range Button 150 - 199.99 */}
+                {hidePriceFour ? (
+                  <button
+                    onClick={() => {
+                      dispatch(removePrice([150, 199.99]));
+                      sethidePriceFour(false);
+                    }}
+                  >
+                    <span style={{ fontWeight: "bolder" }}>
+                      $150.00 - $200.00
+                    </span>
+                  </button>
+                ) : (
+                  <button
+                    onClick={() => {
+                      dispatch(addPrice([150, 199.99]));
+                      sethidePriceFour(true);
+                    }}
+                  >
+                    <span>$150.00 - $200.00</span>
+                  </button>
+                )}
+                {/* Price Range Button 200 - 249.99 */}
+                {hidePriceFive ? (
+                  <button
+                    onClick={() => {
+                      dispatch(removePrice([200, 249.99]));
+                      sethidePriceFive(false);
+                    }}
+                  >
+                    <span style={{ fontWeight: "bolder" }}>
+                      $200.00 - $250.00
+                    </span>
+                  </button>
+                ) : (
+                  <button
+                    onClick={() => {
+                      dispatch(addPrice([200, 249.99]));
+                      sethidePriceFive(true);
+                    }}
+                  >
+                    <span>$200.00 - $250.00</span>
+                  </button>
+                )}
+                {/* Price Range Button 250 - 9999 */}
+                {hidePriceSix ? (
+                  <button
+                    onClick={() => {
+                      dispatch(removePrice([250, 9999]));
+                      sethidePriceSix(false);
+                    }}
+                  >
+                    <span style={{ fontWeight: "bolder" }}>$250.00 +</span>
+                  </button>
+                ) : (
+                  <button
+                    onClick={() => {
+                      dispatch(addPrice([250, 9999]));
+                      sethidePriceSix(true);
+                    }}
+                  >
+                    <span>$250.00 +</span>
+                  </button>
+                )}
               </Price>
             </Filter>
             <Filter>

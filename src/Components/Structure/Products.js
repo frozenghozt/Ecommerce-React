@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { useLocation } from "react-router-dom";
+import { useSelector } from "react-redux";
 import { Server } from "miragejs";
 import { useQuery } from "react-query";
 import productObj from "../../dbObjects/ProductsObj";
@@ -30,11 +31,15 @@ const fetchProducts = async () => {
   return res.json();
 };
 
-const Products = ({ tosort, isOpen }) => {
+const Products = ({ isOpen }) => {
   const { data, status } = useQuery("products", fetchProducts);
+  // Get filter state and sort min/max price.
+  const state = useSelector((state) => state.filter);
+  let filterMinMax = [Math.min(...state.price), Math.max(...state.price)];
+  // React Router Params
   const params = useLocation().search;
 
-  function sorting(a, b) {
+  const sorting = (a, b) => {
     if (
       a.tags.includes(params.slice(6)) === true &&
       b.tags.includes(params.slice(6)) === false
@@ -48,14 +53,20 @@ const Products = ({ tosort, isOpen }) => {
       return 1;
     }
     return 0;
-  }
-
+  };
+  console.log(filterMinMax);
   return (
     <ProductsContainer>
       <VerticalFilter isOpen={isOpen} />
       <ProductsWrapper>
         {status === "success" &&
           data.inventory
+            .filter(({ price }) => {
+              if (state.price.length === 0) {
+                filterMinMax = [0, 9999];
+              }
+              return price > filterMinMax[0] && price < filterMinMax[1];
+            })
             .sort(sorting)
             .map(
               ({

@@ -20,13 +20,28 @@ const NavWrapper = styled.div`
   }
 `;
 
-const DescriptionNav = () => {
+const DescriptionNav = ({ tabSetter, activetab }) => {
   return (
     <NavContainer>
       <NavWrapper>
-        <span>Description</span>
-        <span>Additional Information</span>
-        <span>Reviews</span>
+        <span
+          onClick={() => tabSetter("Description")}
+          style={{ fontWeight: activetab === "Description" ? "500" : "400" }}
+        >
+          Description
+        </span>
+        <span
+          onClick={() => tabSetter("Additional")}
+          style={{ fontWeight: activetab === "Additional" ? "500" : "400" }}
+        >
+          Additional Information
+        </span>
+        <span
+          onClick={() => tabSetter("Reviews")}
+          style={{ fontWeight: activetab === "Reviews" ? "500" : "400" }}
+        >
+          Reviews
+        </span>
       </NavWrapper>
     </NavContainer>
   );

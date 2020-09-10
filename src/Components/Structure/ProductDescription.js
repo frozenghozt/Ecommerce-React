@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import DescriptionNav from "../SmallComponents/DescriptionNav";
 import DescriptionText from "../SmallComponents/DescriptionText";
@@ -8,10 +8,16 @@ const DescriptionContainer = styled.div`
 `;
 
 const ProductDescription = () => {
+  const [activetab, setactivetab] = useState("Description");
+
+  const tabSetter = (tabname) => {
+    setactivetab(tabname);
+  };
+
   return (
     <DescriptionContainer>
-      <DescriptionNav />
-      <DescriptionText />
+      <DescriptionNav tabSetter={tabSetter} activetab={activetab} />
+      <DescriptionText activetab={activetab} />
     </DescriptionContainer>
   );
 };

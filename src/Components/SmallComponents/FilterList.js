@@ -209,29 +209,6 @@ const FilterLine = styled.div`
   margin-bottom: 15px;
 `;
 
-const PseudoRadio = styled.div`
-  height: 16px;
-  width: 16px;
-  vertical-align: top;
-  border: 1px solid rgb(204, 204, 204);
-  border-radius: 100%;
-  margin-right: 6px;
-  display: inline-block;
-  position: relative;
-  &::after {
-    content: "";
-    width: 10px;
-    height: 10px;
-    border-radius: 100%;
-    background: rgb(17, 17, 17);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(1);
-    transition: transform 100ms ease 0s;
-  }
-`;
-
 const StyledLink = styled(Link)`
   text-decoration: none;
   color: var(--black);
@@ -239,7 +216,6 @@ const StyledLink = styled(Link)`
 
 const FilterList = ({ opener, isOpen }) => {
   const ModalRoot = document.getElementById("MobileFilter");
-  // const [active, setActive] = useState("");
 
   return ReactDOM.createPortal(
     <AnimatePresence>
@@ -264,37 +240,31 @@ const FilterList = ({ opener, isOpen }) => {
                 <Sort>
                   <button>
                     <StyledLink to="/shop?sort=best" onClick={opener}>
-                      <PseudoRadio />
                       <span>Best seller</span>
                     </StyledLink>
                   </button>
                   <button>
                     <StyledLink to="/shop?sort=popular" onClick={opener}>
-                      <PseudoRadio />
                       <span>Popularity</span>
                     </StyledLink>
                   </button>
                   <button>
                     <StyledLink to="/shop?sort=rating" onClick={opener}>
-                      <PseudoRadio />
                       <span>Average rating</span>
                     </StyledLink>
                   </button>
                   <button>
                     <StyledLink to="/shop?sort=new" onClick={opener}>
-                      <PseudoRadio />
                       <span>New arrival</span>
                     </StyledLink>
                   </button>
                   <button>
                     <StyledLink to="/shop?sort=priceAsc" onClick={opener}>
-                      <PseudoRadio />
                       <span>Price: low to high</span>
                     </StyledLink>
                   </button>
                   <button>
                     <StyledLink to="/shop?sort=priceDesc" onClick={opener}>
-                      <PseudoRadio />
                       <span>Price: high to low</span>
                     </StyledLink>
                   </button>
