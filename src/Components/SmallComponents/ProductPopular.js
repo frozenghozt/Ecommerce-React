@@ -3,6 +3,7 @@ import styled from "styled-components";
 import SaleRect from "./SaleRect";
 import HotRect from "./HotRect";
 import ProductHover from "./ProductHover";
+import ProductHoverTwo from "./ProductHoverTwo";
 
 const ProductContainer = styled.div`
   min-width: calc(100% / 1.15);
@@ -106,8 +107,6 @@ const ProductPopular = ({
   const hoverHandler = () => {
     setishover(!ishover);
   };
-  // const ref = React.createRef();
-  // console.log(ref.current);
   const ref = React.createRef();
   return (
     <ProductContainer>
@@ -129,6 +128,7 @@ const ProductPopular = ({
             price={price}
             ref={ref}
           />
+          <ProductHoverTwo />
         </Image>
         <Info ref={ref}>
           <NameColor>

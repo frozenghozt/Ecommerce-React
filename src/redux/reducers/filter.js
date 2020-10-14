@@ -38,8 +38,6 @@ export const filter = (state = initialState, action) => {
         ...state,
         size: state.size.filter((each) => each !== action.payload),
       };
-    case "CLEAR":
-      return { ...state, ...action.payload };
     default:
       return state;
   }

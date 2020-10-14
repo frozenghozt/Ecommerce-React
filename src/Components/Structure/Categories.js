@@ -2,8 +2,20 @@ import React from "react";
 import styled from "styled-components";
 
 // Images
-import CatWomen from "../../assets/images/catwomen.jpg";
-import CatWomen767 from "../../assets/images/catwomenmin1200.jpg";
+import CategorieOne from "../../assets/images/categorie1.jpg";
+import CategorieOne768 from "../../assets/images/categorie1-768.jpg";
+import CategorieOne1200 from "../../assets/images/categorie1-1200.jpg";
+import CategorieTwo from "../../assets/images/categorie2.jpg";
+import CategorieTwo768 from "../../assets/images/categorie2-768.jpg";
+import CategorieTwo1200 from "../../assets/images/categorie2-1200.jpg";
+import CategorieThree from "../../assets/images/categorie3.jpg";
+import CategorieThree768 from "../../assets/images/categorie3-768.jpg";
+import CategorieThree1200 from "../../assets/images/categorie3-1200.jpg";
+import CategorieFour from "../../assets/images/categorie4.jpg";
+import CategorieFour768 from "../../assets/images/categorie4-768.jpg";
+import CategorieFour1200 from "../../assets/images/categorie4-1200.jpg";
+import CategorieFive from "../../assets/images/categorie5-1200.jpg";
+import CategorieSix from "../../assets/images/categorie6-1200.jpg";
 
 const Wrapper = styled.div`
   padding: 60px 0 30px 0;
@@ -32,14 +44,16 @@ const Grid = styled.div`
 `;
 
 const Women = styled.picture`
+  grid-column: col1-start;
+  grid-row: row1-start;
   > img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-  }
-  @media (max-width: 767.98px) {
-    grid-column: col1-start;
-    grid-row: row1-start;
+    object-position: left;
+    @media (min-width: 620px) {
+      object-position: center;
+    }
   }
   @media (min-width: 768px) {
     grid-column: col1-start;
@@ -48,12 +62,20 @@ const Women = styled.picture`
 `;
 
 const Sunglasses = styled.picture`
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position-y: -70px;
-  @media (max-width: 767.98) {
-    grid-column: col1-start;
-    grid-row: row4-start;
+  grid-column: col1-start;
+  grid-row: row4-start;
+  > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: left;
+    @media (min-width: 620px) {
+      object-position: center;
+    }
+  }
+  @media (min-width: 768px) {
+    grid-column: col2-start;
+    grid-row: row1-start;
   }
   @media (min-width: 1200px) {
     grid-column: col2-start;
@@ -62,11 +84,16 @@ const Sunglasses = styled.picture`
 `;
 
 const Men = styled.picture`
-  background-size: cover;
-  background-repeat: no-repeat;
-  @media (max-width: 767.98px) {
-    grid-column: col1-start;
-    grid-row: row2-start;
+  grid-column: col1-start;
+  grid-row: row2-start;
+  > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: left;
+    @media (min-width: 620px) {
+      object-position: center;
+    }
   }
   @media (min-width: 768px) {
     grid-column: col3-start;
@@ -79,12 +106,16 @@ const Men = styled.picture`
 `;
 
 const Sneakers = styled.picture`
-  background: #999;
-  background-position: center;
-  background-size: cover;
-  @media (max-width: 767.98px) {
-    grid-column: col1-start;
-    grid-row: row3-start;
+  grid-column: col1-start;
+  grid-row: row3-start;
+  > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: left;
+    @media (min-width: 620px) {
+      object-position: center;
+    }
   }
   @media (min-width: 768px) {
     grid-column: col2-start;
@@ -97,23 +128,30 @@ const Sneakers = styled.picture`
 `;
 
 const Leather = styled.picture`
-  grid-column: col3-start / col5-start;
-  grid-row: row1-start;
-  @media (max-width: 1200px) {
-    display: none;
-    background-size: cover;
-    background-repeat: no-reapeat;
+  display: none;
+  > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  @media (min-width: 1200px) {
+    display: block;
+    grid-column: col4-start;
+    grid-row: row2-start;
   }
 `;
 
 const Hats = styled.picture`
-  grid-column: col4-start / col5-start;
-  grid-row: row2-start;
-  background: #999;
-  @media (max-width: 1200px) {
-    display: none;
-    background-size: cover;
-    background-repeat: no-reapeat;
+  display: none;
+  > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  @media (min-width: 1200px) {
+    display: block;
+    grid-column: col3-start / col5-start;
+    grid-row: row1-start;
   }
 `;
 
@@ -122,31 +160,31 @@ const Categories = () => {
     <Wrapper>
       <Grid>
         <Women>
-          <source media="(max-width: 1199.98px)" srcSet={CatWomen767} />
-          <source media="(min-width: 1200px)" srcSet={CatWomen} />
-          <img src={CatWomen} alt="yo" />
+          <source media="(min-width: 768px)" srcSet={CategorieOne768} />
+          <source media="(min-width: 1200px)" srcSet={CategorieOne1200} />
+          <img src={CategorieOne} alt="yo" />
         </Women>
-        <Sunglasses
-          style={{
-            backgroundImage: `url(https://images.pexels.com/photos/1388888/pexels-photo-1388888.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)`,
-          }}
-        />
-        <Leather
-          style={{
-            backgroundImage: `url(https://images.pexels.com/photos/1152077/pexels-photo-1152077.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)`,
-          }}
-        />
-        <Men
-          style={{
-            backgroundImage: `url(https://images.pexels.com/photos/594610/pexels-photo-594610.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500)`,
-          }}
-        />
-        <Sneakers
-          style={{
-            backgroundImage: `url(https://images.pexels.com/photos/2529148/pexels-photo-2529148.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500)`,
-          }}
-        />
-        <Hats></Hats>
+        <Sunglasses>
+          <source media="(min-width: 768px)" srcSet={CategorieFour768} />
+          <source media="(min-width: 1200px)" srcSet={CategorieFour1200} />
+          <img src={CategorieFour} alt="yo" />
+        </Sunglasses>
+        <Men>
+          <source media="(min-width: 768px)" srcSet={CategorieTwo768} />
+          <source media="(min-width: 1200px)" srcSet={CategorieTwo1200} />
+          <img src={CategorieTwo} alt="yo" />
+        </Men>
+        <Sneakers>
+          <source media="(min-width: 768px)" srcSet={CategorieThree768} />
+          <source media="(min-width: 1200px)" srcSet={CategorieThree1200} />
+          <img src={CategorieThree} alt="yo" />
+        </Sneakers>
+        <Leather>
+          <img src={CategorieFive} alt="yo" />
+        </Leather>
+        <Hats>
+          <img src={CategorieSix} alt="yo" />
+        </Hats>
       </Grid>
     </Wrapper>
   );

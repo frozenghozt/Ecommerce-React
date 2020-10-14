@@ -3,6 +3,7 @@ import styled from "styled-components";
 import SaleRect from "./SaleRect";
 import HotRect from "./HotRect";
 import ProductHover from "./ProductHover";
+import ProductHoverTwo from "./ProductHoverTwo";
 
 const ProductContainer = styled.div`
   min-width: calc(100% / 1.15);
@@ -126,6 +127,7 @@ const ProductTrend = ({
             img={img}
             price={price}
           />
+          <ProductHoverTwo />
         </Image>
         <Info>
           <NameColor>

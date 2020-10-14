@@ -10,7 +10,7 @@ import {
 } from "../../redux/actions/productAct";
 
 const ProductContainer = styled.div`
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: space-between;
   position: absolute;
@@ -20,6 +20,9 @@ const ProductContainer = styled.div`
   padding: 5px 0px;
   background: var(--white);
   cursor: pointer;
+  @media (min-width: 1024px) {
+    display: flex;
+  }
 `;
 
 const AddCart = styled.div`
@@ -28,8 +31,8 @@ const AddCart = styled.div`
   height: 100%;
   font-family: var(--icons);
   font-size: 15px;
-  padding: 0px 14px;
   color: var(--mediumgrey);
+  padding: 0px 14px;
   border-right: 2px solid var(--lightgrey);
 `;
 
